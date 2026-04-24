@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="八米AI数字员工提供智能客服、智能拓客、数据分析、办公自动化功能，7×24小时不间断工作，替代重复性工作，提升企业效率。">
+    <meta name="keywords" content="AI数字员工,智能客服,智能拓客,AI助手,办公自动化,人工智能">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lee18926200599-dotcom.github.io/bami-website/product-ai.html">
+
+
+    <title data-zh="AI数字员工 - 八米科技" data-en="AI Digital Workforce - BAMI Tech">AI数字员工 - 八米科技</title>
+    <link rel="icon" type="image/svg+xml" href="images/LOGO2.SVG">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; background: #0A0E1A; color: #FFFFFF; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(10,14,26,0.98); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.3rem; font-weight: 700; }
+        .logo-icon { width: 70px; height: 36px; background: linear-gradient(135deg, #FF6B35, #FF8A5C); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem; color: #FFFFFF; font-style: italic; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #C5C9D6; }
+        .nav-links a:hover { color: #FF6B35; }
+        .nav-links a.active { color: #FF6B35; }
+        .nav-right { display: flex; align-items: center; gap: 1rem; }
+        .lang-switch { display: flex; background: #1A2235; padding: 0.25rem; border-radius: 20px; border: 1px solid rgba(255,107,53,0.3); }
+        .lang-btn { padding: 0.3rem 0.8rem; border-radius: 15px; border: none; background: none; color: #8B92A8; cursor: pointer; }
+        .lang-btn.active { background: #FF6B35; color: #FFFFFF; }
+        .btn-primary { display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #FF6B35, #FF8A5C); color: #FFFFFF; padding: 0.6rem 1.2rem; border-radius: 25px; font-weight: 600; border: none; cursor: pointer; }
+        .mobile-menu-btn { display: none; width: 44px; height: 44px; background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.3); border-radius: 8px; cursor: pointer; flex-direction: column; justify-content: center; align-items: center; gap: 5px; }
+        .mobile-menu-btn span { width: 20px; height: 2px; background: #FFFFFF; border-radius: 2px; }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0A0E1A; z-index: 999; padding: 5rem 1rem 2rem; }
+        .mobile-menu.active { display: flex; flex-direction: column; }
+        .mobile-menu-content { background: #1A2235; border-radius: 16px; border: 1px solid rgba(255,107,53,0.2); padding: 1.5rem; flex: 1; display: flex; flex-direction: column; max-width: 300px; margin: 0 auto; width: 100%; position: relative; }
+        .mobile-menu-close { background: none; border: none; color: #8B92A8; font-size: 1.5rem; cursor: pointer; position: absolute; top: 1rem; right: 1rem; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+        .mobile-menu-close:hover { color: #FF6B35; background: rgba(255,107,53,0.1); }
+        .mobile-menu-header { display: flex; justify-content: flex-end; padding-bottom: 0.5rem; height: 40px; }
+        .mobile-menu-list { list-style: none; flex: 1; overflow-y: auto; }
+        .mobile-menu-list li { border-bottom: 1px solid rgba(255,107,53,0.1); }
+        .mobile-menu-list a { display: block; padding: 0.8rem 0; font-size: 1rem; color: #FFFFFF; text-align: center; transition: color 0.3s; }
+        .mobile-menu-list a:hover { color: #FF6B35; }
+        .mobile-menu-footer { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,107,53,0.2); display: flex; flex-direction: column; gap: 1rem; }
+        .mobile-menu-footer .lang-switch { justify-content: center; width: fit-content; margin: 0 auto; }
+        .mobile-menu-footer .btn-primary { width: 100%; text-align: center; }
+        .page-header { padding: 8rem 5% 4rem; text-align: center; background: linear-gradient(135deg, #0A0E1A, #1A2235); }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .page-header p { color: #8B92A8; max-width: 700px; margin: 0 auto; }
+        .section { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 1rem; }
+        .section-subtitle { text-align: center; color: #8B92A8; margin-bottom: 3rem; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .feature-card { background: #1A2235; border: 1px solid rgba(255,107,53,0.1); border-radius: 16px; padding: 1.5rem; }
+        .feature-card h3 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .feature-card p { color: #8B92A8; font-size: 0.9rem; }
+        .value-section { padding: 4rem 5%; background: #121829; }
+        .value-container { max-width: 1200px; margin: 0 auto; }
+        .value-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .value-card { background: #1A2235; border: 1px solid rgba(255,107,53,0.1); border-radius: 16px; padding: 2rem; }
+        .value-card h3 { color: #FF6B35; margin-bottom: 1rem; }
+        .value-card p { color: #C5C9D6; }
+        .scenario-section { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; }
+        .scenario-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .scenario-card { background: #1A2235; border: 1px solid rgba(255,107,53,0.1); border-radius: 16px; padding: 2rem; }
+        .scenario-card h3 { color: #FF6B35; margin-bottom: 1rem; }
+        .scenario-card ul { list-style: none; }
+        .scenario-card li { color: #C5C9D6; padding: 0.3rem 0; padding-left: 1.5rem; position: relative; }
+        .scenario-card li::before { content: '✓'; position: absolute; left: 0; color: #FF6B35; }
+        .process-section { padding: 4rem 5%; background: #121829; }
+        .process-container { max-width: 1200px; margin: 0 auto; }
+        .process-flow { display: flex; justify-content: space-between; margin: 3rem 0; flex-wrap: wrap; gap: 1rem; }
+        .process-step { flex: 1; min-width: 150px; text-align: center; }
+        .process-step .step-num { width: 60px; height: 60px; background: linear-gradient(135deg, #FF6B35, #FF8A5C); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: 700; font-size: 1.2rem; }
+        .process-step h4 { color: #FFFFFF; margin-bottom: 0.5rem; }
+        .process-step p { color: #8B92A8; font-size: 0.85rem; }
+        .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; margin: 3rem 0; }
+        .metric-item h3 { font-size: 2.5rem; color: #FF6B35; margin-bottom: 0.5rem; }
+        .metric-item p { color: #8B92A8; }
+        .cta-section { padding: 4rem 5%; text-align: center; background: linear-gradient(135deg, #1A2235, #0A0E1A); }
+        .footer { background: #121829; padding: 3rem 5% 1.5rem; border-top: 1px solid rgba(255,107,53,0.1); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .footer h4 { color: #FFFFFF; margin-bottom: 1rem; }
+        .footer ul { list-style: none; }
+        .footer li { margin-bottom: 0.5rem; }
+        .system-login-menu { position: relative; }
+        .system-login-btn { display: block; color: #8B92A8; cursor: pointer; font-size: 0.9rem; background: none; border: none; padding: 0; margin: 0; font-family: inherit; text-align: left; }
+        .system-login-btn:hover { color: #FF6B35; }
+        .system-dropdown { display: none; position: absolute; bottom: 100%; left: 0; background: #1A2235; border: 1px solid rgba(255,107,53,0.3); border-radius: 12px; padding: 1rem; min-width: 200px; margin-bottom: 0.5rem; box-shadow: 0 10px 40px rgba(0,0,0,0.5); z-index: 1000; }
+        .system-dropdown.active { display: block; }
+        .system-dropdown-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,107,53,0.2); }
+        .system-dropdown-title { color: #FF6B35; font-weight: 600; font-size: 0.9rem; }
+        .system-dropdown-close { background: none; border: none; color: #8B92A8; cursor: pointer; font-size: 1.2rem; padding: 0; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+        .system-dropdown-close:hover { color: #FF6B35; background: rgba(255,107,53,0.1); }
+        .system-category { margin-bottom: 0.8rem; }
+        .system-category-title { color: #FF6B35; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+        .system-category-items { padding-left: 0.5rem; }
+        .system-category-items a { display: block; padding: 0.3rem 0.5rem; color: #C5C9D6; border-radius: 6px; font-size: 0.8rem; margin-bottom: 0.2rem; }
+        .system-category-items a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .system-subcategory { margin-bottom: 0.6rem; }
+        .system-subtitle { display: block; color: #8B92A8; font-size: 0.8rem; font-weight: 500; margin-bottom: 0.3rem; padding: 0.2rem 0; }
+        .system-subitems { padding-left: 0.8rem; border-left: 2px solid rgba(255,107,53,0.3); margin-left: 0.3rem; }
+        .system-subitems a { display: inline-block; padding: 0.2rem 0.5rem; color: #C5C9D6; border-radius: 4px; font-size: 0.75rem; margin-right: 0.3rem; margin-bottom: 0.2rem; background: rgba(255,255,255,0.05); }
+        .system-subitems a:hover { background: rgba(255,107,53,0.2); color: #FF6B35; }
+        .footer a { color: #8B92A8; font-size: 0.9rem; display: block; margin-bottom: 0.5rem; }
+        @media (max-width: 768px) {
+            .nav-links, .nav-right { display: none !important; }
+            .mobile-menu-btn { display: flex !important; }
+            .features-grid, .value-grid, .scenario-grid, .metrics, .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .system-login-menu { display: flex; justify-content: center; }
+            .system-login-btn { text-align: center; }
+            .system-dropdown { text-align: left; }
+            .system-category-title, .system-subtitle { text-align: left; display: block; }
+            .system-subitems { text-align: left; justify-content: flex-start; }
+            .process-flow { flex-direction: column; }
+        }
+            
+    /* V14 悬浮咨询按钮 */
+.fab-contact { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(255,107,53,0.4); transition: all 0.3s; z-index: 999; opacity: 0; transform: translateY(20px); }
+.fab-contact.visible { opacity: 1; transform: translateY(0); }
+.fab-contact:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(255,107,53,0.6); }
+.fab-contact svg { width: 28px; height: 28px; fill: white; }
+.fab-tooltip { position: absolute; right: 70px; background: var(--bg-card); color: white; padding: 8px 16px; border-radius: 8px; font-size: 14px; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: all 0.3s; border: 1px solid var(--border-hover); }
+.fab-contact:hover .fab-tooltip { opacity: 1; transform: translateX(0); }
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 6px; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;"><span style="background: linear-gradient(135deg, #FF6B35, #FF8A5C); padding: 6px 10px; border-radius: 12px; color: #FFFFFF; font-weight: bold; font-size: 18px; line-height: 1; font-family: Arial, Helvetica, sans-serif;">BAMI</span><span style="color: #FF6B35; font-weight: bold; font-size: 24px; line-height: 1;">八米</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html" data-zh="首页" data-en="Home">首页</a></li>
+            <li><a href="products.html" class="active" data-zh="产品服务" data-en="Products">产品服务</a></li>
+            <li><a href="solutions.html" data-zh="解决方案" data-en="Solutions">解决方案</a></li>
+            <li><a href="about.html" data-zh="关于我们" data-en="About">关于我们</a></li>
+            <li><a href="cases.html" data-zh="成功案例" data-en="Cases">成功案例</a></li>
+            <li><a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a></li>
+            <li><a href="support.html" data-zh="服务支持" data-en="Support">服务支持</a></li>
+            <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="zh">中</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <a href="contact.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">立即咨询</a>
+        </div>
+        <button class="mobile-menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+            </div>
+            <ul class="mobile-menu-list">
+                <li><a href="index.html" data-zh="首页" data-en="Home">首页</a></li>
+                <li><a href="products.html" data-zh="产品服务" data-en="Products">产品服务</a></li>
+                <li><a href="solutions.html" data-zh="解决方案" data-en="Solutions">解决方案</a></li>
+                <li><a href="about.html" data-zh="关于我们" data-en="About">关于我们</a></li>
+                <li><a href="cases.html" data-zh="成功案例" data-en="Cases">成功案例</a></li>
+                <li><a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a></li>
+                <li><a href="support.html" data-zh="服务支持" data-en="Support">服务支持</a></li>
+                <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+            </ul>
+            <div class="mobile-menu-footer">
+                <div class="lang-switch">
+                    <button class="lang-btn active" data-lang="zh">中</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <a href="contact.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">立即咨询</a>
+            </div>
+        </div>
+    </div>
+    <header class="page-header">
+        <h1 data-zh="🤖 AI数字员工" data-en="🤖 AI Digital Workforce">🤖 AI数字员工</h1>
+        <p data-zh="7×24小时不间断工作的智能团队，让AI成为您的得力助手，替代重复性工作，释放人力价值" data-en="24/7 intelligent workforce, making AI your capable assistant, replacing repetitive tasks and unleashing human potential">7×24小时不间断工作的智能团队，让AI成为您的得力助手，替代重复性工作，释放人力价值</p>
+    </header>
+
+    <!-- 核心功能 -->
+    <section class="section">
+        <h2 class="section-title" data-zh="核心功能" data-en="Core Features">核心功能</h2>
+        <p class="section-subtitle" data-zh="六大核心能力，打造企业专属AI团队" data-en="Six core capabilities to build your enterprise AI team">六大核心能力，打造企业专属AI团队</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3 data-zh="🎯 智能拓客引擎" data-en="🎯 Smart Customer Acquisition">🎯 智能拓客引擎</h3>
+                <p data-zh="自动识别潜在客户，分析客户画像，智能推荐触达策略。通过NLP技术分析客户对话，精准识别购买意向，提升获客效率3倍以上" data-en="Auto-identify prospects, analyze profiles with NLP, improve acquisition efficiency 3x+">自动识别潜在客户，分析客户画像，智能推荐触达策略。通过NLP技术分析客户对话，精准识别购买意向，提升获客效率3倍以上</p>
+            </div>
+            <div class="feature-card">
+                <h3 data-zh="💬 全渠道客服中枢" data-en="💬 Omnichannel Service Hub">💬 全渠道客服中枢</h3>
+                <p data-zh="统一接入微信、电话、网页、APP等全渠道咨询，7×24小时智能回复，准确率95%+。支持多轮对话、上下文理解、情感分析" data-en="Unified WeChat/phone/web/APP access. 24/7 intelligent response, 95%+ accuracy, sentiment analysis">统一接入微信、电话、网页、APP等全渠道咨询，7×24小时智能回复，准确率95%+。支持多轮对话、上下文理解、情感分析</p>
+            </div>
+            <div class="feature-card">
+                <h3 data-zh="📊 数据决策指挥官" data-en="📊 Data Decision Commander">📊 数据决策指挥官</h3>
+                <p data-zh="实时分析业务数据，智能生成决策建议。自动识别业务异常，预警风险，辅助管理层科学决策，决策效率提升3倍" data-en="Real-time data analysis, intelligent recommendations. Auto anomaly detection, 3x decision efficiency">实时分析业务数据，智能生成决策建议。自动识别业务异常，预警风险，辅助管理层科学决策，决策效率提升3倍</p>
+            </div>
+            <div class="feature-card">
+                <h3 data-zh="🔧 智能管理协作者" data-en="🔧 Intelligent Management Assistant">🔧 智能管理协作者</h3>
+                <p data-zh="自动化处理日常行政事务，如会议纪要生成、邮件自动回复、日程智能安排、文档智能归档，办公效率提升5倍" data-en="Automate admin tasks: meeting notes, emails, scheduling. 5x office efficiency">自动化处理日常行政事务，如会议纪要生成、邮件自动回复、日程智能安排、文档智能归档，办公效率提升5倍</p>
+            </div>
+            <div class="feature-card">
+                <h3 data-zh="🌍 多语言智能交互" data-en="🌍 Multilingual Interaction">🌍 多语言智能交互</h3>
+                <p data-zh="支持中英日韩等20+语言实时互译，助力企业出海。语音识别准确率达98%，支持方言识别，打破语言障碍" data-en="20+ languages real-time translation, 98% voice recognition accuracy">支持中英日韩等20+语言实时互译，助力企业出海。语音识别准确率达98%，支持方言识别，打破语言障碍</p>
+            </div>
+            <div class="feature-card">
+                <h3 data-zh="🔒 企业级安全保障" data-en="🔒 Enterprise Security">🔒 企业级安全保障</h3>
+                <p data-zh="数据加密传输与存储，权限分级管理，操作日志全程留痕。符合GDPR、等保三级要求，企业数据安全无忧" data-en="Encrypted transmission, graded permissions, GDPR compliant, level 3 security">数据加密传输与存储，权限分级管理，操作日志全程留痕。符合GDPR、等保三级要求，企业数据安全无忧</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 业务价值 -->
+    <section class="value-section">
+        <div class="value-container">
+            <h2 class="section-title" data-zh="业务价值" data-en="Business Value">业务价值</h2>
+            <p class="section-subtitle" data-zh="AI赋能带来的显著效益提升" data-en="Significant benefits powered by AI">AI赋能带来的显著效益提升</p>
+            <div class="value-grid">
+                <div class="value-card">
+                    <h3 data-zh="💰 降本增效" data-en="💰 Cost Reduction">💰 降本增效</h3>
+                    <p data-zh="替代重复性人工工作，节省80%以上人力成本。1个AI数字员工可完成10名人工客服的工作量，人力成本大幅降低，释放员工从事更高价值工作" data-en="Replace repetitive work, save 80%+ labor costs. 1 AI = 10 human agents">替代重复性人工工作，节省80%以上人力成本。1个AI数字员工可完成10名人工客服的工作量，人力成本大幅降低，释放员工从事更高价值工作</p>
+                </div>
+                <div class="value-card">
+                    <h3 data-zh="⚡ 效率提升" data-en="⚡ Efficiency Boost">⚡ 效率提升</h3>
+                    <p data-zh="响应速度提升10倍，7×24小时全天候在线无间断。智能处理海量咨询，峰值并发处理能力提升100倍，业务高峰期从容应对" data-en="10x response speed, 24/7 availability, 100x peak capacity">响应速度提升10倍，7×24小时全天候在线无间断。智能处理海量咨询，峰值并发处理能力提升100倍，业务高峰期从容应对</p>
+                </div>
+                <div class="value-card">
+                    <h3 data-zh="📈 业绩增长" data-en="📈 Revenue Growth">📈 业绩增长</h3>
+                    <p data-zh="智能拓客精准识别高价值客户，转化率提升40%。客户跟进及时率100%，商机流失率降低60%，销售业绩稳步增长" data-en="40% conversion improvement, 100% follow-up rate, 60% lead loss reduction">智能拓客精准识别高价值客户，转化率提升40%。客户跟进及时率100%，商机流失率降低60%，销售业绩稳步增长</p>
+                </div>
+                <div class="value-card">
+                    <h3 data-zh="😊 体验升级" data-en="😊 Experience Upgrade">😊 体验升级</h3>
+                    <p data-zh="秒级响应客户咨询，无需等待。个性化服务推荐，客户满意度提升50%。NPS评分提升30分，客户忠诚度显著提高" data-en="Second-level response, 50% satisfaction improvement, +30 NPS score">秒级响应客户咨询，无需等待。个性化服务推荐，客户满意度提升50%。NPS评分提升30分，客户忠诚度显著提高</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 应用场景 -->
+    <section class="scenario-section">
+        <h2 class="section-title" data-zh="应用场景" data-en="Application Scenarios">应用场景</h2>
+        <p class="section-subtitle" data-zh="AI数字员工在不同行业的深度应用" data-en="Deep application of AI digital workforce across industries">AI数字员工在不同行业的深度应用</p>
+        <div class="scenario-grid">
+            <div class="scenario-card">
+                <h3 data-zh="🏭 制造业" data-en="🏭 Manufacturing">🏭 制造业</h3>
+                <ul>
+                    <li data-zh="智能客服：解答产品咨询、技术支持、售后服务" data-en="Smart Customer Service: product inquiries, tech support, after-sales">智能客服：解答产品咨询、技术支持、售后服务</li>
+                    <li data-zh="订单处理：自动接收、确认、跟进订单状态" data-en="Order Processing: auto-receive, confirm, track orders">订单处理：自动接收、确认、跟进订单状态</li>
+                    <li data-zh="供应链协同：供应商沟通、交期跟进、异常预警" data-en="Supply Chain: supplier communication, delivery tracking, alerts">供应链协同：供应商沟通、交期跟进、异常预警</li>
+                    <li data-zh="数据分析：生产报表生成、质量分析、成本核算" data-en="Data Analysis: production reports, quality analysis, cost accounting">数据分析：生产报表生成、质量分析、成本核算</li>
+                </ul>
+            </div>
+            <div class="scenario-card">
+                <h3 data-zh="🛒 零售业" data-en="🛒 Retail">🛒 零售业</h3>
+                <ul>
+                    <li data-zh="智能导购：商品推荐、尺码咨询、活动介绍" data-en="Smart Shopping Guide: recommendations, size consultation">智能导购：商品推荐、尺码咨询、活动介绍</li>
+                    <li data-zh="会员运营：积分查询、优惠券发放、复购提醒" data-en="Member Operations: points inquiry, coupon distribution">会员运营：积分查询、优惠券发放、复购提醒</li>
+                    <li data-zh="售后服务：退换货处理、投诉跟进、满意度回访" data-en="After-sales: returns handling, complaint follow-up">售后服务：退换货处理、投诉跟进、满意度回访</li>
+                    <li data-zh="库存管理：库存查询、补货提醒、调拨协调" data-en="Inventory Management: stock inquiry, restocking alerts">库存管理：库存查询、补货提醒、调拨协调</li>
+                </ul>
+            </div>
+            <div class="scenario-card">
+                <h3 data-zh="📦 物流行业" data-en="📦 Logistics">📦 物流行业</h3>
+                <ul>
+                    <li data-zh="运单查询：物流轨迹查询、时效预估、异常处理" data-en="Waybill Inquiry: tracking, ETA estimation, exception handling">运单查询：物流轨迹查询、时效预估、异常处理</li>
+                    <li data-zh="客服接待：运费咨询、网点查询、投诉处理" data-en="Customer Reception: freight inquiry, network queries">客服接待：运费咨询、网点查询、投诉处理</li>
+                    <li data-zh="调度协同：司机沟通、装卸安排、异常上报" data-en="Dispatch Coordination: driver communication, loading arrangements">调度协同：司机沟通、装卸安排、异常上报</li>
+                    <li data-zh="账单对账：运费核算、对账单生成、结算跟进" data-en="Billing Reconciliation: freight calculation, statement generation">账单对账：运费核算、对账单生成、结算跟进</li>
+                </ul>
+            </div>
+            <div class="scenario-card">
+                <h3 data-zh="💼 专业服务" data-en="💼 Professional Services">💼 专业服务</h3>
+                <ul>
+                    <li data-zh="法律咨询：合同审查、条款解释、案例检索" data-en="Legal Consulting: contract review, clause interpretation">法律咨询：合同审查、条款解释、案例检索</li>
+                    <li data-zh="财务服务：发票查询、报销指引、税务咨询" data-en="Financial Services: invoice inquiry, reimbursement guidance">财务服务：发票查询、报销指引、税务咨询</li>
+                    <li data-zh="人力资源：招聘初筛、面试安排、入职指引" data-en="HR Services: recruitment screening, interview scheduling">人力资源：招聘初筛、面试安排、入职指引</li>
+                    <li data-zh="IT支持：故障报修、操作指引、系统维护" data-en="IT Support: troubleshooting, operation guidance, maintenance">IT支持：故障报修、操作指引、系统维护</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务流程 -->
+    <section class="process-section">
+        <div class="process-container">
+            <h2 class="section-title" data-zh="服务流程" data-en="Service Process">服务流程</h2>
+            <p class="section-subtitle" data-zh="五步打造企业专属AI数字员工" data-en="Five steps to build your enterprise AI digital workforce">五步打造企业专属AI数字员工</p>
+            <div class="process-flow">
+                <div class="process-step">
+                    <div class="step-num">1</div>
+                    <h4 data-zh="AI咨询" data-en="AI Consultation">AI咨询</h4>
+                    <p data-zh="需求调研<br>场景分析<br>方案规划" data-en="Requirements<br>Analysis<br>Planning">需求调研<br>场景分析<br>方案规划</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">2</div>
+                    <h4 data-zh="方案设计" data-en="Solution Design">方案设计</h4>
+                    <p data-zh="功能设计<br>流程梳理<br>原型确认" data-en="Feature Design<br>Process Mapping<br>Prototype">功能设计<br>流程梳理<br>原型确认</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">3</div>
+                    <h4 data-zh="知识训练" data-en="Knowledge Training">知识训练</h4>
+                    <p data-zh="语料准备<br>模型训练<br>效果调优" data-en="Corpus Prep<br>Model Training<br>Tuning">语料准备<br>模型训练<br>效果调优</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">4</div>
+                    <h4 data-zh="流程定制" data-en="Process Customization">流程定制</h4>
+                    <p data-zh="系统集成<br>流程配置<br>权限设置" data-en="System Integration<br>Configuration<br>Permissions">系统集成<br>流程配置<br>权限设置</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">5</div>
+                    <h4 data-zh="上线运营" data-en="Go-live Operations">上线运营</h4>
+                    <p data-zh="灰度发布<br>效果监控<br>持续优化" data-en="Gradual Rollout<br>Monitoring<br>Optimization">灰度发布<br>效果监控<br>持续优化</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心指标 -->
+    <section class="section">
+        <h2 class="section-title" data-zh="核心指标" data-en="Key Metrics">核心指标</h2>
+        <div class="metrics">
+            <div class="metric-item">
+                <h3>80%</h3>
+                <p data-zh="人力成本节省" data-en="Cost Saving">人力成本节省</p>
+            </div>
+            <div class="metric-item">
+                <h3>95%+</h3>
+                <p data-zh="回复准确率" data-en="Accuracy">回复准确率</p>
+            </div>
+            <div class="metric-item">
+                <h3>10x</h3>
+                <p data-zh="响应速度提升" data-en="Speed Boost">响应速度提升</p>
+            </div>
+            <div class="metric-item">
+                <h3>7×24</h3>
+                <p data-zh="全天候在线" data-en="24/7 Online">全天候在线</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2 data-zh="让AI成为您的得力助手" data-en="Make AI Your Capable Assistant">让AI成为您的得力助手</h2>
+        <p data-zh="立即联系我们，定制您的专属AI数字员工" data-en="Contact us to customize your AI digital workforce">立即联系我们，定制您的专属AI数字员工</p>
+        <a href="contact.html" class="btn-primary" data-zh="免费咨询" data-en="Free Consultation">免费咨询</a>
+    </section>
+
+        <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="logo" style="margin-bottom: 1rem;"><div class="logo-icon">BAMI</div><span data-zh="八米科技" data-en="BAMI Tech">八米科技</span></div>
+                <p style="color: #8B92A8; font-size: 0.9rem;" data-zh="专注物流与供应链数智化15年" data-en="15 years in logistics & supply chain digitalization">专注物流与供应链数智化15年</p>
+            </div>
+            <div>
+                <h4 data-zh="产品服务" data-en="Products">产品服务</h4>
+                <ul>
+                    <li><a href="product-ai.html" data-zh="AI数字员工" data-en="AI Digital Workforce">AI数字员工</a></li>
+                    <li><a href="product-wms.html">BAMI WMS</a></li>
+                    <li><a href="product-tms.html">BAMI TMS</a></li>
+                    <li><a href="product-oms.html">BAMI OMS</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 data-zh="快速链接" data-en="Quick Links">快速链接</h4>
+                <ul>
+                    <li><a href="solutions.html" data-zh="解决方案" data-en="Solutions">解决方案</a></li>
+                    <li><a href="about.html" data-zh="关于我们" data-en="About">关于我们</a></li>
+                    <li><a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a></li>
+                    <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 data-zh="联系我们" data-en="Contact Us">联系我们</h4>
+                <ul>
+                    <li><a href="#">📍 <span data-zh="广州天河盛大国际" data-en="Guangzhou Tianhe">广州天河盛大国际</span></a></li>
+                    <li><a href="tel:18926200599">📞 18926200599</a></li>
+                    <li><a href="mailto:27270234@qq.com">✉️ 27270234@qq.com</a></li>
+                    <li><div class="system-login-menu">
+                        <button class="system-login-btn" onclick="toggleSystemMenu()" data-zh="🔐 系统登录" data-en="🔐 System Login">🔐 系统登录</button>
+                        <div class="system-dropdown" id="systemDropdown">
+                            <div class="system-dropdown-header">
+                                <span class="system-dropdown-title" data-zh="选择系统" data-en="Select System">选择系统</span>
+                                <button class="system-dropdown-close" onclick="closeSystemMenu()">✕</button>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">1. WMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="仓配WMS" data-en="Warehouse WMS">仓配WMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="电商WMS" data-en="E-commerce WMS">电商WMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">2. TMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="零担TMS" data-en="LTL TMS">零担TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://admin.liancheng.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://memberh5.liancheng.8bami.com/" target="_blank" data-zh="手机端" data-en="Mobile">手机端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="三方TMS" data-en="3PL TMS">三方TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://live.rxwl.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://live.rxwl.driver.8bami.com" target="_blank" data-zh="司机端" data-en="Driver">司机端</a>
+                                            <a href="http://live.rxwl.memberpc.8bami.com" target="_blank" data-zh="会员端" data-en="Member">会员端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="跨境TMS" data-en="Cross-border TMS">跨境TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://kjtms.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://kjtms.tgemember.8bami.com/?EnterpriseNo=bami" target="_blank" data-zh="会员端" data-en="Member">会员端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="跨境集运" data-en="Cross-border">跨境集运</span>
+                                        <div class="system-subitems">
+                                            <a href="http://b9.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="https://b9.member.8bami.com/?EnterpriseNo=t03_4" target="_blank" data-zh="手机端" data-en="Mobile">手机端</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">3. OMS/BMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="OMS" data-en="OMS">OMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="BMS" data-en="BMS">BMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></li>
+                </ul>
+            </div>
+        </div>
+                    <script>
+                    function toggleSystemMenu() {
+                        const dropdown = document.getElementById('systemDropdown');
+                        dropdown.classList.toggle('active');
+                    }
+                    function closeSystemMenu() {
+                        const dropdown = document.getElementById('systemDropdown');
+                        dropdown.classList.remove('active');
+                    }
+                    document.addEventListener('click', function(e) {
+                        const menu = document.querySelector('.system-login-menu');
+                        if (menu && !menu.contains(e.target)) {
+                            closeSystemMenu();
+                        }
+                    });
+                </script>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BAMI 八米科技. All rights reserved.</p>
+            <p><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer" style="color: #8B92A8; text-decoration: none;">粤ICP备19085702号</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.add('active');
+        });
+        function closeMenu() {
+            document.getElementById('mobileMenu').classList.remove('active');
+        }
+    </script>
+    <script src="js/lang.js">    // System Login Menu Functions
+    function toggleSystemMenu() {
+        const dropdown = document.getElementById('systemDropdown');
+        dropdown.classList.toggle('active');
+    }
+    function closeSystemMenu() {
+        const dropdown = document.getElementById('systemDropdown');
+        dropdown.classList.remove('active');
+    }
+    // Close system menu when clicking outside
+    document.addEventListener('click', function(e) {
+        const menu = document.querySelector('.system-login-menu');
+        const dropdown = document.getElementById('systemDropdown');
+        if (menu && dropdown && !menu.contains(e.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
+</script>
+
+    <script>
+        function openMobileMenu() {
+            document.getElementById('mobileMenu').classList.add('active');
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileMenu').classList.remove('active');
+        }
+        document.getElementById('menuBtn').addEventListener('click', openMobileMenu);
+    
+</script>
+<!-- V14 悬浮咨询按钮 -->
+<a href="contact.html" class="fab-contact" id="fabContact">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+    <span class="fab-tooltip" data-zh="立即咨询" data-en="Contact Us">立即咨询</span>
+</a>
+<script>
+// V14: 悬浮按钮显示控制
+function initFabButton() {
+    const fab = document.getElementById('fabContact');
+    if (!fab) return;
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            fab.classList.add('visible');
+        } else {
+            fab.classList.remove('visible');
+        }
+    }, { passive: true });
+}
+initFabButton();
+</script>
+</body>
+</html>

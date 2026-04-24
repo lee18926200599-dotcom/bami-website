@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="Explore BAMI Technology products: AI Digital Workforce, WMS Warehouse Management System, TMS Transportation Management System, OMS Order Management System.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lee18926200599-dotcom.github.io/bami-website/products-en.html">
+
+    
+    <title data-zh="产品服务 - 八米科技" data-en="Products - BAMI Tech">产品服务 - 八米科技</title>
+    <link rel="icon" type="image/svg+xml" href="images/LOGO2.SVG">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; background: #0A0E1A; color: #FFFFFF; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(10,14,26,0.98); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.3rem; font-weight: 700; }
+        .logo-icon { width: 70px; height: 36px; background: linear-gradient(135deg, #FF6B35, #FF8A5C); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem; color: #FFFFFF; letter-spacing: 1px; font-style: italic; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #C5C9D6; }
+        .nav-right { display: flex; align-items: center; gap: 1rem; }
+        .lang-switch { display: flex; background: #1A2235; padding: 0.25rem; border-radius: 20px; border: 1px solid rgba(255,107,53,0.3); }
+        .lang-btn { padding: 0.3rem 0.8rem; border-radius: 15px; border: none; background: none; color: #8B92A8; cursor: pointer; }
+        .lang-btn.active { background: #FF6B35; color: #FFFFFF; }
+        .btn-primary { display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #FF6B35, #FF8A5C); color: #FFFFFF; padding: 0.6rem 1.2rem; border-radius: 25px; font-weight: 600; border: none; cursor: pointer; }
+        .mobile-menu-btn { display: none; width: 44px; height: 44px; background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.3); border-radius: 8px; cursor: pointer; flex-direction: column; justify-content: center; align-items: center; gap: 5px; }
+        .mobile-menu-btn span { width: 20px; height: 2px; background: #FFFFFF; border-radius: 2px; }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0A0E1A; z-index: 999; padding: 5rem 1rem 2rem; }
+        .mobile-menu.active { display: flex; flex-direction: column; }
+        .mobile-menu-content { background: #1A2235; border-radius: 20px; border: 1px solid rgba(255,107,53,0.2); padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+        .mobile-menu-list { list-style: none; flex: 1; }
+        .mobile-menu-list li { border-bottom: 1px solid rgba(255,107,53,0.1); }
+        .mobile-menu-list a { display: block; padding: 1.2rem 0; font-size: 1.2rem; color: #FFFFFF; text-align: center; }
+        .mobile-menu-footer { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,107,53,0.2); display: flex; flex-direction: column; gap: 1rem; }
+        .page-header { padding: 8rem 5% 3rem; text-align: center; background: linear-gradient(135deg, #0A0E1A, #1A2235); }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .page-header p { color: #8B92A8; }
+        .product-detail { padding: 4rem 5%; }
+        .product-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1200px; margin: 0 auto; align-items: center; }
+        .product-detail-grid.reverse { direction: rtl; }
+        .product-detail-grid.reverse > * { direction: ltr; }
+        .product-badge { display: inline-block; background: rgba(255,107,53,0.1); color: #FF6B35; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; margin-bottom: 1rem; }
+        .product-detail h2 { font-size: 2rem; margin-bottom: 1rem; }
+        .product-detail .lead { color: #C5C9D6; font-size: 1.1rem; margin-bottom: 1rem; }
+        .product-detail p { color: #8B92A8; margin-bottom: 2rem; line-height: 1.8; }
+        .feature-item { display: flex; gap: 1rem; margin-bottom: 1.5rem; }
+        .feature-icon { width: 50px; height: 50px; background: #1A2235; border: 1px solid rgba(255,107,53,0.3); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+        .feature-item h4 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+        .feature-item p { color: #8B92A8; font-size: 0.9rem; margin: 0; }
+        .product-visual-card { background: #1A2235; border: 1px solid rgba(255,107,53,0.2); border-radius: 20px; padding: 2rem; text-align: center; }
+        .visual-icon { width: 80px; height: 80px; background: linear-gradient(135deg, #FF6B35, #FF8A5C); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 1rem; }
+        .visual-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+        .visual-stats div { text-align: center; }
+        .visual-stats strong { display: block; font-size: 1.5rem; color: #FF6B35; }
+        .visual-stats span { font-size: 0.8rem; color: #8B92A8; }
+        .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2rem; }
+        .feature-box { background: #121829; border: 1px solid rgba(255,107,53,0.1); border-radius: 12px; padding: 1.5rem; }
+        .feature-box h4 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .feature-box p { color: #8B92A8; font-size: 0.9rem; margin: 0; }
+        .footer { background: #121829; padding: 3rem 5% 1.5rem; border-top: 1px solid rgba(255,107,53,0.1); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .footer h4 { color: #FFFFFF; margin-bottom: 1rem; }
+        .footer ul { list-style: none; }
+        .footer li { margin-bottom: 0.5rem; }
+        .system-login-menu { position: relative; }
+        .system-login-btn { display: block; color: #8B92A8; cursor: pointer; font-size: 0.9rem; background: none; border: none; padding: 0; margin: 0; font-family: inherit; text-align: left; }
+        .system-login-btn:hover { color: #FF6B35; }
+        .system-dropdown { display: none; position: absolute; bottom: 100%; left: 0; background: #1A2235; border: 1px solid rgba(255,107,53,0.3); border-radius: 12px; padding: 1rem; min-width: 200px; margin-bottom: 0.5rem; box-shadow: 0 10px 40px rgba(0,0,0,0.5); z-index: 1000; }
+        .system-dropdown.active { display: block; }
+        .system-dropdown-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,107,53,0.2); }
+        .system-dropdown-title { color: #FF6B35; font-weight: 600; font-size: 0.9rem; }
+        .system-dropdown-close { background: none; border: none; color: #8B92A8; cursor: pointer; font-size: 1.2rem; padding: 0; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+        .system-dropdown-close:hover { color: #FF6B35; background: rgba(255,107,53,0.1); }
+        .system-category { margin-bottom: 0.8rem; }
+        .system-category-title { color: #FF6B35; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+        .system-category-items { padding-left: 0.5rem; }
+        .system-category-items a { display: block; padding: 0.3rem 0.5rem; color: #C5C9D6; border-radius: 6px; font-size: 0.8rem; margin-bottom: 0.2rem; }
+        .system-category-items a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .system-subcategory { margin-bottom: 0.6rem; }
+        .system-subtitle { display: block; color: #8B92A8; font-size: 0.8rem; font-weight: 500; margin-bottom: 0.3rem; padding: 0.2rem 0; }
+        .system-subitems { padding-left: 0.8rem; border-left: 2px solid rgba(255,107,53,0.3); margin-left: 0.3rem; }
+        .system-subitems a { display: inline-block; padding: 0.2rem 0.5rem; color: #C5C9D6; border-radius: 4px; font-size: 0.75rem; margin-right: 0.3rem; margin-bottom: 0.2rem; background: rgba(255,255,255,0.05); }
+        .system-subitems a:hover { background: rgba(255,107,53,0.2); color: #FF6B35; }
+        .footer ul { list-style: none; }
+        .footer li { margin-bottom: 0.5rem; }
+        .footer a { color: #8B92A8; font-size: 0.9rem; }
+        .footer-bottom { text-align: center; color: #8B92A8; font-size: 0.85rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        @media (min-width: 769px) { .mobile-menu { display: none !important; } }
+        @media (max-width: 768px) {
+            .nav-links, .nav-right { display: none !important; }
+            .mobile-menu-btn { display: flex !important; }
+            .page-header { padding: 6rem 4% 2rem; }
+            .page-header h1 { font-size: 1.8rem; }
+            .product-detail-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .product-detail-grid.reverse { direction: ltr; }
+            .feature-item { flex-direction: column; text-align: center; }
+            .feature-icon { margin: 0 auto; }
+            .visual-stats { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .system-login-menu { display: flex; justify-content: center; }
+            .system-login-btn { text-align: center; }
+            .system-dropdown { text-align: left; }
+            .system-category-title, .system-subtitle { text-align: left; display: block; }
+            .system-subitems { text-align: left; justify-content: flex-start; }
+        }
+            
+    /* V14 悬浮咨询按钮 */
+.fab-contact { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(255,107,53,0.4); transition: all 0.3s; z-index: 999; opacity: 0; transform: translateY(20px); }
+.fab-contact.visible { opacity: 1; transform: translateY(0); }
+.fab-contact:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(255,107,53,0.6); }
+.fab-contact svg { width: 28px; height: 28px; fill: white; }
+.fab-tooltip { position: absolute; right: 70px; background: var(--bg-card); color: white; padding: 8px 16px; border-radius: 8px; font-size: 14px; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: all 0.3s; border: 1px solid var(--border-hover); }
+.fab-contact:hover .fab-tooltip { opacity: 1; transform: translateX(0); }
+</style>
+</head>
+<body data-page="products">
+    <nav class="navbar">
+        <a href="index-en.html" class="logo" style="display: flex; align-items: center; gap: 6px; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;"><span style="background: linear-gradient(135deg, #FF6B35, #FF8A5C); padding: 6px 10px; border-radius: 12px; color: #FFFFFF; font-weight: bold; font-size: 18px; line-height: 1; font-family: Arial, Helvetica, sans-serif;">BAMI</span><span style="color: #FF6B35; font-weight: bold; font-size: 24px; line-height: 1;">八米</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html" data-zh="首页" data-en="Home">首页</a></li>
+            <li><a href="products.html" data-zh="产品服务" data-en="Products">产品服务</a></li>
+            <li><a href="solutions.html" data-zh="解决方案" data-en="Solutions">解决方案</a></li>
+            <li><a href="about.html" data-zh="关于我们" data-en="About">关于我们</a></li>
+            <li><a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a></li>
+            <li><a href="support.html" data-zh="服务支持" data-en="Support">服务支持</a></li>
+            <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="lang-switch">
+                <a href="product-ai.html" class="lang-btn">中</a>
+                <a href="products-en.html" class="lang-btn active">EN</a>
+            </div>
+            <a href="contact.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">立即咨询</a>
+        </div>
+        <button class="mobile-menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-menu-list">
+                <li><a href="index.html" data-zh="首页" data-en="Home">首页</a></li>
+                <li><a href="products.html" data-zh="产品服务" data-en="Products">产品服务</a></li>
+                <li><a href="solutions.html" data-zh="解决方案" data-en="Solutions">解决方案</a></li>
+                <li><a href="about.html" data-zh="关于我们" data-en="About">关于我们</a></li>
+                <li><a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a></li>
+                <li><a href="support.html" data-zh="服务支持" data-en="Support">服务支持</a></li>
+                <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+            </ul>
+            <div class="mobile-menu-footer">
+                <div class="lang-switch">
+                    <a href="product-ai.html" class="lang-btn">中</a>
+                    <a href="products-en.html" class="lang-btn active">EN</a>
+                </div>
+                <a href="contact.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">立即咨询</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <h1 data-zh="产品服务" data-en="Products & Services">产品服务</h1>
+        <p data-zh="四大核心产品，覆盖供应链全链路" data-en="Four core products covering the entire supply chain">四大核心产品，覆盖供应链全链路</p>
+    </section>
+
+    <!-- AI数字员工 -->
+    <section class="product-detail">
+        <div class="product-detail-grid">
+            <div>
+                <div class="product-badge" data-zh="旗舰产品" data-en="Flagship Product">旗舰产品</div>
+                <h2 data-zh="AI数字员工" data-en="AI Digital Workforce">AI数字员工</h2>
+                <p class="lead" data-zh="7×24小时不间断工作的智能团队，让AI成为您的得力助手" data-en="24/7 intelligent workforce - making AI your capable assistant">7×24小时不间断工作的智能团队，让AI成为您的得力助手</p>
+                <p data-zh="基于大语言模型和机器学习技术，八米AI数字员工为企业提供四大核心能力：智能拓客引擎自动识别潜在客户并推荐触达策略；全渠道客服中枢统一接入微信、电话、网页等渠道，智能回复准确率95%+；数据决策指挥官实时分析业务数据，提供决策建议；智能管理协作者协助处理日常管理事务，提升团队协作效率。帮助企业节省80%人力成本，提升3倍运营效率。" data-en="Based on LLM and machine learning, BAMI AI Digital Workforce provides four core capabilities: Smart Acquisition Engine for identifying potential customers; Omnichannel Service Hub with 95%+ accuracy; Data Decision Commander for real-time analysis; Intelligent Management Collaborator for team efficiency. Saves 80% labor costs, improves efficiency by 3x.">基于大语言模型和机器学习技术，八米AI数字员工为企业提供四大核心能力：智能拓客引擎自动识别潜在客户并推荐触达策略；全渠道客服中枢统一接入微信、电话、网页等渠道，智能回复准确率95%+；数据决策指挥官实时分析业务数据，提供决策建议；智能管理协作者协助处理日常管理事务，提升团队协作效率。帮助企业节省80%人力成本，提升3倍运营效率。</p>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <h4 data-zh="智能拓客引擎" data-en="Smart Acquisition">智能拓客引擎</h4>
+                        <p data-zh="自动识别潜在客户，智能推荐触达策略，提升获客效率200%" data-en="Auto-identify prospects, recommend outreach strategies, improve acquisition by 200%">自动识别潜在客户，智能推荐触达策略，提升获客效率200%</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4 data-zh="全渠道客服中枢" data-en="Omnichannel Service">全渠道客服中枢</h4>
+                        <p data-zh="统一接入微信、电话、网页等全渠道，智能回复准确率95%+" data-en="Unified access to WeChat, phone, web channels with 95%+ accuracy">统一接入微信、电话、网页等全渠道，智能回复准确率95%+</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4 data-zh="数据决策指挥官" data-en="Data Decision Commander">数据决策指挥官</h4>
+                        <p data-zh="实时分析业务数据，智能生成决策建议，辅助管理层决策" data-en="Real-time data analysis, intelligent decision recommendations">实时分析业务数据，智能生成决策建议，辅助管理层决策</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4 data-zh="智能管理协作者" data-en="Intelligent Collaborator">智能管理协作者</h4>
+                        <p data-zh="协助处理日常管理事务，提升团队协作效率50%" data-en="Assist daily management tasks, improve team collaboration by 50%">协助处理日常管理事务，提升团队协作效率50%</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-visual-card">
+                <div class="visual-icon">🤖</div>
+                <h3 data-zh="AI数字员工平台" data-en="AI Digital Workforce Platform">AI数字员工平台</h3>
+                <div class="visual-stats">
+                    <div><strong>80%</strong><span data-zh="成本节省" data-en="Cost Saving">成本节省</span></div>
+                    <div><strong>3x</strong><span data-zh="效率提升" data-en="Efficiency">效率提升</span></div>
+                    <div><strong>24/7</strong><span data-zh="全天候服务" data-en="Service">全天候服务</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BAMI WMS -->
+    <section class="product-detail" style="background: #121829;">
+        <div class="product-detail-grid reverse">
+            <div class="product-visual-card">
+                <div class="visual-icon">📦</div>
+                <h3>BAMI WMS</h3>
+                <div class="visual-stats">
+                    <div><strong>100K+</strong><span data-zh="日处理单量" data-en="Daily Orders">日处理单量</span></div>
+                    <div><strong>99.99%</strong><span data-zh="库存准确率" data-en="Accuracy">库存准确率</span></div>
+                    <div><strong>50%</strong><span data-zh="人效提升" data-en="Productivity">人效提升</span></div>
+                </div>
+            </div>
+            <div>
+                <div class="product-badge" data-zh="核心产品" data-en="Core Product">核心产品</div>
+                <h2 data-zh="BAMI WMS 仓储管理系统" data-en="BAMI WMS Warehouse Management">BAMI WMS 仓储管理系统</h2>
+                <p class="lead" data-zh="智能仓储管理专家，让库存管理更轻松" data-en="Smart warehouse management expert making inventory control easier">智能仓储管理专家，让库存管理更轻松</p>
+                <p data-zh="八米WMS仓储管理系统支持海外仓、保税仓、云仓等多种业态，通过智能化的库存管理和订单处理，帮助企业实现仓储作业效率最大化。系统提供多仓协同管理、智能波次拣货、库存预警、批次追溯等核心功能，日处理能力达10万+订单，库存准确率高达99.99%。" data-en="BAMI WMS supports overseas warehouses, bonded warehouses, cloud warehouses. With intelligent inventory management and order processing, it maximizes warehouse efficiency. Features multi-warehouse coordination, smart wave picking, inventory alerts, batch tracking. Processes 100k+ orders daily with 99.99% accuracy.">八米WMS仓储管理系统支持海外仓、保税仓、云仓等多种业态，通过智能化的库存管理和订单处理，帮助企业实现仓储作业效率最大化。系统提供多仓协同管理、智能波次拣货、库存预警、批次追溯等核心功能，日处理能力达10万+订单，库存准确率高达99.99%。</p>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <h4 data-zh="多仓协同管理" data-en="Multi-Warehouse Coordination">多仓协同管理</h4>
+                        <p data-zh="支持全球多仓库统一管理，库存实时同步，智能调拨" data-en="Unified global warehouse management with real-time sync and smart transfers">支持全球多仓库统一管理，库存实时同步，智能调拨</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4 data-zh="智能波次拣货" data-en="Smart Wave Picking">智能波次拣货</h4>
+                        <p data-zh="AI算法优化拣货路径，波次任务智能分配，拣货效率提升50%" data-en="AI-optimized picking paths, smart wave allocation, 50% efficiency boost">AI算法优化拣货路径，波次任务智能分配，拣货效率提升50%</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4 data-zh="库存预警系统" data-en="Inventory Alerts">库存预警系统</h4>
+                        <p data-zh="智能库存监控，低库存自动预警，避免缺货和积压" data-en="Smart inventory monitoring with auto-alerts for low stock">智能库存监控，低库存自动预警，避免缺货和积压</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4 data-zh="批次追溯管理" data-en="Batch Tracking">批次追溯管理</h4>
+                        <p data-zh="全生命周期批次管理，支持先进先出和效期管理" data-en="Full lifecycle batch management, FIFO and expiration tracking">全生命周期批次管理，支持先进先出和效期管理</p>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <a href="product-wms.html" class="btn-primary" data-zh="了解详情 →" data-en="Learn More →">了解详情 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BAMI TMS -->
+    <section class="product-detail">
+        <div class="product-detail-grid">
+            <div>
+                <div class="product-badge" data-zh="核心产品" data-en="Core Product">核心产品</div>
+                <h2 data-zh="BAMI TMS 运输管理系统" data-en="BAMI TMS Transportation Management">BAMI TMS 运输管理系统</h2>
+                <p class="lead" data-zh="智能运输调度，让物流更高效" data-en="Smart transportation dispatch for more efficient logistics">智能运输调度，让物流更高效</p>
+                <p data-zh="八米TMS运输管理系统支持陆运、海运、空运、铁运及跨境物流，通过智能调度和路径优化，为企业降低30%运输成本。系统提供智能调度、路径优化、运力整合、多式联运等功能，实现从订单接入到签收结算的全流程数智化管理。" data-en="BAMI TMS supports road, sea, air, rail and cross-border logistics. Smart dispatch and route optimization reduce transportation costs by 30%. Features include intelligent scheduling, routing, capacity integration, and multimodal transport for full-process digital management.">八米TMS运输管理系统支持陆运、海运、空运、铁运及跨境物流，通过智能调度和路径优化，为企业降低30%运输成本。系统提供智能调度、路径优化、运力整合、多式联运等功能，实现从订单接入到签收结算的全流程数智化管理。</p>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <h4 data-zh="智能调度系统" data-en="Smart Dispatch">智能调度系统</h4>
+                        <p data-zh="AI算法自动匹配最优运力，智能排班，调度效率提升3倍" data-en="AI algorithm matches optimal capacity, smart scheduling, 3x efficiency">AI算法自动匹配最优运力，智能排班，调度效率提升3倍</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4 data-zh="智能路径优化" data-en="Route Optimization">智能路径优化</h4>
+                        <p data-zh="实时路况分析，多点配送路径优化，降低运输成本30%" data-en="Real-time traffic analysis, multi-point delivery optimization, 30% cost reduction">实时路况分析，多点配送路径优化，降低运输成本30%</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4 data-zh="运力资源整合" data-en="Capacity Integration">运力资源整合</h4>
+                        <p data-zh="整合自有运力和社会运力，实现资源最优配置" data-en="Integrate owned and third-party capacity for optimal resource allocation">整合自有运力和社会运力，实现资源最优配置</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4 data-zh="多式联运支持" data-en="Multimodal Transport">多式联运支持</h4>
+                        <p data-zh="支持海陆空铁多种运输方式，一键切换最优方案" data-en="Support sea, land, air, rail transport with one-click optimal solution">支持海陆空铁多种运输方式，一键切换最优方案</p>
+                    </div>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <a href="product-tms.html" class="btn-primary" data-zh="了解详情 →" data-en="Learn More →">了解详情 →</a>
+                </div>
+            </div>
+            <div class="product-visual-card">
+                <div class="visual-icon">🚛</div>
+                <h3>BAMI TMS</h3>
+                <div class="visual-stats">
+                    <div><strong>30%</strong><span data-zh="成本降低" data-en="Cost Reduction">成本降低</span></div>
+                    <div><strong data-zh="实时">实时</strong><span data-zh="全程追踪" data-en="Tracking">全程追踪</span></div>
+                    <div><strong data-zh="多式">多式</strong><span data-zh="联运支持" data-en="Modal">联运支持</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BAMI OMS -->
+    <section class="product-detail" style="background: #121829;">
+        <div class="product-detail-grid reverse">
+            <div class="product-visual-card">
+                <div class="visual-icon">📋</div>
+                <h3>BAMI OMS</h3>
+                <div class="visual-stats">
+                    <div><strong>99.9%</strong><span data-zh="订单准确率" data-en="Accuracy">订单准确率</span></div>
+                    <div><strong data-zh="全渠道">全渠道</strong><span data-zh="统一接入" data-en="Access">统一接入</span></div>
+                    <div><strong data-zh="实时">实时</strong><span data-zh="库存同步" data-en="Inventory Sync">库存同步</span></div>
+                </div>
+            </div>
+            <div>
+                <div class="product-badge" data-zh="核心产品" data-en="Core Product">核心产品</div>
+                <h2 data-zh="BAMI OMS 订单管理系统" data-en="BAMI OMS Order Management">BAMI OMS 订单管理系统</h2>
+                <p class="lead" data-zh="全渠道订单一站式管理，让订单处理更智能" data-en="Omnichannel order management for smarter order processing">全渠道订单一站式管理，让订单处理更智能</p>
+                <p data-zh="八米OMS订单管理系统实现多渠道订单统一接入、智能分配、全链追踪、售后管理一体化。系统支持电商平台、自建商城、线下门店、社交渠道等多渠道订单接入，智能分配至最优仓库和配送方式，实时同步库存，提供全程可视化追踪。" data-en="BAMI OMS provides unified omnichannel order access, smart allocation, full-chain tracking, and integrated after-sales management. Supports e-commerce platforms, self-built malls, offline stores, social channels. Smart allocation to optimal warehouses with real-time inventory sync and visual tracking.">八米OMS订单管理系统实现多渠道订单统一接入、智能分配、全链追踪、售后管理一体化。系统支持电商平台、自建商城、线下门店、社交渠道等多渠道订单接入，智能分配至最优仓库和配送方式，实时同步库存，提供全程可视化追踪。</p>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <h4 data-zh="多渠道统一接入" data-en="Omnichannel Access">多渠道统一接入</h4>
+                        <p data-zh="支持淘宝、京东、拼多多、抖音等主流电商平台一键接入" data-en="One-click integration with Taobao, JD, PDD, Douyin and other platforms">支持淘宝、京东、拼多多、抖音等主流电商平台一键接入</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4 data-zh="智能订单分配" data-en="Smart Allocation">智能订单分配</h4>
+                        <p data-zh="基于库存、距离、成本等因素智能分配至最优仓库" data-en="Smart allocation to optimal warehouse based on inventory, distance, cost">基于库存、距离、成本等因素智能分配至最优仓库</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4 data-zh="全链路可视化" data-en="Full-chain Visibility">全链路可视化</h4>
+                        <p data-zh="订单全生命周期追踪，从下单到签收全程可视化" data-en="Full lifecycle order tracking from placement to delivery">订单全生命周期追踪，从下单到签收全程可视化</p>
+                    </div>
+                    <div class="feature-box">
+                        <h4 data-zh="售后管理一体化" data-en="Integrated After-sales">售后管理一体化</h4>
+                        <p data-zh="退换货、退款、补偿等售后服务一站式处理" data-en="One-stop handling of returns, refunds, compensation">退换货、退款、补偿等售后服务一站式处理</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="logo" style="margin-bottom: 1rem;"><div class="logo-icon">BAMI</div><span data-zh="八米科技" data-en="BAMI Tech">八米科技</span></div>
+                <p style="color: #8B92A8; font-size: 0.9rem;" data-zh="专注物流与供应链数智化15年" data-en="15 years in logistics & supply chain digitalization">专注物流与供应链数智化15年</p>
+            </div>
+            <div>
+                <h4 data-zh="产品服务" data-en="Products">产品服务</h4>
+                <ul>
+                    <li><a href="product-ai.html" data-zh="AI数字员工" data-en="AI Digital Workforce">AI数字员工</a></li>
+                    <li><a href="product-wms.html">BAMI WMS</a></li>
+                    <li><a href="product-tms.html">BAMI TMS</a></li>
+                    <li><a href="product-oms.html">BAMI OMS</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 data-zh="快速链接" data-en="Quick Links">快速链接</h4>
+                <ul>
+                    <li><a href="solutions.html" data-zh="解决方案" data-en="Solutions">解决方案</a></li>
+                    <li><a href="about.html" data-zh="关于我们" data-en="About">关于我们</a></li>
+                    <li><a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a></li>
+                    <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 data-zh="联系我们" data-en="Contact Us">联系我们</h4>
+                <ul>
+                    <li><a href="#">📍 <span data-zh="广州天河盛大国际" data-en="Guangzhou Tianhe">广州天河盛大国际</span></a></li>
+                    <li><a href="tel:18926200599">📞 18926200599</a></li>
+                    <li><a href="mailto:27270234@qq.com">✉️ 27270234@qq.com</a></li>
+                    <li><div class="system-login-menu">
+                        <button class="system-login-btn" onclick="toggleSystemMenu()" data-zh="🔐 系统登录" data-en="🔐 System Login">🔐 系统登录</button>
+                        <div class="system-dropdown" id="systemDropdown">
+                            <div class="system-dropdown-header">
+                                <span class="system-dropdown-title" data-zh="选择系统" data-en="Select System">选择系统</span>
+                                <button class="system-dropdown-close" onclick="closeSystemMenu()">✕</button>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">1. WMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="仓配WMS" data-en="Warehouse WMS">仓配WMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="电商WMS" data-en="E-commerce WMS">电商WMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">2. TMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="零担TMS" data-en="LTL TMS">零担TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://admin.liancheng.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://memberh5.liancheng.8bami.com/" target="_blank" data-zh="手机端" data-en="Mobile">手机端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="三方TMS" data-en="3PL TMS">三方TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://live.rxwl.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://live.rxwl.driver.8bami.com" target="_blank" data-zh="司机端" data-en="Driver">司机端</a>
+                                            <a href="http://live.rxwl.memberpc.8bami.com" target="_blank" data-zh="会员端" data-en="Member">会员端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="跨境TMS" data-en="Cross-border TMS">跨境TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://kjtms.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://kjtms.tgemember.8bami.com/?EnterpriseNo=bami" target="_blank" data-zh="会员端" data-en="Member">会员端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="跨境集运" data-en="Cross-border">跨境集运</span>
+                                        <div class="system-subitems">
+                                            <a href="http://b9.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="https://b9.member.8bami.com/?EnterpriseNo=t03_4" target="_blank" data-zh="手机端" data-en="Mobile">手机端</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">3. OMS/BMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="OMS" data-en="OMS">OMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="BMS" data-en="BMS">BMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></li>
+                </ul>
+            </div>
+        </div>
+                    <script>
+                    function toggleSystemMenu() {
+                        const dropdown = document.getElementById('systemDropdown');
+                        dropdown.classList.toggle('active');
+                    }
+                    function closeSystemMenu() {
+                        const dropdown = document.getElementById('systemDropdown');
+                        dropdown.classList.remove('active');
+                    }
+                    document.addEventListener('click', function(e) {
+                        const menu = document.querySelector('.system-login-menu');
+                        if (menu && !menu.contains(e.target)) {
+                            closeSystemMenu();
+                        }
+                    });
+                </script>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BAMI 八米科技. All rights reserved.</p>
+            <p><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer" style="color: #8B92A8; text-decoration: none;">粤ICP备19085702号</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Security: HTTPS Force Redirect
+        if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost' && !window.location.hostname.match(/^127\./)) {
+            window.location.href = window.location.href.replace('http:', 'https:');
+        }
+
+        // Security: XSS Protection - Escape User Input Function
+        function escapeHtml(text) {
+            if (typeof text !== 'string') return text;
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Security: Sanitize URL Function
+        function sanitizeUrl(url) {
+            if (typeof url !== 'string') return '#';
+            const allowedProtocols = ['http:', 'https:', 'mailto:', 'tel:'];
+            const parsed = document.createElement('a');
+            parsed.href = url;
+            if (!allowedProtocols.includes(parsed.protocol)) {
+                return '#';
+            }
+            return url;
+        }
+
+        // Mobile Menu Toggle
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('mobileMenu').classList.toggle('active');
+        });
+        document.querySelectorAll('.mobile-menu-list a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('menuBtn').classList.remove('active');
+                document.getElementById('mobileMenu').classList.remove('active');
+            });
+        });
+    </script>
+    <script src="js/lang.js">    // System Login Menu Functions
+    function toggleSystemMenu() {
+        const dropdown = document.getElementById('systemDropdown');
+        dropdown.classList.toggle('active');
+    }
+    function closeSystemMenu() {
+        const dropdown = document.getElementById('systemDropdown');
+        dropdown.classList.remove('active');
+    }
+    // Close system menu when clicking outside
+    document.addEventListener('click', function(e) {
+        const menu = document.querySelector('.system-login-menu');
+        const dropdown = document.getElementById('systemDropdown');
+        if (menu && dropdown && !menu.contains(e.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
+</script>
+<script>
+        function openMobileMenu() {
+            document.getElementById('mobileMenu').classList.add('active');
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileMenu').classList.remove('active');
+        }
+        document.getElementById('menuBtn').addEventListener('click', openMobileMenu);
+    
+</script>
+<!-- V14 悬浮咨询按钮 -->
+<a href="contact.html" class="fab-contact" id="fabContact">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+    <span class="fab-tooltip" data-zh="立即咨询" data-en="Contact Us">立即咨询</span>
+</a>
+<script>
+// V14: 悬浮按钮显示控制
+function initFabButton() {
+    const fab = document.getElementById('fabContact');
+    if (!fab) return;
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            fab.classList.add('visible');
+        } else {
+            fab.classList.remove('visible');
+        }
+    }, { passive: true });
+}
+initFabButton();
+</script>
+</body>
+</html>

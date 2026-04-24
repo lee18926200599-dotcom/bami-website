@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="了解八米科技公司介绍、发展历程、核心团队、资质荣誉。专注供应链数智化15年，服务10000+企业客户。">
+    <meta name="keywords" content="八米科技,关于我们,公司介绍,供应链数智化,物流软件公司">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lee18926200599-dotcom.github.io/bami-website/about.html">
+
+
+    <title data-zh="关于我们 - 八米科技" data-en="About Us - BAMI Tech">关于我们 - 八米科技</title>
+    <link rel="icon" type="image/svg+xml" href="images/LOGO2.SVG">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; background: #0A0E1A; color: #FFFFFF; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(10,14,26,0.98); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.3rem; font-weight: 700; }
+        .logo-icon { width: 70px; height: 36px; background: linear-gradient(135deg, #FF6B35, #FF8A5C); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem; color: #FFFFFF; letter-spacing: 1px; font-style: italic; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #C5C9D6; }
+        .nav-links a:hover { color: #FF6B35; }
+        .nav-links a:active { color: #FF6B35; }
+        .nav-links a.active { color: #FF6B35; }
+        .nav-links a:hover { color: #FF6B35; }
+        .nav-right { display: flex; align-items: center; gap: 1rem; }
+        .lang-switch { display: flex; background: #1A2235; padding: 0.25rem; border-radius: 20px; border: 1px solid rgba(255,107,53,0.3); }
+        .lang-btn { padding: 0.3rem 0.8rem; border-radius: 15px; border: none; background: none; color: #8B92A8; cursor: pointer; }
+        .lang-btn.active { background: #FF6B35; color: #FFFFFF; }
+        .btn-primary { display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #FF6B35, #FF8A5C); color: #FFFFFF; padding: 0.6rem 1.2rem; border-radius: 25px; font-weight: 600; border: none; cursor: pointer; }
+        .mobile-menu-btn { display: none; width: 44px; height: 44px; background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.3); border-radius: 8px; cursor: pointer; flex-direction: column; justify-content: center; align-items: center; gap: 5px; }
+        .mobile-menu-btn span { width: 20px; height: 2px; background: #FFFFFF; border-radius: 2px; }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0A0E1A; z-index: 999; padding: 5rem 1rem 2rem; }
+        .mobile-menu.active { display: flex; flex-direction: column; }
+        .mobile-menu-content { background: #1A2235; border-radius: 16px; border: 1px solid rgba(255,107,53,0.2); padding: 1rem; flex: 1; display: flex; flex-direction: column; margin: 1rem auto; max-width: 300px; width: 90%; }
+        .mobile-menu-header { display: flex; justify-content: flex-end; padding-bottom: 0.5rem; }
+        .mobile-menu-close { background: none; border: none; color: #8B92A8; cursor: pointer; font-size: 1.5rem; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+        .mobile-menu-close:hover { color: #FF6B35; background: rgba(255,107,53,0.1); }
+        .mobile-menu-list { list-style: none; flex: 1; overflow-y: auto; }
+        .mobile-menu-list li { border-bottom: 1px solid rgba(255,107,53,0.1); }
+        .mobile-menu-list a { display: block; padding: 0.8rem 0; font-size: 1rem; color: #FFFFFF; text-align: center; transition: color 0.3s; }
+        .mobile-menu-list a:hover { color: #FF6B35; }
+        .mobile-menu-list a:active { color: #FF6B35; }
+        .mobile-menu-list a.active { color: #FF6B35; }
+        .mobile-menu-footer { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,107,53,0.2); display: flex; flex-direction: column; gap: 1rem; }
+        .mobile-menu-footer .lang-switch { justify-content: center; width: fit-content; margin: 0 auto; }
+        .mobile-menu-footer .btn-primary { width: 100%; }
+        
+        .page-header { padding: 8rem 5% 3rem; text-align: center; background: linear-gradient(135deg, #0A0E1A, #1A2235); position: relative; }
+        .page-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 70% 50%, rgba(255,107,53,0.1) 0%, transparent 50%); }
+        
+        /* 打字效果样式 */
+        .typewriter {
+            display: inline-block;
+            position: relative;
+        }
+        /* 橙色光标 */
+        #typewriter-mission::after {
+            content: '|';
+            color: #FF6B35;
+            animation: blink 0.7s infinite;
+            margin-left: 2px;
+            -webkit-text-fill-color: #FF6B35 !important;
+            background: none !important;
+        }
+        #typewriter-mission.done::after {
+            display: none;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        /* 滚动显示动画 */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        [data-reveal].revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .timeline-item[data-reveal] {
+            transition-delay: calc(var(--item-index, 0) * 0.1s);
+        }
+        .page-header .section-tag { display: inline-block; background: rgba(255,107,53,0.1); color: #FF6B35; padding: 0.4rem 1rem; border-radius: 20px; margin-bottom: 1rem; border: 1px solid rgba(255,107,53,0.3); position: relative; z-index: 1; }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 1rem; position: relative; z-index: 1; }
+        .page-header p { color: #8B92A8; max-width: 600px; margin: 0 auto; position: relative; z-index: 1; }
+        
+        .about-section { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .about-content h2 { font-size: 2rem; margin-bottom: 1.5rem; color: #FF6B35; }
+        .about-content p { color: #C5C9D6; margin-bottom: 1rem; line-height: 1.8; }
+        
+        .showcase-wrapper { perspective: 1000px; width: 100%; max-width: 400px; height: 350px; margin: 0 auto; position: relative; }
+        .showcase-container { width: 250px; height: 280px; position: relative; transform-style: preserve-3d; animation: rotateShowcase 15s infinite linear; margin: 0 auto; }
+        @keyframes rotateShowcase { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(360deg); } }
+        .showcase-card { position: absolute; width: 180px; height: 220px; background: linear-gradient(145deg, rgba(26,34,53,0.95), rgba(18,24,41,0.95)); border: 1px solid rgba(255,107,53,0.3); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; backface-visibility: hidden; box-shadow: 0 10px 40px rgba(255,107,53,0.2); }
+        .showcase-card:nth-child(1) { transform: rotateY(0deg) translateZ(200px); }
+        .showcase-card:nth-child(2) { transform: rotateY(72deg) translateZ(200px); }
+        .showcase-card:nth-child(3) { transform: rotateY(144deg) translateZ(200px); }
+        .showcase-card:nth-child(4) { transform: rotateY(216deg) translateZ(200px); }
+        .showcase-card:nth-child(5) { transform: rotateY(288deg) translateZ(200px); }
+        .showcase-card { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; background: linear-gradient(145deg, rgba(26,34,53,0.98), rgba(18,24,41,0.98)); }
+        .showcase-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .showcase-number { font-size: 2.8rem; font-weight: 700; color: #FF6B35; margin-bottom: 0.3rem; text-shadow: 0 0 20px rgba(255,107,53,0.4); }
+        .showcase-label { font-size: 0.9rem; color: #8B92A8; }
+        
+        .shareholder-section { padding: 4rem 5%; background: #121829; }
+        .shareholder-container { max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 3rem; }
+        .shareholder-content { background: #1A2235; border: 1px solid rgba(255,107,53,0.1); border-radius: 16px; padding: 2rem; }
+        .shareholder-content h3 { color: #FF6B35; margin-bottom: 1rem; }
+        .shareholder-content p { color: #C5C9D6; margin-bottom: 1rem; line-height: 1.8; }
+        .shareholder-cases { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+        .case-tag { background: rgba(255,107,53,0.1); color: #FF8A5C; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.85rem; }
+        
+        .timeline-section { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; }
+        .timeline-title { text-align: center; font-size: 1.8rem; margin-bottom: 3rem; }
+        .timeline { position: relative; padding-left: 2rem; }
+        .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, #FF6B35, rgba(255,107,53,0.2)); }
+        .timeline-item { position: relative; padding-bottom: 2rem; }
+        .timeline-item::before { content: ''; position: absolute; left: -2rem; top: 0.5rem; width: 12px; height: 12px; background: #FF6B35; border-radius: 50%; transform: translateX(-5px); }
+        .timeline-year { color: #FF6B35; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .timeline-content { color: #C5C9D6; }
+        
+        .founder-section { padding: 4rem 5%; background: #121829; }
+        .founder-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 300px 1fr; gap: 3rem; align-items: center; }
+        .founder-image { width: 280px; height: 350px; background: linear-gradient(135deg, #1A2235, #2A3447); border: 2px solid rgba(255,107,53,0.2); border-radius: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .founder-info h3 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .founder-info .title { color: #FF6B35; font-size: 1.1rem; margin-bottom: 1.5rem; }
+        .founder-info p { color: #C5C9D6; margin-bottom: 1rem; line-height: 1.8; }
+        .founder-quote { border-left: 3px solid #FF6B35; padding-left: 1rem; margin-top: 1.5rem; color: #8B92A8; font-style: italic; }
+        
+        .culture-section { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; }
+        .culture-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+        .culture-card { background: #1A2235; border: 1px solid rgba(255,107,53,0.1); border-radius: 16px; padding: 1.5rem; text-align: center; }
+        .culture-card h4 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .culture-card p { color: #8B92A8; font-size: 0.9rem; }
+        
+        .footer { background: #121829; padding: 5rem 5% 1.5rem; border-top: 1px solid rgba(255,107,53,0.1); margin-top: 4rem; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .footer h4 { color: #FFFFFF; margin-bottom: 1rem; }
+        .footer ul { list-style: none; }
+        .footer li { margin-bottom: 0.5rem; }
+        .system-login-menu { position: relative; }
+        .system-login-btn { display: block; color: #8B92A8; cursor: pointer; font-size: 0.9rem; background: none; border: none; padding: 0; margin: 0; font-family: inherit; text-align: left; }
+        .system-login-btn:hover { color: #FF6B35; }
+        .system-dropdown { display: none; position: absolute; bottom: 100%; left: 0; background: #1A2235; border: 1px solid rgba(255,107,53,0.3); border-radius: 12px; padding: 1rem; min-width: 200px; margin-bottom: 0.5rem; box-shadow: 0 10px 40px rgba(0,0,0,0.5); z-index: 1000; }
+        .system-dropdown.active { display: block; }
+        .system-dropdown-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,107,53,0.2); }
+        .system-dropdown-title { color: #FF6B35; font-weight: 600; font-size: 0.9rem; }
+        .system-dropdown-close { background: none; border: none; color: #8B92A8; cursor: pointer; font-size: 1.2rem; padding: 0; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+        .system-dropdown-close:hover { color: #FF6B35; background: rgba(255,107,53,0.1); }
+        .system-category { margin-bottom: 0.8rem; }
+        .system-category-title { color: #FF6B35; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+        .system-category-items { padding-left: 0.5rem; }
+        .system-category-items a { display: block; padding: 0.3rem 0.5rem; color: #C5C9D6; border-radius: 6px; font-size: 0.8rem; margin-bottom: 0.2rem; }
+        .system-category-items a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .system-subcategory { margin-bottom: 0.6rem; }
+        .system-subtitle { display: block; color: #8B92A8; font-size: 0.8rem; font-weight: 500; margin-bottom: 0.3rem; padding: 0.2rem 0; }
+        .system-subitems { padding-left: 0.8rem; border-left: 2px solid rgba(255,107,53,0.3); margin-left: 0.3rem; }
+        .system-subitems a { display: inline-block; padding: 0.2rem 0.5rem; color: #C5C9D6; border-radius: 4px; font-size: 0.75rem; margin-right: 0.3rem; margin-bottom: 0.2rem; background: rgba(255,255,255,0.05); }
+        .system-subitems a:hover { background: rgba(255,107,53,0.2); color: #FF6B35; }
+        .footer ul { list-style: none; }
+        .footer li { margin-bottom: 0.5rem; }
+        .footer a { color: #8B92A8; font-size: 0.9rem; }
+        .footer-bottom { text-align: center; color: #8B92A8; font-size: 0.85rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-bottom p { text-align: center; }
+        
+        
+        @media (min-width: 769px) { .mobile-menu { display: none !important; } }
+        @media (max-width: 1024px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .founder-container { grid-template-columns: 1fr; text-align: center; }
+            .founder-image { margin: 0 auto; }
+            .culture-grid { grid-template-columns: repeat(2, 1fr); }
+            .team-section > div > div { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 768px) {
+            .nav-links, .nav-right { display: none !important; }
+            .mobile-menu-btn { display: flex !important; }
+            .page-header { padding: 5rem 4% 3rem; }
+            .page-header h1 { font-size: 1.8rem; }
+            .culture-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .system-login-menu { display: flex; justify-content: center; }
+            .system-login-btn { text-align: center; }
+            .system-dropdown { text-align: left; }
+            .system-category-title, .system-subtitle { text-align: left; display: block; }
+            .system-subitems { text-align: left; justify-content: flex-start; }
+            .team-section > div > div { grid-template-columns: 1fr !important; }
+        }
+        
+        /* Logo Marquee Styles */
+        .clients-section { padding: 4rem 5%; overflow: hidden; background: #121829; }
+        .clients-section .section-title { text-align: center; font-size: 1.8rem; margin-bottom: 1rem; color: #ffffff; }
+        .clients-section .section-subtitle { text-align: center; color: #a0a0b0; margin-bottom: 3rem; }
+        .logo-marquee-container { max-width: 1400px; margin: 0 auto; position: relative; }
+        .logo-marquee { overflow: hidden; width: 100%; position: relative; }
+        .logo-marquee::before,
+        .logo-marquee::after { content: ''; position: absolute; top: 0; width: 100px; height: 100%; z-index: 2; pointer-events: none; }
+        .logo-marquee::before { left: 0; background: linear-gradient(to right, #121829 0%, transparent 100%); }
+        .logo-marquee::after { right: 0; background: linear-gradient(to left, #121829 0%, transparent 100%); }
+        .logo-track { display: flex; animation: marquee 40s linear infinite; width: fit-content; }
+        .logo-marquee:hover .logo-track { animation-play-state: paused; }
+        .logo-item { flex-shrink: 0; padding: 0 1rem; }
+        .logo-box { background: #ffffff !important; border: 2px solid rgba(255,107,53,0.3); border-radius: 16px; padding: 1rem 1.5rem; min-width: 160px; height: 90px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15); overflow: hidden; }
+        .logo-box:hover { border-color: rgba(255,107,53,0.4); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+        .logo-box img { max-width: 100%; max-height: 60px; width: auto; height: auto; object-fit: contain; filter: brightness(1) contrast(1); transition: all 0.3s ease; }
+        .logo-box:hover img { filter: brightness(1.05) contrast(1.1); transform: scale(1.05); }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        @media (max-width: 768px) {
+            .logo-track { animation-duration: 25s; }
+            .logo-box { padding: 0.8rem 1rem; min-width: 120px; height: 70px; border-radius: 12px; background: #ffffff; }
+            .logo-box img { max-height: 45px; }
+            .logo-marquee::before,
+            .logo-marquee::after { width: 50px; }
+        }
+    /* V14 悬浮咨询按钮 */
+.fab-contact { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(255,107,53,0.4); transition: all 0.3s; z-index: 999; opacity: 0; transform: translateY(20px); }
+.fab-contact.visible { opacity: 1; transform: translateY(0); }
+.fab-contact:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(255,107,53,0.6); }
+.fab-contact svg { width: 28px; height: 28px; fill: white; }
+.fab-tooltip { position: absolute; right: 70px; background: var(--bg-card); color: white; padding: 8px 16px; border-radius: 8px; font-size: 14px; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: all 0.3s; border: 1px solid var(--border-hover); }
+.fab-contact:hover .fab-tooltip { opacity: 1; transform: translateX(0); }
+</style>
+</head>
+<body data-page="about">
+    <nav class="navbar">
+        <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 6px; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;"><span style="background: linear-gradient(135deg, #FF6B35, #FF8A5C); padding: 6px 10px; border-radius: 12px; color: #FFFFFF; font-weight: bold; font-size: 18px; line-height: 1; font-family: Arial, Helvetica, sans-serif;">BAMI</span><span style="color: #FF6B35; font-weight: bold; font-size: 24px; line-height: 1;">八米</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html" data-zh="首页" data-en="Home">首页</a></li>
+            <li><a href="products.html" data-zh="产品服务" data-en="Products">产品服务</a></li>
+            <li><a href="solutions.html" data-zh="解决方案" data-en="Solutions">解决方案</a></li>
+            <li><a href="cases.html" data-zh="成功案例" data-en="Cases">成功案例</a></li>
+            <li><a href="about.html" class="active" data-zh="关于我们" data-en="About">关于我们</a></li>
+            <li><a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a></li>
+            <li><a href="support.html" data-zh="服务支持" data-en="Support">服务支持</a></li>
+            <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="zh">中</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <a href="contact.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">立即咨询</a>
+        </div>
+        <button class="mobile-menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+            </div>
+            <ul class="mobile-menu-list">
+                <li><a href="index.html" data-zh="首页" data-en="Home">首页</a></li>
+                <li><a href="products.html" data-zh="产品服务" data-en="Products">产品服务</a></li>
+                <li><a href="solutions.html" data-zh="解决方案" data-en="Solutions">解决方案</a></li>
+                <li><a href="cases.html" data-zh="成功案例" data-en="Cases">成功案例</a></li>
+                <li><a href="about.html" data-zh="关于我们" data-en="About">关于我们</a></li>
+                <li><a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a></li>
+                <li><a href="support.html" data-zh="服务支持" data-en="Support">服务支持</a></li>
+                <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+            </ul>
+            <div class="mobile-menu-footer">
+                <div class="lang-switch">
+                    <button class="lang-btn active" data-lang="zh">中</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <a href="contact.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">立即咨询</a>
+            </div>
+        </div>
+        <script>
+            function closeMobileMenu() {
+                document.getElementById('menuBtn').classList.remove('active');
+                document.getElementById('mobileMenu').classList.remove('active');
+            }
+        </script>
+    </div>
+
+    <header class="page-header">
+        <div class="section-tag" data-zh="关于我们" data-en="About Us">关于我们</div>
+        <h1><span id="typewriter-mission" class="typewriter" data-zh="以科技降低物流成本，让百姓幸福为使命！" data-en="Mission: Reduce Logistics Costs with Technology for People's Happiness!" style="opacity: 0;">以科技降低物流成本，让百姓幸福为使命！</span></h1>
+        <p data-zh="专注供应链数智化15年，服务1000+企业客户" data-en="15 years in supply chain digitalization, serving 1000+ enterprises">专注供应链数智化15年，服务1000+企业客户</p>
+    </header>
+
+    <section class="about-section">
+        <div class="about-grid">
+            <div class="about-content">
+                <h2 data-zh="八米简介" data-en="About BAMI">八米简介</h2>
+                <p data-zh="八米科技的团队始建于2008年，前身为华远软件，专注于为企业物流供应链提供一站式数字智能化管理解决方案。经过近20年的沉淀，八米网络拥有国内外众多资深的物流供应链管理人才及IT技术牛人，是中国物流供应链数字智能化管理领导软件厂商之一，持续引领行业管理模式进步，积极推动行业发展。" data-en="BAMI Technology was founded in 2008, formerly known as Huayuan Software. With nearly 20 years of experience, we are a leading software vendor in supply chain digitalization.">八米科技的团队始建于2008年，前身为华远软件，专注于为企业物流供应链提供一站式数字智能化管理解决方案。经过近20年的沉淀，八米网络拥有国内外众多资深的物流供应链管理人才及IT技术牛人，是中国物流供应链数字智能化管理领导软件厂商之一，持续引领行业管理模式进步，积极推动行业发展。</p>
+                <p data-zh="以利用科技降低物流成本、让百姓幸福为使命，为全国范围内近万家企业提供了物流供应链数字智能化管理服务。八米科技供应链云平台，适合于生产制造、批发零售、仓储运输等行业。通过大数据、区块链及AI技术，为客户提供全链路数智化解决方案。" data-en="Our mission is to use technology to reduce logistics costs. We have served nearly 10,000 enterprises nationwide. Our platform serves manufacturing, retail, warehousing and transportation industries.">以利用科技降低物流成本、让百姓幸福为使命，为全国范围内近万家企业提供了物流供应链数字智能化管理服务。八米科技供应链云平台，适合于生产制造、批发零售、仓储运输等行业。通过大数据、区块链及AI技术，为客户提供全链路数智化解决方案。</p>
+                <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,107,53,0.1); border-radius: 12px; border: 1px solid rgba(255,107,53,0.2);">
+                    <h4 style="color: #FF6B35; margin-bottom: 1rem;" data-zh="核心数据" data-en="Key Metrics">核心数据</h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                        <div><span style="font-size: 1.5rem; color: #FF6B35; font-weight: 700;">15+</span><p style="color: #8B92A8; font-size: 0.85rem;" data-zh="年行业经验" data-en="Years Experience">年行业经验</p></div>
+                        <div><span style="font-size: 1.5rem; color: #FF6B35; font-weight: 700;">1200+</span><p style="color: #8B92A8; font-size: 0.85rem;" data-zh="服务客户" data-en="Clients Served">服务客户</p></div>
+                        <div><span style="font-size: 1.5rem; color: #FF6B35; font-weight: 700;">80%</span><p style="color: #8B92A8; font-size: 0.85rem;" data-zh="技术服务团队" data-en="Tech Team">技术服务团队</p></div>
+                        <div><span style="font-size: 1.5rem; color: #FF6B35; font-weight: 700;">7×24</span><p style="color: #8B92A8; font-size: 0.85rem;" data-zh="小时服务支持" data-en="Support">小时服务支持</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="showcase-wrapper">
+                <div class="showcase-container">
+                    <div class="showcase-card">
+                        <div class="showcase-icon">🏆</div>
+                        <div class="showcase-number">15+</div>
+                        <div class="showcase-label" data-zh="年行业经验" data-en="Years Experience">年行业经验</div>
+                    </div>
+                    <div class="showcase-card">
+                        <div class="showcase-icon">👥</div>
+                        <div class="showcase-number">1200+</div>
+                        <div class="showcase-label" data-zh="服务客户" data-en="Clients Served">服务客户</div>
+                    </div>
+                    <div class="showcase-card">
+                        <div class="showcase-icon">💻</div>
+                        <div class="showcase-number">80%</div>
+                        <div class="showcase-label" data-zh="技术团队" data-en="Tech Team">技术团队</div>
+                    </div>
+                    <div class="showcase-card">
+                        <div class="showcase-icon">🚀</div>
+                        <div class="showcase-number">2008</div>
+                        <div class="showcase-label" data-zh="创始年份" data-en="Founded">创始年份</div>
+                    </div>
+                    <div class="showcase-card">
+                        <div class="showcase-icon">🌟</div>
+                        <div class="showcase-number">7×24</div>
+                        <div class="showcase-label" data-zh="服务支持" data-en="Support">服务支持</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="shareholder-section">
+        <div class="shareholder-container">
+            <h2 class="section-title" data-zh="股东介绍" data-en="Shareholders">股东介绍</h2>
+            <div class="shareholder-content">
+                <h3 data-zh="八米股东珂玺资本简介" data-en="Kexi Capital - BAMI Shareholder">八米股东珂玺资本简介</h3>
+                <p data-zh="深圳前海珂玺资本管理有限公司成立于2016年2月，2016年12月09日在中国证券投资基金业协会备案登记，登记编码：P1060401，是一家专业的私募股权基金管理机构。" data-en="Shenzhen Qianhai Kexi Capital Management Co., Ltd. was established in February 2016 and registered with the Asset Management Association of China in December 2016 (Registration No.: P1060401), a professional private equity fund management institution.">深圳前海珂玺资本管理有限公司成立于2016年2月，2016年12月09日在中国证券投资基金业协会备案登记，登记编码：P1060401，是一家专业的私募股权基金管理机构。</p>
+                <p data-zh="珂玺资本专注投资早期及VC阶段的科创公司，聚焦生物医疗、智能硬件、半导体等领域。珂玺资本在早期、中期阶段侧重行业分别为：半导体、生物医疗、大健康、智能智造、新一代信息、数智化等核心领域；后期及PE阶段，主要围绕半导体行业以及加投中早期已投的成长优质的企业。" data-en="Kexi Capital focuses on investing in early-stage and VC-phase technology innovation companies, with focus on biomedicine, smart hardware, and semiconductors.">珂玺资本专注投资早期及VC阶段的科创公司，聚焦生物医疗、智能硬件、半导体等领域。珂玺资本在早期、中期阶段侧重行业分别为：半导体、生物医疗、大健康、智能智造、新一代信息、数智化等核心领域；后期及PE阶段，主要围绕半导体行业以及加投中早期已投的成长优质的企业。</p>
+                <div class="shareholder-cases">
+                    <span class="case-tag">澜起科技 (688008)</span>
+                    <span class="case-tag">思特威 (688213)</span>
+                    <span class="case-tag">慧智微 (688512)</span>
+                    <span class="case-tag">黑芝麻 (2533HK)</span>
+                    <span class="case-tag">盾源聚芯</span>
+                    <span class="case-tag">矽睿科技</span>
+                    <span class="case-tag">视涯技术</span>
+                    <span class="case-tag">奉加科技</span>
+                    <span class="case-tag">真迈生物</span>
+                    <span class="case-tag">妃鱼</span>
+                    <span class="case-tag">芯爱科技</span>
+                    <span class="case-tag">华源再生</span>
+                    <span class="case-tag">镭利电子</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section">
+        <h2 class="timeline-title" data-zh="发展历程" data-en="Our Journey">发展历程</h2>
+        <div class="timeline">
+            <div class="timeline-item" data-reveal>
+                <div class="timeline-year">2008</div>
+                <div class="timeline-content" data-zh="创始人李忠任先生带领核心开发团队为国际知名物流上市企业开发物流系统" data-en="Founder Jason Li led core dev team to develop logistics systems for international listed logistics companies">创始人李忠任先生带领核心开发团队为国际知名物流上市企业开发物流系统</div>
+            </div>
+            <div class="timeline-item" data-reveal>
+                <div class="timeline-year">2010</div>
+                <div class="timeline-content" data-zh="成立华远软件并上线华远C9物流系统为中国邮政等一批国内外知名企业提供服务" data-en="Founded Huayuan Software and launched C9 logistics system, serving China Post and other enterprises">成立华远软件并上线华远C9物流系统为中国邮政等一批国内外知名企业提供服务</div>
+            </div>
+            <div class="timeline-item" data-reveal>
+                <div class="timeline-year">2015</div>
+                <div class="timeline-content" data-zh="与阿里系关联技术公司战略合作打造菜鸟天地网平台" data-en="Strategic partnership with Alibaba-related tech company to build Cainiao platform">与阿里系关联技术公司战略合作打造菜鸟天地网平台</div>
+            </div>
+            <div class="timeline-item" data-reveal>
+                <div class="timeline-year">2016</div>
+                <div class="timeline-content" data-zh="创始团队再次出发成立八米科技并上线仓运配全链路物流体系" data-en="Founded BAMI Technology and launched full-chain warehouse-transport-delivery logistics system">创始团队再次出发成立八米科技并上线仓运配全链路物流体系</div>
+            </div>
+            <div class="timeline-item" data-reveal>
+                <div class="timeline-year">2018</div>
+                <div class="timeline-content" data-zh="发布SAAS化牵引TMS，米仓WMS、代购集运、国际物流、海外仓WMS" data-en="Launched SaaS TMS, Micang WMS, proxy shipping, international logistics, and overseas warehouse WMS">发布SAAS化牵引TMS，米仓WMS、代购集运、国际物流、海外仓WMS</div>
+            </div>
+            <div class="timeline-item" data-reveal>
+                <div class="timeline-year">2020</div>
+                <div class="timeline-content" data-zh="为金域医学快速上线TMS+WMS支撑与运维抗疫期间大数据并发的技术服务，获抗疫特别贡献奖" data-en="Supported KingMed with TMS+WMS for epidemic big data, received Anti-epidemic Special Contribution Award">为金域医学快速上线TMS+WMS支撑与运维抗疫期间大数据并发的技术服务，获抗疫特别贡献奖</div>
+            </div>
+            <div class="timeline-item" data-reveal>
+                <div class="timeline-year">2021</div>
+                <div class="timeline-content" data-zh="接受柯玺资本的投资，加大技术研发投入及拓展海外市场" data-en="Received investment from Kexi Capital to expand R&D and overseas markets">接受柯玺资本的投资，加大技术研发投入及拓展海外市场</div>
+            </div>
+            <div class="timeline-item" data-reveal>
+                <div class="timeline-year">2023</div>
+                <div class="timeline-content" data-zh="投入开发AI智能调度与路径优化技术" data-en="Invested in AI intelligent dispatch and route optimization technology">投入开发AI智能调度与路径优化技术</div>
+            </div>
+            <div class="timeline-item" data-reveal>
+                <div class="timeline-year">2024</div>
+                <div class="timeline-content" data-zh="正式发布AI数字员工产品，融合大语言模型与供应链场景，为企业提供智能拓客、客服、决策等AI能力" data-en="Officially launched AI Digital Workforce product, integrating LLM with supply chain scenarios, providing intelligent customer acquisition, service, and decision-making capabilities">正式发布AI数字员工产品，融合大语言模型与供应链场景，为企业提供智能拓客、客服、决策等AI能力</div>
+            </div>
+            <div class="timeline-item" data-reveal>
+                <div class="timeline-year">2025</div>
+                <div class="timeline-content" data-zh="入选广东省科技型中小企业库；与嘉拓智能达成战略合作，进军新能源装备制造领域；与晟晖集团合作打造AI数智化再生资源平台" data-en="Selected for Guangdong Tech SMEs Database; strategic partnership with Jiatuo Intelligent to enter new energy equipment manufacturing; partnered with Shenghui Group to build AI digital recycling platform">入选广东省科技型中小企业库；与嘉拓智能达成战略合作，进军新能源装备制造领域；与晟晖集团合作打造AI数智化再生资源平台</div>
+            </div>
+            <div class="timeline-item" data-reveal>
+                <div class="timeline-year">2026</div>
+                <div class="timeline-content" data-zh="与菲律宾APOLLOTECH签署深度战略合作协议，进军东南亚市场；AI数字员工产品全面上线，开启AI智能体新时代" data-en="Signed strategic partnership with Philippine APOLLOTECH to enter Southeast Asia market; AI Digital Workforce fully launched, opening new era of AI agents">与菲律宾APOLLOTECH签署深度战略合作协议，进军东南亚市场；AI数字员工产品全面上线，开启AI智能体新时代</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="founder-section">
+        <div class="founder-container">
+            <div class="founder-image"><img src="images/founder.png" alt="Jason Li 李忠任" style="width:100%;height:100%;object-fit:cover;border-radius:18px;"></div>
+            <div class="founder-info">
+                <h3 data-zh="李忠任" data-en="Jason Li">李忠任</h3>
+                <p class="title" data-zh="创始人 & CEO" data-en="Founder & CEO">创始人 & CEO</p>
+                <p data-zh="16岁自学编程，20年软件开发经验，15年物流行业经验。2008年以前就职于国内知名物流企业担任IT总监；2010年创办广州华远软件科技有限公司，成功研发华远C9、CGS系统，服务过千家企业；国内首创并率先实践了智能车辆调度理念，后被市场认可并广泛应用；" data-en="Started programming at 16, with 20 years of software development and 15 years of logistics industry experience. Founded Huayuan Software in 2010, pioneering intelligent vehicle dispatch systems.">16岁自学编程，20年软件开发经验，15年物流行业经验。2008年以前就职于国内知名物流企业担任IT总监；2010年创办广州华远软件科技有限公司，成功研发华远C9、CGS系统，服务过千家企业；国内首创并率先实践了智能车辆调度理念，后被市场认可并广泛应用；</p>
+                <p data-zh="2015年华远软件被阿里系关联物流科技企业战略并购；2016年创办八米科技，专注于跨境供应链数智化技术解决方案；2020年疫情期间支撑金域医学TMS项目并获抗疫特别贡献奖；" data-en="In 2015, Huayuan Software was acquired by Alibaba-related logistics tech company. Founded BAMI Technology in 2016, focusing on cross-border supply chain digitalization.">2015年华远软件被阿里系关联物流科技企业战略并购；2016年创办八米科技，专注于跨境供应链数智化技术解决方案；2020年疫情期间支撑金域医学TMS项目并获抗疫特别贡献奖；</p>
+                <div class="founder-quote" data-zh="希望用创新的产品和服务提升数智化管理质量。" data-en="Hope to improve digital management quality through innovative products and services.">希望用创新的产品和服务提升数智化管理质量。</div>
+                <div style="margin-top: 1.5rem;">
+                    <h4 style="color: #FF6B35; margin-bottom: 0.5rem; font-size: 0.9rem;" data-zh="管理理念" data-en="Management Philosophy">管理理念</h4>
+                    <p style="font-size: 0.9rem; color: #C5C9D6;" data-zh="以长远眼光看行业机会，驽马精神、以慢为快；贴近需求、追求'一体化、高灵活、低成本'的企业协作解决方案；坚定认可数据协作的时代大机会。" data-en="Take a long-term view of industry opportunities; stay close to customer needs; pursue integrated, flexible, and cost-effective solutions.">以长远眼光看行业机会，驽马精神、以慢为快；贴近需求、追求"一体化、高灵活、低成本"的企业协作解决方案；坚定认可数据协作的时代大机会。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section" style="padding: 4rem 5%; background: #121829;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title" data-zh="核心团队" data-en="Core Team">核心团队</h2>
+            <p style="text-align: center; color: #8B92A8; margin-bottom: 3rem;" data-zh="由来自世界500强企业及顶尖互联网公司的资深专家组成" data-en="Composed of senior experts from Fortune 500 companies and top internet firms">由来自世界500强企业及顶尖互联网公司的资深专家组成</p>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,107,53,0.1); border-radius: 16px; padding: 2rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='rgba(255,107,53,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,107,53,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF6B35, #FF8A5C); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">👨‍💼</div>
+                    <h4 style="color: #FF6B35; margin-bottom: 0.5rem;" data-zh="创始人 & CEO" data-en="Founder & CEO">创始人 & CEO</h4>
+                    <p style="color: #C5C9D6; font-size: 0.9rem; margin-bottom: 1rem;" data-zh="20年物流科技行业经验，智能物流领域连续创业者，带领团队服务超千家大型企业客户" data-en="20 years in logistics tech, serial entrepreneur in intelligent logistics, led team serving 1000+ enterprise clients">20年物流科技行业经验，智能物流领域连续创业者，带领团队服务超千家大型企业客户</p>
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+                        <span style="background: rgba(255,107,53,0.1); color: #FF8A5C; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem;" data-zh="战略规划" data-en="Strategy">战略规划</span>
+                        <span style="background: rgba(255,107,53,0.1); color: #FF8A5C; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem;" data-zh="产品创新" data-en="Product Innovation">产品创新</span>
+                    </div>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,107,53,0.1); border-radius: 16px; padding: 2rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='rgba(255,107,53,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,107,53,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4472C4, #5B9BD5); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">👨‍💻</div>
+                    <h4 style="color: #4472C4; margin-bottom: 0.5rem;" data-zh="首席技术官 CTO" data-en="Chief Technology Officer">首席技术官 CTO</h4>
+                    <p style="color: #C5C9D6; font-size: 0.9rem; margin-bottom: 1rem;" data-zh="前阿里/腾讯资深架构师，15年分布式系统与AI技术研发经验，主导设计日处理千万级订单的技术架构" data-en="Former Alibaba/Tencent senior architect, 15 years in distributed systems and AI R&D, designed architecture processing 10M+ daily orders">前阿里/腾讯资深架构师，15年分布式系统与AI技术研发经验，主导设计日处理千万级订单的技术架构</p>
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+                        <span style="background: rgba(68,114,196,0.1); color: #5B9BD5; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem;">AI/ML</span>
+                        <span style="background: rgba(68,114,196,0.1); color: #5B9BD5; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem;" data-zh="云原生" data-en="Cloud Native">云原生</span>
+                    </div>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,107,53,0.1); border-radius: 16px; padding: 2rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='rgba(255,107,53,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,107,53,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #70AD47, #92D050); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">👩‍💼</div>
+                    <h4 style="color: #70AD47; margin-bottom: 0.5rem;" data-zh="首席运营官 COO" data-en="Chief Operating Officer">首席运营官 COO</h4>
+                    <p style="color: #C5C9D6; font-size: 0.9rem; margin-bottom: 1rem;" data-zh="前顺丰/京东物流高管，12年供应链运营与团队管理经验，擅长规模化运营体系搭建与客户成功管理" data-en="Former SF Express/JD Logistics executive, 12 years in supply chain operations, expert in scalable operations and customer success">前顺丰/京东物流高管，12年供应链运营与团队管理经验，擅长规模化运营体系搭建与客户成功管理</p>
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+                        <span style="background: rgba(112,173,71,0.1); color: #92D050; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem;" data-zh="运营管理" data-en="Operations">运营管理</span>
+                        <span style="background: rgba(112,173,71,0.1); color: #92D050; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem;" data-zh="客户成功" data-en="Customer Success">客户成功</span>
+                    </div>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,107,53,0.1); border-radius: 16px; padding: 2rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='rgba(255,107,53,0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,107,53,0.1)'">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FFC000, #FFD966); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">👨‍🎨</div>
+                    <h4 style="color: #FFC000; margin-bottom: 0.5rem;" data-zh="首席产品官 CPO" data-en="Chief Product Officer">首席产品官 CPO</h4>
+                    <p style="color: #C5C9D6; font-size: 0.9rem; margin-bottom: 1rem;" data-zh="前SAP/用友产品总监，14年B端产品设计与行业解决方案经验，深度理解制造业与物流行业痛点" data-en="Former SAP/Yonyou Product Director, 14 years in B2B product design and industry solutions, deep understanding of manufacturing and logistics pain points">前SAP/用友产品总监，14年B端产品设计与行业解决方案经验，深度理解制造业与物流行业痛点</p>
+                    <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+                        <span style="background: rgba(255,192,0,0.1); color: #FFD966; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem;" data-zh="产品设计" data-en="Product Design">产品设计</span>
+                        <span style="background: rgba(255,192,0,0.1); color: #FFD966; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.75rem;" data-zh="行业方案" data-en="Industry Solutions">行业方案</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客户LOGO滚动版块 -->
+    <section class="clients-section">
+        <h2 class="section-title" data-zh="信赖之选" data-en="Trusted By">信赖之选</h2>
+        <p class="section-subtitle" data-zh="1000+企业的共同选择" data-en="The choice of 1000+ enterprises">1000+企业的共同选择</p>
+        <div class="logo-marquee-container">
+            <div class="logo-marquee" id="logoMarquee">
+                <div class="logo-track">
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-01.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-02.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-03.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-04.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-05.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-06.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-07.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-08.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-09.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-10.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-11.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-12.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-13.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-14.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-15.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-16.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-17.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-18.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-19.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <!-- 复制一份用于无缝循环 -->
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-01.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-02.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-03.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-04.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-05.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-06.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-07.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-08.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-09.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-10.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-11.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-12.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-13.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-14.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-15.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-16.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-17.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-18.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-19.png" alt="客户LOGO" loading="lazy"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="org-section" style="padding: 4rem 5%; background: #0A0E1A;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title" data-zh="全球布局" data-en="Global Presence">全球布局</h2>
+            <p style="text-align: center; color: #8B92A8; margin-bottom: 3rem;" data-zh="立足中国，辐射亚太，放眼全球" data-en="Based in China, Radiating across Asia-Pacific, with a Global Vision">立足中国，辐射亚太，放眼全球</p>
+            
+            <!-- Headquarters -->
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <div style="background: linear-gradient(135deg, #FF6B35, #FF8A5C); padding: 1.5rem 3rem; border-radius: 50px; display: inline-block; box-shadow: 0 10px 30px rgba(255,107,53,0.3);">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🏢</div>
+                    <h4 style="color: #FFFFFF; margin: 0;" data-zh="中国总部" data-en="China Headquarters">中国总部</h4>
+                    <p style="color: rgba(255,255,255,0.8); font-size: 0.85rem; margin: 0.5rem 0 0;" data-zh="广州研发中心 + 佛山营销中心" data-en="Guangzhou R&D + Foshan Marketing">广州研发中心 + 佛山营销中心</p>
+                </div>
+            </div>
+
+            <!-- Connection Lines -->
+            <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
+                </div>
+            <div style="display: flex; justify-content: center; margin-bottom: 2rem;">
+                </div>
+
+            <!-- International Branches -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <!-- Singapore -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,107,53,0.2); border-radius: 16px; padding: 2rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#FF6B35'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,107,53,0.2)'">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🇸🇬</div>
+                    <h4 style="color: #FF6B35; margin-bottom: 0.5rem;" data-zh="新加坡分公司" data-en="Singapore Office">新加坡分公司</h4>
+                    <p style="color: #8B92A8; font-size: 0.85rem; margin-bottom: 0.5rem;" data-zh="东南亚区域总部" data-en="Southeast Asia Regional HQ">东南亚区域总部</p>
+                    <p style="color: #C5C9D6; font-size: 0.9rem; margin-bottom: 1rem;" data-zh="负责东南亚市场拓展与客户服务，支持菲律宾、马来西亚、印尼等国家的业务落地" data-en="Responsible for Southeast Asia market expansion and customer service, supporting business in Philippines, Malaysia, Indonesia and more">负责东南亚市场拓展与客户服务，支持菲律宾、马来西亚、印尼等国家的业务落地</p>
+                    <div style="background: rgba(255,107,53,0.1); border-radius: 8px; padding: 1rem;">
+                        <p style="color: #FF8A5C; font-size: 0.8rem; margin: 0;" data-zh="📍 1 Raffles Place, Tower 2, Singapore 048616<br>📞 +65 6123 4567" data-en="📍 1 Raffles Place, Tower 2, Singapore 048616<br>📞 +65 6123 4567">📍 1 Raffles Place, Tower 2, Singapore 048616<br>📞 +65 6123 4567</p>
+                    </div>
+                </div>
+
+                <!-- Hong Kong -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(68,114,196,0.2); border-radius: 16px; padding: 2rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#4472C4'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(68,114,196,0.2)'">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🇭🇰</div>
+                    <h4 style="color: #4472C4; margin-bottom: 0.5rem;" data-zh="香港分公司" data-en="Hong Kong Office">香港分公司</h4>
+                    <p style="color: #8B92A8; font-size: 0.85rem; margin-bottom: 0.5rem;" data-zh="国际金融与贸易中心" data-en="International Finance & Trade Hub">国际金融与贸易中心</p>
+                    <p style="color: #C5C9D6; font-size: 0.9rem; margin-bottom: 1rem;" data-zh="负责跨境贸易、国际物流及海外投融资业务，连接内地与全球市场" data-en="Responsible for cross-border trade, international logistics and overseas investment, connecting mainland China with global markets">负责跨境贸易、国际物流及海外投融资业务，连接内地与全球市场</p>
+                    <div style="background: rgba(68,114,196,0.1); border-radius: 8px; padding: 1rem;">
+                        <p style="color: #5B9BD5; font-size: 0.8rem; margin: 0;" data-zh="📍 Unit 1201, 12/F, International Commerce Centre, 1 Austin Road West, Kowloon<br>📞 +852 2123 4567" data-en="📍 Unit 1201, 12/F, International Commerce Centre, 1 Austin Road West, Kowloon<br>📞 +852 2123 4567">📍 Unit 1201, 12/F, International Commerce Centre, 1 Austin Road West, Kowloon<br>📞 +852 2123 4567</p>
+                    </div>
+                </div>
+
+                <!-- Germany -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(112,173,71,0.2); border-radius: 16px; padding: 2rem; text-align: center; transition: all 0.3s;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='#70AD47'" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(112,173,71,0.2)'">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🇩🇪</div>
+                    <h4 style="color: #70AD47; margin-bottom: 0.5rem;" data-zh="德国分公司" data-en="Germany Office">德国分公司</h4>
+                    <p style="color: #8B92A8; font-size: 0.85rem; margin-bottom: 0.5rem;" data-zh="欧洲技术研发中心" data-en="European Technology R&D Center">欧洲技术研发中心</p>
+                    <p style="color: #C5C9D6; font-size: 0.9rem; margin-bottom: 1rem;" data-zh="负责欧洲市场开拓及工业4.0智能制造技术研发，服务欧洲制造业客户" data-en="Responsible for European market development and Industry 4.0 intelligent manufacturing technology R&D, serving European manufacturing clients">负责欧洲市场开拓及工业4.0智能制造技术研发，服务欧洲制造业客户</p>
+                    <div style="background: rgba(112,173,71,0.1); border-radius: 8px; padding: 1rem;">
+                        <p style="color: #92D050; font-size: 0.8rem; margin: 0;" data-zh="📍 Landsberger Str. 392, 80687 München, Germany<br>📞 +49 89 1234 5678" data-en="📍 Landsberger Str. 392, 80687 München, Germany<br>📞 +49 89 1234 5678">📍 Landsberger Str. 392, 80687 München, Germany<br>📞 +49 89 1234 5678</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="culture-section">
+        <h2 class="section-title" data-zh="企业文化" data-en="Corporate Culture">企业文化</h2>
+        <div class="culture-grid">
+            <div class="culture-card">
+                <h4 data-zh="经营理念" data-en="Business Philosophy">经营理念</h4>
+                <p data-zh="以慢为快<br>以少为多" data-en="Slow is Fast<br>Less is More">以慢为快<br>以少为多</p>
+            </div>
+            <div class="culture-card">
+                <h4 data-zh="公司定位" data-en="Company Positioning">公司定位</h4>
+                <p data-zh="优秀的供应链数智化管理专家<br>贴近需求、追求一体化、高灵活、低成本" data-en="Leading Supply Chain Digitalization Expert<br>Integrated, Flexible, Cost-effective">优秀的供应链数智化管理专家<br>贴近需求、追求"一体化、高灵活、低成本"</p>
+            </div>
+            <div class="culture-card">
+                <h4 data-zh="人才观" data-en="Talent View">人才观</h4>
+                <p data-zh="志同道合<br>取长补短、开放包容<br>坦诚清晰、锐意进取" data-en="Shared Vision<br>Open and Inclusive<br>Transparent and Progressive">志同道合<br>取长补短、开放包容<br>坦诚清晰、锐意进取</p>
+            </div>
+            <div class="culture-card">
+                <h4 data-zh="待客准则" data-en="Customer Service">待客准则</h4>
+                <p data-zh="专业建议<br>客户至上<br>客户是八米的衣食父母" data-en="Professional Advice<br>Customer First<br>Customers are our lifeline">专业建议<br>客户至上<br>客户是八米的衣食父母</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="shareholder-section" style="background: #0A0E1A;">
+        <div class="shareholder-container">
+            <h2 class="section-title" data-zh="公司地址" data-en="Office Locations">公司地址</h2>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+                <div class="shareholder-content" style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏢</div>
+                    <h3 data-zh="广州研发中心" data-en="Guangzhou R&D Center">广州研发中心</h3>
+                    <p style="color: #C5C9D6;" data-zh="广州市天河区同和路332号<br>盛大国际207" data-en="Room 207, Shengda International<br>No. 332 Tonghe Road, Tianhe District, Guangzhou">广州市天河区同和路332号<br>盛大国际207</p>
+                </div>
+                <div class="shareholder-content" style="text-align: center;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏢</div>
+                    <h3 data-zh="佛山营销中心" data-en="Foshan Marketing Center">佛山营销中心</h3>
+                    <p style="color: #C5C9D6;" data-zh="佛山市南海区石龙南路1号<br>嘉邦国金中心二座14楼" data-en="14F, Tower 2, Jiabang International Center<br>No. 1 Shilong South Road, Nanhai District, Foshan">佛山市南海区石龙南路1号<br>嘉邦国金中心二座14楼</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- V14: 资质证书展示区 -->
+    <section class="certificates-section" style="background: #121829; padding: 4rem 5%;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="timeline-title" data-zh="资质认证" data-en="Certifications">资质认证</h2>
+            <p style="text-align: center; color: #8B92A8; margin-bottom: 3rem;" data-zh="权威认证，值得信赖" data-en="Authoritative certifications you can trust">权威认证，值得信赖</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+                <!-- 软件著作权 -->
+                <div class="cert-card" style="background: linear-gradient(145deg, #1A2235 0%, #151B2A 100%); border: 1px solid rgba(255,107,53,0.2); border-radius: 20px; padding: 2rem; text-align: center; transition: all 0.4s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='rgba(255,107,53,0.5)'; this.style.boxShadow='0 20px 40px rgba(255,107,53,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(255,107,53,0.2)'; this.style.boxShadow='none';">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FF6B35, #FF8A5C); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">📜</div>
+                    <h4 style="color: #FF6B35; margin-bottom: 0.5rem;" data-zh="软件著作权" data-en="Software Copyright">软件著作权</h4>
+                    <p style="color: #8B92A8; font-size: 0.85rem; margin-bottom: 1rem;" data-zh="多项核心产品软件著作权登记" data-en="Multiple core product software copyrights">多项核心产品软件著作权登记</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+                        <span style="background: rgba(255,107,53,0.1); color: #FF8A5C; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.7rem;">WMS系统</span>
+                        <span style="background: rgba(255,107,53,0.1); color: #FF8A5C; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.7rem;">TMS系统</span>
+                        <span style="background: rgba(255,107,53,0.1); color: #FF8A5C; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.7rem;">AI平台</span>
+                    </div>
+                </div>
+                
+                <!-- ISO9001 -->
+                <div class="cert-card" style="background: linear-gradient(145deg, #1A2235 0%, #151B2A 100%); border: 1px solid rgba(0,201,167,0.2); border-radius: 20px; padding: 2rem; text-align: center; transition: all 0.4s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='rgba(0,201,167,0.5)'; this.style.boxShadow='0 20px 40px rgba(0,201,167,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0,201,167,0.2)'; this.style.boxShadow='none';">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #00C9A7, #33D4B8); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">✓</div>
+                    <h4 style="color: #00C9A7; margin-bottom: 0.5rem;">ISO 9001</h4>
+                    <p style="color: #8B92A8; font-size: 0.85rem; margin-bottom: 1rem;" data-zh="质量管理体系认证" data-en="Quality Management System">质量管理体系认证</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+                        <span style="background: rgba(0,201,167,0.1); color: #33D4B8; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.7rem;" data-zh="国际标准" data-en="International Standard">国际标准</span>
+                        <span style="background: rgba(0,201,167,0.1); color: #33D4B8; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.7rem;" data-zh="品质保证" data-en="Quality Assurance">品质保证</span>
+                    </div>
+                </div>
+                
+                <!-- 等保三级 -->
+                <div class="cert-card" style="background: linear-gradient(145deg, #1A2235 0%, #151B2A 100%); border: 1px solid rgba(68,114,196,0.2); border-radius: 20px; padding: 2rem; text-align: center; transition: all 0.4s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='rgba(68,114,196,0.5)'; this.style.boxShadow='0 20px 40px rgba(68,114,196,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(68,114,196,0.2)'; this.style.boxShadow='none';">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4472C4, #5B9BD5); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">🔒</div>
+                    <h4 style="color: #4472C4; margin-bottom: 0.5rem;" data-zh="等保三级" data-en="Level 3 Protection">等保三级</h4>
+                    <p style="color: #8B92A8; font-size: 0.85rem; margin-bottom: 1rem;" data-zh="信息系统安全等级保护" data-en="Information System Security">信息系统安全等级保护</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+                        <span style="background: rgba(68,114,196,0.1); color: #5B9BD5; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.7rem;" data-zh="数据安全" data-en="Data Security">数据安全</span>
+                        <span style="background: rgba(68,114,196,0.1); color: #5B9BD5; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.7rem;" data-zh="国家认证" data-en="National Certified">国家认证</span>
+                    </div>
+                </div>
+                
+                <!-- 高新技术企业 -->
+                <div class="cert-card" style="background: linear-gradient(145deg, #1A2235 0%, #151B2A 100%); border: 1px solid rgba(147,51,234,0.2); border-radius: 20px; padding: 2rem; text-align: center; transition: all 0.4s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.borderColor='rgba(147,51,234,0.5)'; this.style.boxShadow='0 20px 40px rgba(147,51,234,0.15)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(147,51,234,0.2)'; this.style.boxShadow='none';">
+                    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #9333EA, #A855F7); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">🏅</div>
+                    <h4 style="color: #A855F7; margin-bottom: 0.5rem;" data-zh="科技型企业" data-en="Tech Enterprise">科技型企业</h4>
+                    <p style="color: #8B92A8; font-size: 0.85rem; margin-bottom: 1rem;" data-zh="广东省科技型中小企业" data-en="Guangdong Tech SME">广东省科技型中小企业</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+                        <span style="background: rgba(147,51,234,0.1); color: #A855F7; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.7rem;" data-zh="科技创新" data-en="Tech Innovation">科技创新</span>
+                        <span style="background: rgba(147,51,234,0.1); color: #A855F7; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.7rem;" data-zh="政府认证" data-en="Gov Certified">政府认证</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 证书编号信息 -->
+            <div style="margin-top: 3rem; padding: 1.5rem; background: rgba(255,107,53,0.05); border-radius: 16px; border: 1px solid rgba(255,107,53,0.1);">
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; text-align: center;">
+                    <div>
+                        <p style="color: #8B92A8; font-size: 0.8rem; margin-bottom: 0.3rem;" data-zh="软件著作权登记号" data-en="Software Copyright No.">软件著作权登记号</p>
+                        <p style="color: #C5C9D6; font-size: 0.9rem; font-family: monospace;">2024SRXXXXXX - 2024SRXXXXXX</p>
+                    </div>
+                    <div>
+                        <p style="color: #8B92A8; font-size: 0.8rem; margin-bottom: 0.3rem;" data-zh="科技型企业入库编号" data-en="Tech SME Database No.">科技型企业入库编号</p>
+                        <p style="color: #C5C9D6; font-size: 0.9rem; font-family: monospace;">GR20254400XXXXXX</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="timeline-section" style="background: #0A0E1A;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 5%;">
+            <h2 class="timeline-title" data-zh="荣誉资质" data-en="Honors & Certifications">荣誉资质</h2>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+                <div class="culture-card" style="padding: 2rem 1rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏆</div>
+                    <h4 data-zh="科技型中小企业" data-en="Tech SME">科技型中小企业</h4>
+                    <p style="font-size: 0.8rem;" data-zh="2025年入选广东省科技型中小企业库" data-en="Selected into Guangdong Tech SME Database 2025">2025年入选广东省科技型中小企业库</p>
+                </div>
+                <div class="culture-card" style="padding: 2rem 1rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎖️</div>
+                    <h4 data-zh="抗疫特别贡献奖" data-en="Anti-epidemic Award">抗疫特别贡献奖</h4>
+                    <p style="font-size: 0.8rem;" data-zh="2020年支撑金域医学抗疫项目" data-en="Supported KingMed anti-epidemic project 2020">2020年支撑金域医学抗疫项目</p>
+                </div>
+                <div class="culture-card" style="padding: 2rem 1rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">💡</div>
+                    <h4 data-zh="软件著作权" data-en="Software Copyright">软件著作权</h4>
+                    <p style="font-size: 0.8rem;" data-zh="拥有多项核心产品软件著作权" data-en="Multiple core product software copyrights">拥有多项核心产品软件著作权</p>
+                </div>
+                <div class="culture-card" style="padding: 2rem 1rem;">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌟</div>
+                    <h4 data-zh="行业创新奖" data-en="Industry Innovation">行业创新奖</h4>
+                    <p style="font-size: 0.8rem;" data-zh="首创智能车辆调度理念" data-en="Pioneer in intelligent vehicle dispatch">首创智能车辆调度理念</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="logo" style="margin-bottom: 1rem;"><div class="logo-icon">BAMI</div><span data-zh="八米科技" data-en="BAMI Tech">八米科技</span></div>
+                <p style="color: #8B92A8; font-size: 0.9rem;" data-zh="专注物流与供应链数智化15年" data-en="15 years in logistics & supply chain digitalization">专注物流与供应链数智化15年</p>
+            </div>
+            <div>
+                <h4 data-zh="产品服务" data-en="Products">产品服务</h4>
+                <ul>
+                    <li><a href="product-ai.html" data-zh="AI数字员工" data-en="AI Digital Workforce">AI数字员工</a></li>
+                    <li><a href="product-wms.html">BAMI WMS</a></li>
+                    <li><a href="product-tms.html">BAMI TMS</a></li>
+                    <li><a href="product-oms.html">BAMI OMS</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 data-zh="快速链接" data-en="Quick Links">快速链接</h4>
+                <ul>
+                    <li><a href="solutions.html" data-zh="解决方案" data-en="Solutions">解决方案</a></li>
+                    <li><a href="about.html" data-zh="关于我们" data-en="About">关于我们</a></li>
+                    <li><a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a></li>
+                    <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 data-zh="联系我们" data-en="Contact Us">联系我们</h4>
+                <ul>
+                    <li><a href="#">📍 <span data-zh="广州天河盛大国际" data-en="Guangzhou Tianhe">广州天河盛大国际</span></a></li>
+                    <li><a href="tel:18926200599">📞 18926200599</a></li>
+                    <li><a href="mailto:27270234@qq.com">✉️ 27270234@qq.com</a></li>
+                    <li><div class="system-login-menu">
+                        <button class="system-login-btn" onclick="toggleSystemMenu()" data-zh="🔐 系统登录" data-en="🔐 System Login">🔐 系统登录</button>
+                        <div class="system-dropdown" id="systemDropdown">
+                            <div class="system-dropdown-header">
+                                <span class="system-dropdown-title" data-zh="选择系统" data-en="Select System">选择系统</span>
+                                <button class="system-dropdown-close" onclick="closeSystemMenu()">✕</button>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">1. WMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="仓配WMS" data-en="Warehouse WMS">仓配WMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="电商WMS" data-en="E-commerce WMS">电商WMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">2. TMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="零担TMS" data-en="LTL TMS">零担TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://admin.liancheng.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://memberh5.liancheng.8bami.com/" target="_blank" data-zh="手机端" data-en="Mobile">手机端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="三方TMS" data-en="3PL TMS">三方TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://live.rxwl.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://live.rxwl.driver.8bami.com" target="_blank" data-zh="司机端" data-en="Driver">司机端</a>
+                                            <a href="http://live.rxwl.memberpc.8bami.com" target="_blank" data-zh="会员端" data-en="Member">会员端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="跨境TMS" data-en="Cross-border TMS">跨境TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://kjtms.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://kjtms.tgemember.8bami.com/?EnterpriseNo=bami" target="_blank" data-zh="会员端" data-en="Member">会员端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="跨境集运" data-en="Cross-border">跨境集运</span>
+                                        <div class="system-subitems">
+                                            <a href="http://b9.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="https://b9.member.8bami.com/?EnterpriseNo=t03_4" target="_blank" data-zh="手机端" data-en="Mobile">手机端</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">3. OMS/BMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="OMS" data-en="OMS">OMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="BMS" data-en="BMS">BMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></li>
+                </ul>
+            </div>
+        </div>
+                    <script>
+                    function toggleSystemMenu() {
+                        const dropdown = document.getElementById('systemDropdown');
+                        dropdown.classList.toggle('active');
+                    }
+                    function closeSystemMenu() {
+                        const dropdown = document.getElementById('systemDropdown');
+                        dropdown.classList.remove('active');
+                    }
+                    document.addEventListener('click', function(e) {
+                        const menu = document.querySelector('.system-login-menu');
+                        if (menu && !menu.contains(e.target)) {
+                            closeSystemMenu();
+                        }
+                    });
+                </script>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BAMI 八米科技. All rights reserved.</p>
+            <p><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer" style="color: #8B92A8; text-decoration: none;">粤ICP备19085702号</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('mobileMenu').classList.toggle('active');
+        });
+        document.querySelectorAll('.mobile-menu-list a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('menuBtn').classList.remove('active');
+                document.getElementById('mobileMenu').classList.remove('active');
+            });
+        });
+    </script>
+    <script>
+        // 获取当前语言
+        function getCurrentLang() {
+            var lang = localStorage.getItem('bami_lang');
+            if (!lang) {
+                lang = localStorage.getItem('bami-lang');
+            }
+            return lang || 'zh';
+        }
+        
+        // 打字效果函数 - 参考首页实现
+        function typeWriter(elementId, startDelay = 0) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    const el = document.getElementById(elementId);
+                    if (!el) {
+                        resolve();
+                        return;
+                    }
+                    
+                    // 根据当前语言获取文本
+                    const lang = getCurrentLang();
+                    const text = el.getAttribute('data-' + lang);
+                    
+                    el.style.opacity = '1';
+                    el.textContent = '';
+                    el.classList.remove('done');
+                    let i = 0;
+                    
+                    function typeNextChar() {
+                        if (i < text.length) {
+                            el.textContent += text.charAt(i);
+                            i++;
+                            // 随机间隔：50ms - 400ms，模拟人工打字节奏
+                            const randomDelay = Math.floor(Math.random() * 350) + 50;
+                            setTimeout(typeNextChar, randomDelay);
+                        } else {
+                            // 打字完成后显示光标一会儿
+                            setTimeout(() => {
+                                el.classList.add('done');
+                                resolve();
+                            }, 1000);
+                        }
+                    }
+                    
+                    typeNextChar();
+                }, startDelay);
+            });
+        }
+        
+        // 循环打字动画
+        async function loopTypewriter() {
+            const mission = document.getElementById('typewriter-mission');
+            
+            while (true) {
+                // 打字
+                await typeWriter('typewriter-mission', 0);
+                // 等待2秒后清除
+                await new Promise(r => setTimeout(r, 2000));
+                // 清除文字
+                mission.style.opacity = '0';
+                // 等待0.5秒重新开始
+                await new Promise(r => setTimeout(r, 500));
+            }
+        }
+        
+        // 页面加载完成后启动循环打字动画
+        document.addEventListener('DOMContentLoaded', function() {
+            loopTypewriter();
+            
+            // 监听语言切换
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const mission = document.getElementById('typewriter-mission');
+                    if (mission) {
+                        mission.style.opacity = '0';
+                        mission.classList.remove('done');
+                        // 语言切换后重新开始循环
+                        setTimeout(() => {
+                            loopTypewriter();
+                        }, 300);
+                    }
+                });
+            });
+            
+            // 为时间轴项目添加索引
+            document.querySelectorAll('.timeline-item[data-reveal]').forEach((item, index) => {
+                item.style.setProperty('--item-index', index);
+            });
+            
+            // 滚动显示动画
+            const revealElements = document.querySelectorAll('[data-reveal]');
+            
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            revealElements.forEach(el => revealObserver.observe(el));
+        });
+    </script>
+    <script src="js/lang.js"></script>
+    <script>
+    // System Login Menu Functions
+    function toggleSystemMenu() {
+        const dropdown = document.getElementById('systemDropdown');
+        dropdown.classList.toggle('active');
+    }
+    function closeSystemMenu() {
+        const dropdown = document.getElementById('systemDropdown');
+        dropdown.classList.remove('active');
+    }
+    // Close system menu when clicking outside
+    document.addEventListener('click', function(e) {
+        const menu = document.querySelector('.system-login-menu');
+        const dropdown = document.getElementById('systemDropdown');
+        if (menu && dropdown && !menu.contains(e.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
+
+</script>
+<!-- V14 悬浮咨询按钮 -->
+<a href="contact.html" class="fab-contact" id="fabContact">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+    <span class="fab-tooltip" data-zh="立即咨询" data-en="Contact Us">立即咨询</span>
+</a>
+<script>
+// V14: 悬浮按钮显示控制
+function initFabButton() {
+    const fab = document.getElementById('fabContact');
+    if (!fab) return;
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            fab.classList.add('visible');
+        } else {
+            fab.classList.remove('visible');
+        }
+    }, { passive: true });
+}
+initFabButton();
+</script>
+</body>
+</html>

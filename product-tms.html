@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="BAMI TMS运输管理系统实现运输全程可视化、智能调度、承运商管理、费用结算，降低运输成本，提升配送效率。">
+    <meta name="keywords" content="TMS系统,运输管理系统,物流管理系统,智能调度,运输跟踪,承运商管理">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lee18926200599-dotcom.github.io/bami-website/product-tms.html">
+
+
+    <title data-zh="TMS运输管理系统 - 八米科技" data-en="TMS Transportation Management - BAMI Tech">TMS运输管理系统 - 八米科技</title>
+    <link rel="icon" type="image/svg+xml" href="images/LOGO2.SVG">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; background: #0A0E1A; color: #FFFFFF; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(10,14,26,0.98); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.3rem; font-weight: 700; }
+        .logo-icon { width: 70px; height: 36px; background: linear-gradient(135deg, #FF6B35, #FF8A5C); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem; color: #FFFFFF; font-style: italic; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #C5C9D6; }
+        .nav-links a:hover { color: #FF6B35; }
+        .nav-links a.active { color: #FF6B35; }
+        .nav-right { display: flex; align-items: center; gap: 1rem; }
+        .lang-switch { display: flex; background: #1A2235; padding: 0.25rem; border-radius: 20px; border: 1px solid rgba(255,107,53,0.3); }
+        .lang-btn { padding: 0.3rem 0.8rem; border-radius: 15px; border: none; background: none; color: #8B92A8; cursor: pointer; }
+        .lang-btn.active { background: #FF6B35; color: #FFFFFF; }
+        .btn-primary { display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #FF6B35, #FF8A5C); color: #FFFFFF; padding: 0.6rem 1.2rem; border-radius: 25px; font-weight: 600; border: none; cursor: pointer; }
+        .mobile-menu-btn { display: none; width: 44px; height: 44px; background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.3); border-radius: 8px; cursor: pointer; flex-direction: column; justify-content: center; align-items: center; gap: 5px; }
+        .mobile-menu-btn span { width: 20px; height: 2px; background: #FFFFFF; border-radius: 2px; }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0A0E1A; z-index: 999; padding: 5rem 1rem 2rem; }
+        .mobile-menu.active { display: flex; flex-direction: column; }
+        .mobile-menu-content { background: #1A2235; border-radius: 16px; border: 1px solid rgba(255,107,53,0.2); padding: 1.5rem; flex: 1; display: flex; flex-direction: column; max-width: 300px; margin: 0 auto; width: 100%; position: relative; }
+        .mobile-menu-close { background: none; border: none; color: #8B92A8; font-size: 1.5rem; cursor: pointer; position: absolute; top: 0.5rem; right: 0.5rem; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+        .mobile-menu-close:hover { color: #FF6B35; background: rgba(255,107,53,0.1); }
+        .mobile-menu-header { display: flex; justify-content: flex-end; padding-bottom: 0.5rem; height: 40px; }
+        .mobile-menu-list { list-style: none; flex: 1; overflow-y: auto; }
+        .mobile-menu-list li { border-bottom: 1px solid rgba(255,107,53,0.1); }
+        .mobile-menu-list a { display: block; padding: 0.8rem 0; font-size: 1rem; color: #FFFFFF; text-align: center; transition: color 0.3s; }
+        .mobile-menu-list a:hover { color: #FF6B35; }
+        .mobile-menu-footer { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,107,53,0.2); display: flex; flex-direction: column; gap: 1rem; }
+        .mobile-menu-footer .lang-switch { justify-content: center; width: fit-content; margin: 0 auto; }
+        .mobile-menu-footer .btn-primary { width: 100%; text-align: center; }
+        .page-header { padding: 8rem 5% 4rem; text-align: center; background: linear-gradient(135deg, #0A0E1A, #1A2235); }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .page-header p { color: #8B92A8; max-width: 700px; margin: 0 auto; }
+        .tms-section { padding: 4rem 5%; }
+        .tms-section:nth-child(odd) { background: #121829; }
+        .tms-container { max-width: 1200px; margin: 0 auto; }
+        .tms-header { text-align: center; margin-bottom: 3rem; }
+        .tms-header h2 { font-size: 1.8rem; color: #FF6B35; margin-bottom: 0.5rem; }
+        .tms-header p { color: #8B92A8; }
+        .tms-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+        .tms-block h3 { color: #FF6B35; margin-bottom: 1.5rem; font-size: 1.2rem; }
+        .tms-item { background: #1A2235; padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(255,107,53,0.1); margin-bottom: 1rem; }
+        .tms-item h4 { color: #FFFFFF; margin-bottom: 0.5rem; font-size: 1rem; }
+        .tms-item p { color: #8B92A8; font-size: 0.9rem; line-height: 1.5; }
+        .tms-scenarios { background: #1A2235; padding: 2rem; border-radius: 16px; border: 1px solid rgba(255,107,53,0.1); }
+        .tms-scenarios h3 { color: #FF6B35; margin-bottom: 1rem; }
+        .tms-scenarios ul { list-style: none; }
+        .tms-scenarios li { color: #C5C9D6; padding: 0.5rem 0; padding-left: 1.5rem; position: relative; }
+        .tms-scenarios li::before { content: '✓'; position: absolute; left: 0; color: #FF6B35; }
+        .process-flow { display: flex; justify-content: space-between; margin: 3rem 0; flex-wrap: wrap; gap: 1rem; }
+        .process-step { flex: 1; min-width: 140px; text-align: center; }
+        .process-step .step-num { width: 50px; height: 50px; background: linear-gradient(135deg, #FF6B35, #FF8A5C); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: 700; }
+        .process-step h4 { color: #FFFFFF; margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .process-step p { color: #8B92A8; font-size: 0.8rem; }
+        .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; margin: 3rem 0; }
+        .metric-item h3 { font-size: 2.5rem; color: #FF6B35; margin-bottom: 0.5rem; }
+        .metric-item p { color: #8B92A8; }
+        .cta-section { padding: 4rem 5%; text-align: center; background: linear-gradient(135deg, #1A2235, #0A0E1A); }
+        .footer { background: #121829; padding: 3rem 5% 1.5rem; border-top: 1px solid rgba(255,107,53,0.1); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .footer ul { list-style: none; }
+        .footer li { margin-bottom: 0.5rem; }
+        .footer a { color: #8B92A8; font-size: 0.9rem; display: block; }
+        .system-login-menu { position: relative; }
+        .system-login-btn { display: block; color: #8B92A8; cursor: pointer; font-size: 0.9rem; background: none; border: none; padding: 0; font-family: inherit; text-align: left; }
+        .system-login-btn:hover { color: #FF6B35; }
+        .system-dropdown { display: none; position: absolute; bottom: 100%; left: 0; background: #1A2235; border: 1px solid rgba(255,107,53,0.3); border-radius: 12px; padding: 1rem; min-width: 200px; margin-bottom: 0.5rem; box-shadow: 0 10px 40px rgba(0,0,0,0.5); z-index: 1000; }
+        .system-dropdown.active { display: block; }
+        .system-dropdown-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,107,53,0.2); }
+        .system-dropdown-title { color: #FF6B35; font-weight: 600; font-size: 0.9rem; }
+        .system-dropdown-close { background: none; border: none; color: #8B92A8; cursor: pointer; font-size: 1.2rem; padding: 0; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+        .system-dropdown-close:hover { color: #FF6B35; background: rgba(255,107,53,0.1); }
+        .system-category { margin-bottom: 0.8rem; }
+        .system-category-title { color: #FF6B35; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+        .system-category-items { padding-left: 0.5rem; }
+        .system-category-items a { display: block; padding: 0.3rem 0.5rem; color: #C5C9D6; border-radius: 6px; font-size: 0.8rem; margin-bottom: 0.2rem; }
+        .system-category-items a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .system-subcategory { margin-bottom: 0.6rem; }
+        .system-subtitle { display: block; color: #8B92A8; font-size: 0.8rem; font-weight: 500; margin-bottom: 0.3rem; padding: 0.2rem 0; }
+        .system-subitems { padding-left: 0.8rem; border-left: 2px solid rgba(255,107,53,0.3); margin-left: 0.3rem; }
+        .system-subitems a { display: inline-block; padding: 0.2rem 0.5rem; color: #C5C9D6; border-radius: 4px; font-size: 0.75rem; margin-right: 0.3rem; margin-bottom: 0.2rem; background: rgba(255,255,255,0.05); }
+        .system-subitems a:hover { background: rgba(255,107,53,0.2); color: #FF6B35; }
+        @media (max-width: 768px) {
+            .nav-links, .nav-right { display: none !important; }
+            .mobile-menu-btn { display: flex !important; }
+            .tms-content { grid-template-columns: 1fr; }
+            .metrics { grid-template-columns: repeat(2, 1fr); }
+            .process-flow { flex-direction: column; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .system-login-menu { display: flex; justify-content: center; }
+            .system-login-btn { text-align: center; }
+            .system-dropdown { text-align: left; }
+            .system-category-title, .system-subtitle { text-align: left; display: block; }
+            .system-subitems { text-align: left; justify-content: flex-start; }
+        }
+            
+    /* V14 悬浮咨询按钮 */
+.fab-contact { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(255,107,53,0.4); transition: all 0.3s; z-index: 999; opacity: 0; transform: translateY(20px); }
+.fab-contact.visible { opacity: 1; transform: translateY(0); }
+.fab-contact:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(255,107,53,0.6); }
+.fab-contact svg { width: 28px; height: 28px; fill: white; }
+.fab-tooltip { position: absolute; right: 70px; background: var(--bg-card); color: white; padding: 8px 16px; border-radius: 8px; font-size: 14px; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: all 0.3s; border: 1px solid var(--border-hover); }
+.fab-contact:hover .fab-tooltip { opacity: 1; transform: translateX(0); }
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 6px; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;"><span style="background: linear-gradient(135deg, #FF6B35, #FF8A5C); padding: 6px 10px; border-radius: 12px; color: #FFFFFF; font-weight: bold; font-size: 18px; line-height: 1; font-family: Arial, Helvetica, sans-serif;">BAMI</span><span style="color: #FF6B35; font-weight: bold; font-size: 24px; line-height: 1;">八米</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html" data-zh="首页" data-en="Home">首页</a></li>
+            <li><a href="products.html" class="active" data-zh="产品服务" data-en="Products">产品服务</a></li>
+            <li><a href="solutions.html" data-zh="解决方案" data-en="Solutions">解决方案</a></li>
+            <li><a href="about.html" data-zh="关于我们" data-en="About">关于我们</a></li>
+            <li><a href="cases.html" data-zh="成功案例" data-en="Cases">成功案例</a></li>
+            <li><a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a></li>
+            <li><a href="support.html" data-zh="服务支持" data-en="Support">服务支持</a></li>
+            <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="zh">中</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <a href="contact.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">立即咨询</a>
+        </div>
+        <button class="mobile-menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+            </div>
+            <ul class="mobile-menu-list">
+                <li><a href="index.html" data-zh="首页" data-en="Home">首页</a></li>
+                <li><a href="products.html" data-zh="产品服务" data-en="Products">产品服务</a></li>
+                <li><a href="solutions.html" data-zh="解决方案" data-en="Solutions">解决方案</a></li>
+                <li><a href="about.html" data-zh="关于我们" data-en="About">关于我们</a></li>
+                <li><a href="cases.html" data-zh="成功案例" data-en="Cases">成功案例</a></li>
+                <li><a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a></li>
+                <li><a href="support.html" data-zh="服务支持" data-en="Support">服务支持</a></li>
+                <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+            </ul>
+            <div class="mobile-menu-footer">
+                <div class="lang-switch">
+                    <button class="lang-btn active" data-lang="zh">中</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <a href="contact.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">立即咨询</a>
+            </div>
+        </div>
+    </div>
+    <header class="page-header">
+        <h1 data-zh="BAMI TMS" data-en="BAMI TMS">BAMI TMS</h1>
+        <p data-zh="智能运输管理系统，包含零担TMS、三方TMS、跨境集运、国际TMS四大产品线，覆盖全场景运输管理需求" data-en="Intelligent transportation system with four product lines covering all scenarios" data-zh="智能运输管理系统，包含零担TMS、三方TMS、跨境集运、国际TMS四大产品线，覆盖全场景运输管理需求" data-en="Intelligent transport system with LTL, 3PL, Cross-border, and International TMS">智能运输管理系统，包含零担TMS、三方TMS、跨境集运、国际TMS四大产品线，覆盖全场景运输管理需求</p>
+    </header>
+
+    <!-- 零担TMS -->
+    <section class="tms-section">
+        <div class="tms-container">
+            <div class="tms-header">
+                <h2 data-zh="零担TMS - 智能零担运输管理" data-en="LTL TMS - Smart Less-Than-Truckload">零担TMS - 智能零担运输管理</h2>
+                <p data-zh="面向专线物流、区域配送企业，提供从开单到签收的全流程管理" data-en="For dedicated lines and regional distribution, full-process management">面向专线物流、区域配送企业，提供从开单到签收的全流程管理</p>
+            </div>
+            
+            <div class="tms-content">
+                <div class="tms-block">
+                    <h3 data-zh="核心功能" data-en="Core Features">核心功能</h3>
+                    <div class="tms-item">
+                        <h4 data-zh="智能开单录单" data-en="Smart Booking">智能开单录单</h4>
+                        <p data-zh="支持PC/APP/小程序多终端开单，OCR识别身份证和运单，语音录入货物信息，3秒完成开单，开单效率提升10倍" data-en="Multi-terminal booking, OCR ID/waybill, voice entry, 3s booking, 10x efficiency">支持PC/APP/小程序多终端开单，OCR识别身份证和运单，语音录入货物信息，3秒完成开单，开单效率提升10倍</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="智能配载调度" data-en="Smart Load Planning">智能配载调度</h4>
+                        <p data-zh="AI算法自动匹配最优车辆，装载率提升至95%。多点集货路径优化，减少绕行30%，降低空驶率" data-en="AI auto-matches vehicles, 95% load rate, 30% detour reduction">AI算法自动匹配最优车辆，装载率提升至95%。多点集货路径优化，减少绕行30%，降低空驶率</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="全程节点跟踪" data-en="Full Node Tracking">全程节点跟踪</h4>
+                        <p data-zh="提货-装车-发车-中转-到达-派送-签收，每个节点扫码打卡，货物状态实时可查，客户随时掌握货物动态" data-en="Pickup-loading-departure-transit-arrival-delivery-signature. Each node scan, real-time visibility">提货-装车-发车-中转-到达-派送-签收，每个节点扫码打卡，货物状态实时可查，客户随时掌握货物动态</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="自动结算对账" data-en="Auto Settlement">自动结算对账</h4>
+                        <p data-zh="电子回单自动上传，运费自动计算，司机/承运商费用自动结算，财务对账效率提升80%" data-en="E-POD auto-upload, freight auto-calculation, 80% reconciliation efficiency">电子回单自动上传，运费自动计算，司机/承运商费用自动结算，财务对账效率提升80%</p>
+                    </div>
+                </div>
+                <div class="tms-block">
+                    <h3 data-zh="业务价值" data-en="Business Value">业务价值</h3>
+                    <div class="tms-item">
+                        <h4 data-zh="降低运输成本" data-en="Reduce Transport Costs">降低运输成本</h4>
+                        <p data-zh="智能拼车配载，装载率提升至95%，单车运力提升40%。路线优化减少空驶，油费节省25%" data-en="Smart load sharing, 95% load rate, 40% capacity, 25% fuel savings">智能拼车配载，装载率提升至95%，单车运力提升40%。路线优化减少空驶，油费节省25%</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="提升运营效率" data-en="Improve Efficiency">提升运营效率</h4>
+                        <p data-zh="开单速度提升10倍，调度效率提升3倍。1个调度员可管理50+车辆，人效提升5倍" data-en="10x booking speed, 3x dispatch efficiency, 1 dispatcher manages 50+ vehicles">开单速度提升10倍，调度效率提升3倍。1个调度员可管理50+车辆，人效提升5倍</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="提升客户体验" data-en="Improve Customer Experience">提升客户体验</h4>
+                        <p data-zh="货物全程可视，到货提前通知，签收电子回单。客户满意度提升60%，投诉率降低80%" data-en="Full visibility, arrival notices, e-POD. 60% satisfaction, 80% complaint reduction">货物全程可视，到货提前通知，签收电子回单。客户满意度提升60%，投诉率降低80%</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="降低货损货差" data-en="Reduce Cargo Damage">降低货损货差</h4>
+                        <p data-zh="节点扫码核对，异常自动预警。货损货差率从3%降至0.5%，理赔成本降低70%" data-en="Node scan verification, auto alerts. Damage rate 3% to 0.5%, 70% claim reduction">节点扫码核对，异常自动预警。货损货差率从3%降至0.5%，理赔成本降低70%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tms-scenarios">
+                <h3 data-zh="适用场景" data-en="Applicable Scenarios">适用场景</h3>
+                <ul>
+                    <li><strong data-zh="区域专线物流" data-en="Regional Dedicated Lines">区域专线物流</strong><span data-zh="：省内/省际专线运输，多点集货，拼车配送，需要高效配载和调度" data-en=": Intra-provincial and inter-provincial dedicated line transportation, multi-point cargo collection, and shared-vehicle delivery that require efficient loading and scheduling.">：省内/省际专线运输，多点集货，拼车配送，需要高效配载和调度</span></li>
+                    <li><strong data-zh="城市配送企业" data-en="Urban Delivery">城市配送企业</strong><span data-zh="：同城配送、区域配送，多客户、多线路的日常配送管理" data-en=": Same-city and regional delivery, as well as daily delivery management for multiple clients and routes.">：同城配送、区域配送，多客户、多线路的日常配送管理</span></li>
+                    <li><strong data-zh="批发市场物流" data-en="Wholesale Market">批发市场物流</strong><span data-zh="：服装、建材、百货等批发市场的零担运输，货物品种多、批次多、客户分散" data-en=": Less-than-truckload (LTL) transportation for wholesale markets such as garments, building materials, and general merchandise, featuring a wide variety of goods, numerous batches, and scattered customers.">：服装、建材、百货等批发市场的零担运输，货物品种多、批次多、客户分散</span></li>
+                    <li><strong data-zh="电商落地配" data-en="E-commerce Last Mile">电商落地配</strong><span data-zh="：电商订单的区域配送，时效要求高，需要实时跟踪和签收确认" data-en=": Regional delivery of e-commerce orders with high timeliness requirements, which need real-time tracking and signature confirmation.">：电商订单的区域配送，时效要求高，需要实时跟踪和签收确认</span></li>
+                    <li><strong data-zh="家具家电配送" data-en="Furniture & Appliance">家具家电配送</strong><span data-zh="：大件商品配送，需要预约送货、上楼安装等特殊服务管理" data-en=": Delivery of large-sized commodities that require special service management such as scheduled delivery and in-home installation.">：大件商品配送，需要预约送货、上楼安装等特殊服务管理</span></li>
+                </ul>
+            </div>
+
+            <h3 style="color: #FF6B35; margin: 3rem 0 1.5rem; text-align: center;" data-zh="业务流程" data-en="Business Process">业务流程</h3>
+            <div class="process-flow">
+                <div class="process-step">
+                    <div class="step-num">1</div>
+                    <h4 data-zh="下单开单" data-en="Booking">下单开单</h4>
+                    <p data-zh="客户下单<br>运单录入" data-en="Customer order<br>Waybill entry">客户下单<br>运单录入</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">2</div>
+                    <h4 data-zh="提货揽收" data-en="Pickup">提货揽收</h4>
+                    <p data-zh="派车提货<br>扫码揽收" data-en="Dispatch pickup<br>Scan collection">派车提货<br>扫码揽收</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">3</div>
+                    <h4 data-zh="智能配载" data-en="Load Planning">智能配载</h4>
+                    <p data-zh="货物配载<br>装车发车" data-en="Cargo loading<br>Departure">货物配载<br>装车发车</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">4</div>
+                    <h4 data-zh="在途运输" data-en="In Transit">在途运输</h4>
+                    <p data-zh="GPS定位<br>节点扫码" data-en="GPS tracking<br>Node scan">GPS定位<br>节点扫码</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">5</div>
+                    <h4 data-zh="到达派送" data-en="Arrival & Delivery">到达派送</h4>
+                    <p data-zh="到货通知<br>末端派送" data-en="Arrival notice<br>Last mile">到货通知<br>末端派送</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">6</div>
+                    <h4 data-zh="签收结算" data-en="Signature & Settlement">签收结算</h4>
+                    <p data-zh="电子签收<br>费用结算" data-en="E-signature<br>Settlement">电子签收<br data-zh="费用结算" data-en="Cost Settlement">费用结算</p>
+                </div>
+            </div>
+
+            <div class="metrics">
+                <div class="metric-item">
+                    <h3>95%</h3>
+                    <p data-zh="装载率提升" data-en="Load Rate Improvement">装载率提升</p>
+                </div>
+                <div class="metric-item">
+                    <h3>30%</h3>
+                    <p data-zh="运输成本降低" data-en="Transport Cost Reduction">运输成本降低</p>
+                </div>
+                <div class="metric-item">
+                    <h3>10x</h3>
+                    <p data-zh="开单效率提升" data-en="Booking Efficiency">开单效率提升</p>
+                </div>
+                <div class="metric-item">
+                    <h3>99%</h3>
+                    <p data-zh="轨迹准确率" data-en="Tracking Accuracy">轨迹准确率</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 三方TMS -->
+    <section class="tms-section">
+        <div class="tms-container">
+            <div class="tms-header">
+                <h2 data-zh="三方TMS - 第三方物流智慧管理" data-en="3PL TMS - Smart Third-Party Logistics">三方TMS - 第三方物流智慧管理</h2>
+                <p data-zh="面向合同物流、三方物流企业，实现多货主、多业态的统一管理" data-en="For contract logistics and 3PL, unified multi-shipper management">面向合同物流、三方物流企业，实现多货主、多业态的统一管理</p>
+            </div>
+            
+            <div class="tms-content">
+                <div class="tms-block">
+                    <h3 data-zh="核心功能" data-en="Core Features">核心功能</h3>
+                    <div class="tms-item">
+                        <h4 data-zh="多货主管理" data-en="Multi-Shipper Management">多货主管理</h4>
+                        <p data-zh="支持数千货主同时运营，独立核算体系。不同货主配置不同价格策略、服务标准、结算方式，数据隔离安全可靠" data-en="Thousands of shippers, independent accounting. Different pricing, secure data isolation">支持数千货主同时运营，独立核算体系。不同货主配置不同价格策略、服务标准、结算方式，数据隔离安全可靠</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="运力资源整合" data-en="Capacity Integration">运力资源整合</h4>
+                        <p data-zh="整合自有车辆、承运商、临时运力，建立运力资源池。智能匹配最优运力资源，降低运输成本20-30%" data-en="Integrate fleet, carriers, temporary capacity. Smart matching reduces costs 20-30%">整合自有车辆、承运商、临时运力，建立运力资源池。智能匹配最优运力资源，降低运输成本20-30%</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="合同与报价管理" data-en="Contract Management">合同与报价管理</h4>
+                        <p data-zh="灵活配置合同价格体系，支持阶梯价、区域价、品类价、淡旺季价。自动匹配合同价格，杜绝错单漏单" data-en="Flexible pricing: tiered, regional, category, seasonal. Auto-matching prevents errors">灵活配置合同价格体系，支持阶梯价、区域价、品类价、淡旺季价。自动匹配合同价格，杜绝错单漏单</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="财务自动结算" data-en="Auto Financial Settlement">财务自动结算</h4>
+                        <p data-zh="应收应付自动计算，对账单自动生成，在线对账确认。支持多种结算周期（月结、周结、现结）和结算方式" data-en="AR/AP auto-calculation, auto statements, online reconciliation. Monthly/weekly/cash">应收应付自动计算，对账单自动生成，在线对账确认。支持多种结算周期（月结、周结、现结）和结算方式</p>
+                    </div>
+                </div>
+                <div class="tms-block">
+                    <h3 data-zh="业务价值" data-en="Business Value">业务价值</h3>
+                    <div class="tms-item">
+                        <h4 data-zh="提升管理半径" data-en="Expand Management Scope">提升管理半径</h4>
+                        <p data-zh="一个系统管理数千客户，上万订单。支持多组织架构、多层级权限，企业规模扩张不受系统限制" data-en="One system manages thousands of customers, orders. Multi-org, multi-level permissions">一个系统管理数千客户，上万订单。支持多组织架构、多层级权限，企业规模扩张不受系统限制</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="降低运营成本" data-en="Reduce Operating Costs">降低运营成本</h4>
+                        <p data-zh="智能调度降低空驶率，运力共享提升装载率。整体运输成本降低20-30%，利润空间大幅提升" data-en="Smart dispatch reduces empty miles, load sharing improves utilization. 20-30% cost reduction">智能调度降低空驶率，运力共享提升装载率。整体运输成本降低20-30%，利润空间大幅提升</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="加速资金周转" data-en="Accelerate Cash Flow">加速资金周转</h4>
+                        <p data-zh="自动对账缩短结算周期，电子回单加速回款。应收账款周转天数从60天缩短至30天" data-en="Auto reconciliation shortens cycles, e-POD accelerates payment. AR days 60 to 30">自动对账缩短结算周期，电子回单加速回款。应收账款周转天数从60天缩短至30天</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="增强客户粘性" data-en="Enhance Customer Loyalty">增强客户粘性</h4>
+                        <p data-zh="客户自助查单、在线对账、电子回单下载。服务透明可追溯，客户满意度提升，续约率达95%" data-en="Self-service tracking, online reconciliation, e-POD. 95% renewal rate">客户自助查单、在线对账、电子回单下载。服务透明可追溯，客户满意度提升，续约率达95%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tms-scenarios">
+                <h3 data-zh="适用场景" data-en="Applicable Scenarios">适用场景</h3>
+                <ul>
+                    <li><strong data-zh="合同物流企业" data-en="Contract Logistics">合同物流企业</strong><span data-zh="：为制造业、零售业提供长期合同物流服务，需要管理多个货主的订单和结算" data-en=": Long-term contract logistics services provided for manufacturing and retail industries, which require the management of orders and settlements for multiple shippers.">：为制造业、零售业提供长期合同物流服务，需要管理多个货主的订单和结算</span></li>
+                    <li><strong data-zh="三方物流平台" data-en="3PL Platforms">三方物流平台</strong><span data-zh="：整合社会运力，为货主提供运输服务，需要运力匹配和费用结算" data-en=": Integration of social transportation capacity to offer transportation services for shippers, with needs for transportation capacity matching and expense settlement.">：整合社会运力，为货主提供运输服务，需要运力匹配和费用结算</span></li>
+                    <li><strong data-zh="供应链服务商" data-en="Supply Chain Services">供应链服务商</strong><span data-zh="：提供仓配一体化服务，需要WMS+TMS协同，库存与运输联动" data-en=": Provision of integrated warehousing and distribution services, requiring WMS+TMS collaboration as well as inventory and transportation linkage.">：提供仓配一体化服务，需要WMS+TMS协同，库存与运输联动</span></li>
+                    <li><strong data-zh="物流园区" data-en="Logistics Parks">物流园区</strong><span data-zh="：园区内多家物流企业共用平台，需要多租户管理和独立核算" data-en=": Shared platforms for multiple logistics enterprises within a park, demanding multi-tenant management and independent accounting.">：园区内多家物流企业共用平台，需要多租户管理和独立核算</span></li>
+                    <li><strong data-zh="大型分销企业" data-en="Large Distributors">大型分销企业</strong><span data-zh="：自有物流部门对外承接业务，需要内外业务分离管理" data-en=": In-house logistics departments undertaking external business, necessitating separate management of internal and external operations.">：自有物流部门对外承接业务，需要内外业务分离管理</span></li>
+                </ul>
+            </div>
+
+            <h3 style="color: #FF6B35; margin: 3rem 0 1.5rem; text-align: center;" data-zh="业务流程" data-en="Business Process">业务流程</h3>
+            <div class="process-flow">
+                <div class="process-step">
+                    <div class="step-num">1</div>
+                    <h4 data-zh="订单接入" data-en="Order Access">订单接入</h4>
+                    <p data-zh="多货主订单<br>统一接入" data-en="Multi-shipper orders<br>Unified access">多货主订单<br>统一接入</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">2</div>
+                    <h4 data-zh="运力匹配" data-en="Capacity Matching">运力匹配</h4>
+                    <p data-zh="智能调度<br>最优运力" data-en="Smart dispatch<br>Optimal capacity">智能调度<br>最优运力</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">3</div>
+                    <h4 data-zh="运输执行" data-en="Transport Execution">运输执行</h4>
+                    <p data-zh="全程跟踪<br>节点打卡" data-en="Full tracking<br>Node check-in">全程跟踪<br>节点打卡</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">4</div>
+                    <h4 data-zh="费用计算" data-en="Cost Calculation">费用计算</h4>
+                    <p data-zh="合同匹配<br>自动计费" data-en="Contract match<br>Auto billing">合同匹配<br>自动计费</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">5</div>
+                    <h4 data-zh="对账结算" data-en="Reconciliation">对账结算</h4>
+                    <p data-zh="应收应付<br>自动对账" data-en="AR/AP<br>Auto reconciliation">应收应付<br>自动对账</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">6</div>
+                    <h4 data-zh="财务核算" data-en="Financial Accounting">财务核算</h4>
+                    <p data-zh="利润分析<br>成本管控" data-en="Profit analysis<br>Cost control">利润分析<br>成本管控</p>
+                </div>
+            </div>
+
+            <div class="metrics">
+                <div class="metric-item">
+                    <h3>5000+</h3>
+                    <p data-zh="支持货主数量" data-en="Shippers Supported">支持货主数量</p>
+                </div>
+                <div class="metric-item">
+                    <h3>30%</h3>
+                    <p data-zh="成本降低" data-en="Cost Reduction">成本降低</p>
+                </div>
+                <div class="metric-item">
+                    <h3>95%</h3>
+                    <p data-zh="客户续约率" data-en="Renewal Rate">客户续约率</p>
+                </div>
+                <div class="metric-item">
+                    <h3 data-zh="50%" data-en="50%">50%</h3>
+                    <p data-zh="周转天数缩短" data-en="Days Shortened">周转天数缩短</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 跨境集运 -->
+    <section class="tms-section">
+        <div class="tms-container">
+            <div class="tms-header">
+                <h2 data-zh="跨境集运 - 一站式跨境物流解决方案" data-en="Cross-border - One-stop Cross-border Solution">跨境集运 - 一站式跨境物流解决方案</h2>
+                <p data-zh="面向跨境电商卖家，提供头程运输、海外仓储、尾程派送的全链路服务" data-en="For cross-border sellers, first-mile, overseas warehouse, last-mile full chain service">面向跨境电商卖家，提供头程运输、海外仓储、尾程派送的全链路服务</p>
+            </div>
+            
+            <div class="tms-content">
+                <div class="tms-block">
+                    <h3 data-zh="核心功能" data-en="Core Features">核心功能</h3>
+                    <div class="tms-item">
+                        <h4 data-zh="头程集货运输" data-en="First-mile Collection">头程集货运输</h4>
+                        <p data-zh="国内集货仓收货，智能拼柜装箱。海运/空运/铁路多式联运，物流轨迹全程可视，头程成本节省30%" data-en="Domestic collection, smart container loading. Sea/air/rail intermodal, 30% cost savings">国内集货仓收货，智能拼柜装箱。海运/空运/铁路多式联运，物流轨迹全程可视，头程成本节省30%</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="海外仓管理" data-en="Overseas Warehouse">海外仓管理</h4>
+                        <p data-zh="一件代发、FBA转运、退货换标。库存实时同步，智能补货提醒，避免断货和积压，库存周转提升40%" data-en="Dropshipping, FBA transfer, relabeling. Real-time sync, smart restocking, 40% turnover improvement">一件代发、FBA转运、退货换标。库存实时同步，智能补货提醒，避免断货和积压，库存周转提升40%</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="尾程派送对接" data-en="Last-mile Delivery">尾程派送对接</h4>
+                        <p data-zh="对接USPS、UPS、FedEx、DHL等主流尾程。智能匹配最优渠道，派送成本降低20%，时效提升50%" data-en="USPS, UPS, FedEx, DHL integration. Smart channel matching, 20% cost reduction, 50% faster">对接USPS、UPS、FedEx、DHL等主流尾程。智能匹配最优渠道，派送成本降低20%，时效提升50%</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="报关清关协同" data-en="Customs Clearance">报关清关协同</h4>
+                        <p data-zh="报关资料自动生成，海关状态实时跟踪。异常自动预警，降低查验率和扣货风险，通关时效提升50%" data-en="Auto customs docs, real-time tracking. Auto alerts, reduced inspection risk, 50% faster clearance">报关资料自动生成，海关状态实时跟踪。异常自动预警，降低查验率和扣货风险，通关时效提升50%</p>
+                    </div>
+                </div>
+                <div class="tms-block">
+                    <h3 data-zh="业务价值" data-en="Business Value">业务价值</h3>
+                    <div class="tms-item">
+                        <h4 data-zh="降低物流成本" data-en="Reduce Logistics Costs">降低物流成本</h4>
+                        <p data-zh="拼柜集运降低头程成本30%，智能渠道匹配降低尾程成本20%。综合物流成本节省40%，利润空间大幅提升" data-en="Consolidation reduces first-mile 30%, smart matching reduces last-mile 20%. 40% total savings">拼柜集运降低头程成本30%，智能渠道匹配降低尾程成本20%。综合物流成本节省40%，利润空间大幅提升</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="缩短派送时效" data-en="Shorten Delivery Time">缩短派送时效</h4>
+                        <p data-zh="海外仓本地发货，欧美主流国家3-5天送达。相比直邮时效提升50%，客户满意度大幅提升" data-en="Local overseas warehouse shipping, 3-5 days to US/EU. 50% faster than direct mail">海外仓本地发货，欧美主流国家3-5天送达。相比直邮时效提升50%，客户满意度大幅提升</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="提升店铺评分" data-en="Improve Store Rating">提升店铺评分</h4>
+                        <p data-zh="快速稳定的物流时效，提升平台物流评分。亚马逊、eBay等平台店铺评分提升，获得更多流量倾斜" data-en="Fast stable logistics improves platform ratings. Amazon, eBay store scores improve">快速稳定的物流时效，提升平台物流评分。亚马逊、eBay等平台店铺评分提升，获得更多流量倾斜</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="灵活应对退货" data-en="Flexible Returns">灵活应对退货</h4>
+                        <p data-zh="海外仓接收退货，质检换标重新上架。退货处理时效从30天缩短至3天，退货损失降低70%" data-en="Overseas warehouse receives returns, QC relabeling. Processing from 30 days to 3 days, 70% loss reduction">海外仓接收退货，质检换标重新上架。退货处理时效从30天缩短至3天，退货损失降低70%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tms-scenarios">
+                <h3 data-zh="适用场景" data-en="Applicable Scenarios">适用场景</h3>
+                <ul>
+                    <li><strong data-zh="亚马逊FBA卖家" data-en="Amazon FBA Sellers">亚马逊FBA卖家</strong><span data-zh="：需要将货物运至亚马逊海外仓库，需要头程运输+FBA转运服务" data-en=": Need to ship goods to Amazon's overseas warehouses, requiring first-mile transportation and FBA forwarding services.">：需要将货物运至亚马逊海外仓库，需要头程运输+FBA转运服务</span></li>
+                    <li><strong data-zh="独立站卖家" data-en="Independent Sites">独立站卖家</strong><span data-zh="：Shopify、WooCommerce等独立站，需要海外仓一件代发服务" data-en=": For independent stores such as Shopify and WooCommerce, requiring overseas warehouse dropshipping services.">：Shopify、WooCommerce等独立站，需要海外仓一件代发服务</span></li>
+                    <li><strong data-zh="eBay卖家" data-en="eBay Sellers">eBay卖家</strong><span data-zh="：多SKU、小批量发货，需要集运拼柜降低物流成本" data-en=": Multi-SKU and small-batch shipments, requiring consolidation and LCL (Less than Container Load) to reduce logistics costs.">：多SKU、小批量发货，需要集运拼柜降低物流成本</span></li>
+                    <li><strong data-zh="代购集运商" data-en="Shopping Agents">代购集运商</strong><span data-zh="：为国内消费者提供海外代购和集运服务，需要多包裹合并发货" data-en=": Provide overseas purchasing and consolidation services for domestic consumers, requiring multi-parcel consolidation and shipment.">：为国内消费者提供海外代购和集运服务，需要多包裹合并发货</span></li>
+                    <li><strong data-zh="跨境电商企业" data-en="Cross-border E-commerce">跨境电商企业</strong><span data-zh="：多平台、多店铺运营，需要统一管理库存和订单" data-en=": Multi-platform and multi-store operations, requiring unified inventory and order management.">：多平台、多店铺运营，需要统一管理库存和订单</span></li>
+                </ul>
+            </div>
+
+            <h3 style="color: #FF6B35; margin: 3rem 0 1.5rem; text-align: center;" data-zh="业务流程" data-en="Business Process">业务流程</h3>
+            <div class="process-flow">
+                <div class="process-step">
+                    <div class="step-num">1</div>
+                    <h4 data-zh="国内集货" data-en="Domestic Collection">国内集货</h4>
+                    <p data-zh="卖家发货<br>仓库收货" data-en="Seller ships<br>Warehouse receives">卖家发货<br>仓库收货</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">2</div>
+                    <h4 data-zh="拼柜装箱" data-en="Container Loading">拼柜装箱</h4>
+                    <p data-zh="智能拼柜<br>最优装箱" data-en="Smart consolidation<br>Optimal loading">智能拼柜<br>最优装箱</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">3</div>
+                    <h4 data-zh="头程运输" data-en="First-mile Transport">头程运输</h4>
+                    <p data-zh="海运/空运<br>轨迹跟踪" data-en="Sea/air freight<br>Tracking">海运/空运<br>轨迹跟踪</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">4</div>
+                    <h4 data-zh="海外清关" data-en="Overseas Customs">海外清关</h4>
+                    <p data-zh="目的港清关<br>提柜入仓" data-en="Destination clearance<br>Container to warehouse">目的港清关<br>提柜入仓</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">5</div>
+                    <h4 data-zh="海外仓管" data-en="Warehouse Mgmt">海外仓管</h4>
+                    <p data-zh="库存管理<br>订单处理" data-en="Inventory mgmt<br>Order processing">库存管理<br>订单处理</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">6</div>
+                    <h4>尾程派送</h4>
+                    <p data-zh="本地配送<br>签收确认" data-en="Local delivery<br>Signature confirm">本地配送<br>签收确认</p>
+                </div>
+            </div>
+
+            <div class="metrics">
+                <div class="metric-item">
+                    <h3 data-zh="40%" data-en="40%">40%</h3>
+                    <p data-zh="综合成本节省" data-en="Total Cost Savings">综合成本节省</p>
+                </div>
+                <div class="metric-item">
+                    <h3 data-zh="50%" data-en="50%">50%</h3>
+                    <p data-zh="时效提升" data-en="Time Improvement">时效提升</p>
+                </div>
+                <div class="metric-item">
+                    <h3 data-zh="3-5天" data-en="3-5 Days">3-5天</h3>
+                    <p data-zh="欧美时效" data-en="US/EU Delivery">欧美时效</p>
+                </div>
+                <div class="metric-item">
+                    <h3 data-zh="70%" data-en="70%">70%</h3>
+                    <p data-zh="退货损失降低" data-en="Return Loss Reduction">退货损失降低</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 国际TMS -->
+    <section class="tms-section">
+        <div class="tms-container">
+            <div class="tms-header">
+                <h2 data-zh="国际TMS - 全球供应链协同平台" data-en="International TMS - Global Supply Chain Platform">国际TMS - 全球供应链协同平台</h2>
+                <p data-zh="面向进出口贸易企业，提供端到端的国际物流数智化管理" data-en="For import/export enterprises, end-to-end international logistics digital management">面向进出口贸易企业，提供端到端的国际物流数智化管理</p>
+            </div>
+            
+            <div class="tms-content">
+                <div class="tms-block">
+                    <h3 data-zh="核心功能" data-en="Core Features">核心功能</h3>
+                    <div class="tms-item">
+                        <h4 data-zh="多式联运管理" data-en="Intermodal Management">多式联运管理</h4>
+                        <p data-zh="海运、空运、铁路、公路多式联运。最优路线智能推荐，平衡运输成本与时效，降低综合物流成本15-25%" data-en="Sea, air, rail, road intermodal. Smart route recommendation, 15-25% cost reduction">海运、空运、铁路、公路多式联运。最优路线智能推荐，平衡运输成本与时效，降低综合物流成本15-25%</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="全球船期跟踪" data-en="Global Schedule Tracking">全球船期跟踪</h4>
+                        <p data-zh="对接全球主流船公司，船期实时查询。开船、到港、提柜等节点自动推送，全程可视管控" data-en="Connect global carriers, real-time schedule queries. Departure, arrival alerts">对接全球主流船公司，船期实时查询。开船、到港、提柜等节点自动推送，全程可视管控</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="报关单证管理" data-en="Customs Documentation">报关单证管理</h4>
+                        <p data-zh="报关资料模板化，单证自动生成。贸易合规检查，海关编码智能推荐，降低退单率和查验率" data-en="Template customs docs, auto generation. Compliance checks, HS code recommendation">报关资料模板化，单证自动生成。贸易合规检查，海关编码智能推荐，降低退单率和查验率</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="外汇与结算" data-en="FX & Settlement">外汇与结算</h4>
+                        <p data-zh="多币种运费报价，汇率自动换算。国际结算、信用证管理，财务合规无忧" data-en="Multi-currency quotes, auto exchange rates. International settlement, LC management">多币种运费报价，汇率自动换算。国际结算、信用证管理，财务合规无忧</p>
+                    </div>
+                </div>
+                <div class="tms-block">
+                    <h3 data-zh="业务价值" data-en="Business Value">业务价值</h3>
+                    <div class="tms-item">
+                        <h4 data-zh="全程可视管控" data-en="End-to-end Visibility">全程可视管控</h4>
+                        <p data-zh="从工厂到海外仓全程可视，在途库存精准掌握。提前安排到港接货，避免滞港费和滞箱费" data-en="Factory to warehouse visibility, accurate in-transit inventory. Avoid demurrage">从工厂到海外仓全程可视，在途库存精准掌握。提前安排到港接货，避免滞港费和滞箱费</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="提升响应速度" data-en="Improve Response Speed">提升响应速度</h4>
+                        <p data-zh="船期延误自动预警，快速切换备用方案。异常情况30分钟内响应，损失降至最低" data-en="Schedule delay alerts, quick backup plans. 30-min response to exceptions">船期延误自动预警，快速切换备用方案。异常情况30分钟内响应，损失降至最低</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="降低物流成本" data-en="Reduce Logistics Costs">降低物流成本</h4>
+                        <p>智能比价选择最优航线，拼柜集运降低整柜成本。综合物流成本降低15-25%</p>
+                    </div>
+                    <div class="tms-item">
+                        <h4 data-zh="合规风险管控" data-en="Compliance Risk Control">合规风险管控</h4>
+                        <p data-zh="贸易合规自动检查，海关编码智能推荐。降低查验率和扣货风险，通关时效提升50%" data-en="Trade compliance checks, HS code recommendation. Reduce inspection risk, 50% faster clearance">贸易合规自动检查，海关编码智能推荐。降低查验率和扣货风险，通关时效提升50%</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tms-scenarios">
+                <h3 data-zh="适用场景" data-en="Applicable Scenarios">适用场景</h3>
+                <ul>
+                    <li><strong data-zh="进出口贸易企业" data-en="Import/Export Traders">进出口贸易企业</strong><span data-zh="：原材料进口、成品出口，需要管理国际运输全链条" data-en=": Raw material import and finished product export, requiring full-chain management of international transportation.">：原材料进口、成品出口，需要管理国际运输全链条</span></li>
+                    <li><strong data-zh="制造企业" data-en="Manufacturing">制造企业</strong><span data-zh="：全球供应链管理，需要协调多国供应商和客户" data-en=": Global supply chain management, necessitating coordination with multi-national suppliers and customers.">：全球供应链管理，需要协调多国供应商和客户</span></li>
+                    <li><strong data-zh="国际货代公司" data-en="International Forwarders">国际货代公司</strong><span data-zh="：为货主提供国际运输服务，需要船期跟踪和单证管理" data-en=": Providing international transportation services for shippers, requiring vessel tracking and document management.">：为货主提供国际运输服务，需要船期跟踪和单证管理</span></li>
+                    <li><strong data-zh="跨境电商大卖" data-en="Cross-border Sellers">跨境电商大卖</strong><span data-zh="：大规模进出口业务，需要多式联运和全球仓配管理" data-en=": Large-scale import/export operations, demanding multimodal transportation and global warehouse management.">：大规模进出口业务，需要多式联运和全球仓配管理</span></li>
+                    <li><strong data-zh="保税物流企业" data-en="Bonded Logistics">保税物流企业</strong><span data-zh="：保税区仓储和进出口业务，需要海关对接和监管" data-en=": Bonded warehouse storage and import/export businesses, requiring customs connection and supervision.">：保税区仓储和进出口业务，需要海关对接和监管</span></li>
+                </ul>
+            </div>
+
+            <h3 style="color: #FF6B35; margin: 3rem 0 1.5rem; text-align: center;" data-zh="业务流程" data-en="Business Process">业务流程</h3>
+            <div class="process-flow">
+                <div class="process-step">
+                    <div class="step-num">1</div>
+                    <h4>订舱下单</h4>
+                    <p data-zh="在线订舱<br>船期选择" data-en="Online booking<br>Schedule selection">在线订舱<br>船期选择</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">2</div>
+                    <h4 data-zh="装柜报关" data-en="Loading & Customs">装柜报关</h4>
+                    <p data-zh="货物集港<br>报关申报" data-en="Cargo to port<br>Customs declaration">货物集港<br>报关申报</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">3</div>
+                    <h4 data-zh="国际运输" data-en="International Transport">国际运输</h4>
+                    <p data-zh="海运/空运<br>轨迹跟踪" data-en="Sea/air freight<br>Tracking">海运/空运<br>轨迹跟踪</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">4</div>
+                    <h4 data-zh="到港清关" data-en="Arrival Clearance">到港清关</h4>
+                    <p data-zh="目的港清关<br>缴税放行" data-en="Port clearance<br>Tax payment">目的港清关<br>缴税放行</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">5</div>
+                    <h4 data-zh="末端配送" data-en="Final Delivery">末端配送</h4>
+                    <p data-zh="拖车提柜<br>派送到门" data-en="Trailer pickup<br>Door delivery">拖车提柜<br>派送到门</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-num">6</div>
+                    <h4>结算归档</h4>
+                    <p data-zh="费用结算" data-en="Cost Settlement">费用结算<br data-zh="单证归档" data-en="Documentation">单证归档</p>
+                </div>
+            </div>
+
+            <div class="metrics">
+                <div class="metric-item">
+                    <h3>25%</h3>
+                    <p>物流成本降低</p>
+                </div>
+                <div class="metric-item">
+                    <h3 data-zh="50%" data-en="50%">50%</h3>
+                    <p>通关时效提升</p>
+                </div>
+                <div class="metric-item">
+                    <h3>100%</h3>
+                    <p>全程可视</p>
+                </div>
+                <div class="metric-item">
+                    <h3>30min</h3>
+                    <p>异常响应</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2 data-zh="选择适合您的TMS解决方案" data-en="Choose Your TMS Solution">选择适合您的TMS解决方案</h2>
+        <p data-zh="立即联系我们，获取专属演示和报价" data-en="Contact us for demo and quote">立即联系我们，获取专属演示和报价</p>
+        <a href="contact.html" class="btn-primary" data-zh="免费咨询" data-en="Free Consultation">免费咨询</a>
+    </section>
+
+        <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="logo" style="margin-bottom: 1rem;"><div class="logo-icon">BAMI</div><span data-zh="八米科技" data-en="BAMI Tech">八米科技</span></div>
+                <p style="color: #8B92A8; font-size: 0.9rem;" data-zh="专注物流与供应链数智化15年" data-en="15 years in logistics & supply chain digitalization">专注物流与供应链数智化15年</p>
+            </div>
+            <div>
+                <h4 data-zh="产品服务" data-en="Products">产品服务</h4>
+                <ul>
+                    <li><a href="product-ai.html" data-zh="AI数字员工" data-en="AI Digital Workforce">AI数字员工</a></li>
+                    <li><a href="product-wms.html">BAMI WMS</a></li>
+                    <li><a href="product-tms.html">BAMI TMS</a></li>
+                    <li><a href="product-oms.html">BAMI OMS</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 data-zh="快速链接" data-en="Quick Links">快速链接</h4>
+                <ul>
+                    <li><a href="solutions.html" data-zh="解决方案" data-en="Solutions">解决方案</a></li>
+                    <li><a href="about.html" data-zh="关于我们" data-en="About">关于我们</a></li>
+                    <li><a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a></li>
+                    <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 data-zh="联系我们" data-en="Contact Us">联系我们</h4>
+                <ul>
+                    <li><a href="#">📍 <span data-zh="广州天河盛大国际" data-en="Guangzhou Tianhe">广州天河盛大国际</span></a></li>
+                    <li><a href="tel:18926200599">📞 18926200599</a></li>
+                    <li><a href="mailto:27270234@qq.com">✉️ 27270234@qq.com</a></li>
+                    <li><div class="system-login-menu">
+                        <button class="system-login-btn" onclick="toggleSystemMenu()" data-zh="🔐 系统登录" data-en="🔐 System Login">🔐 系统登录</button>
+                        <div class="system-dropdown" id="systemDropdown">
+                            <div class="system-dropdown-header">
+                                <span class="system-dropdown-title" data-zh="选择系统" data-en="Select System">选择系统</span>
+                                <button class="system-dropdown-close" onclick="closeSystemMenu()">✕</button>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">1. WMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="仓配WMS" data-en="Warehouse WMS">仓配WMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="电商WMS" data-en="E-commerce WMS">电商WMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">2. TMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="零担TMS" data-en="LTL TMS">零担TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://admin.liancheng.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://memberh5.liancheng.8bami.com/" target="_blank" data-zh="手机端" data-en="Mobile">手机端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="三方TMS" data-en="3PL TMS">三方TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://live.rxwl.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://live.rxwl.driver.8bami.com" target="_blank" data-zh="司机端" data-en="Driver">司机端</a>
+                                            <a href="http://live.rxwl.memberpc.8bami.com" target="_blank" data-zh="会员端" data-en="Member">会员端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="跨境TMS" data-en="Cross-border TMS">跨境TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://kjtms.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://kjtms.tgemember.8bami.com/?EnterpriseNo=bami" target="_blank" data-zh="会员端" data-en="Member">会员端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="跨境集运" data-en="Cross-border">跨境集运</span>
+                                        <div class="system-subitems">
+                                            <a href="http://b9.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="https://b9.member.8bami.com/?EnterpriseNo=t03_4" target="_blank" data-zh="手机端" data-en="Mobile">手机端</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">3. OMS/BMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="OMS" data-en="OMS">OMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="BMS" data-en="BMS">BMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></li>
+                </ul>
+            </div>
+        </div>
+                    <script>
+                    function toggleSystemMenu() {
+                        const dropdown = document.getElementById('systemDropdown');
+                        dropdown.classList.toggle('active');
+                    }
+                    function closeSystemMenu() {
+                        const dropdown = document.getElementById('systemDropdown');
+                        dropdown.classList.remove('active');
+                    }
+                    document.addEventListener('click', function(e) {
+                        const menu = document.querySelector('.system-login-menu');
+                        if (menu && !menu.contains(e.target)) {
+                            closeSystemMenu();
+                        }
+                    });
+                </script>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BAMI 八米科技. All rights reserved.</p>
+            <p><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer" style="color: #8B92A8; text-decoration: none;">粤ICP备19085702号</a></p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.add('active');
+        });
+        function closeMenu() {
+            document.getElementById('mobileMenu').classList.remove('active');
+        }
+    </script>
+    <script src="js/lang.js">    // System Login Menu Functions
+    function toggleSystemMenu() {
+        const dropdown = document.getElementById('systemDropdown');
+        dropdown.classList.toggle('active');
+    }
+    function closeSystemMenu() {
+        const dropdown = document.getElementById('systemDropdown');
+        dropdown.classList.remove('active');
+    }
+    // Close system menu when clicking outside
+    document.addEventListener('click', function(e) {
+        const menu = document.querySelector('.system-login-menu');
+        const dropdown = document.getElementById('systemDropdown');
+        if (menu && dropdown && !menu.contains(e.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
+</script>
+
+    <script>
+        function openMobileMenu() {
+            document.getElementById('mobileMenu').classList.add('active');
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileMenu').classList.remove('active');
+        }
+        document.getElementById('menuBtn').addEventListener('click', openMobileMenu);
+    
+</script>
+<!-- V14 悬浮咨询按钮 -->
+<a href="contact.html" class="fab-contact" id="fabContact">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+    <span class="fab-tooltip" data-zh="立即咨询" data-en="Contact Us">立即咨询</span>
+</a>
+<script>
+// V14: 悬浮按钮显示控制
+function initFabButton() {
+    const fab = document.getElementById('fabContact');
+    if (!fab) return;
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            fab.classList.add('visible');
+        } else {
+            fab.classList.remove('visible');
+        }
+    }, { passive: true });
+}
+initFabButton();
+</script>
+</body>
+</html>

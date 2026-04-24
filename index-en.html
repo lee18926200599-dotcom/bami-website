@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="BAMI Technology focuses on AI Digital Workforce, WMS Warehouse Management, TMS Transportation Management, OMS Order Management. 15 years experience, 10000+ customers.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lee18926200599-dotcom.github.io/bami-website/index-en.html">
+
+    
+    <title  BAMI Tech - AI Digital Workforce & Supply Chain Solutions>BAMI Tech - AI Digital Workforce与供应链数智化Solutions</title>
+    <link rel="icon" type="image/svg+xml" href="images/LOGO2.SVG">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; background: #0A0E1A; color: #FFFFFF; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(10,14,26,0.98); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.3rem; font-weight: 700; }
+        .logo-icon { width: 70px; height: 36px; background: linear-gradient(135deg, #FF6B35, #FF8A5C); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem; color: #FFFFFF; letter-spacing: 1px; font-style: italic; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #C5C9D6; }
+        .nav-right { display: flex; align-items: center; gap: 1rem; }
+        .lang-switch { display: flex; background: #1A2235; padding: 0.25rem; border-radius: 20px; border: 1px solid rgba(255,107,53,0.3); }
+        .lang-btn { padding: 0.3rem 0.8rem; border-radius: 15px; border: none; background: none; color: #8B92A8; cursor: pointer; }
+        .lang-btn.active { background: #FF6B35; color: #FFFFFF; }
+        .btn-primary { display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #FF6B35, #FF8A5C); color: #FFFFFF; padding: 0.6rem 1.2rem; border-radius: 25px; font-weight: 600; border: none; cursor: pointer; }
+        .mobile-menu-btn { display: none; width: 44px; height: 44px; background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.3); border-radius: 8px; cursor: pointer; flex-direction: column; justify-content: center; align-items: center; gap: 5px; }
+        .mobile-menu-btn span { width: 20px; height: 2px; background: #FFFFFF; border-radius: 2px; }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0A0E1A; z-index: 999; padding: 5rem 1rem 2rem; }
+        .mobile-menu.active { display: flex; flex-direction: column; }
+        .mobile-menu-content { background: #1A2235; border-radius: 20px; border: 1px solid rgba(255,107,53,0.2); padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+        .mobile-menu-list { list-style: none; flex: 1; }
+        .mobile-menu-list li { border-bottom: 1px solid rgba(255,107,53,0.1); }
+        .mobile-menu-list a { display: block; padding: 1.2rem 0; font-size: 1.2rem; color: #FFFFFF; text-align: center; }
+        .mobile-menu-footer { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,107,53,0.2); display: flex; flex-direction: column; gap: 1rem; }
+        .mobile-menu-footer .lang-switch { justify-content: center; width: fit-content; margin: 0 auto; }
+        .mobile-menu-footer .btn-primary { width: 100%; }
+        .hero { padding: 7rem 5% 4rem; min-height: 100vh; display: flex; align-items: center; }
+        .hero-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+        .hero h1 .highlight { background: linear-gradient(135deg, #FF6B35, #FF8A5C); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { color: #8B92A8; margin-bottom: 2rem; }
+        .hero-buttons { display: flex; gap: 1rem; margin-bottom: 2rem; }
+        .btn-secondary { border: 2px solid rgba(255,107,53,0.5); color: #FFFFFF; padding: 0.6rem 1.5rem; border-radius: 25px; }
+        .hero-stats { display: flex; gap: 2rem; }
+        .stat-number { font-size: 2.5rem; font-weight: 700; color: #FF6B35; font-variant-numeric: tabular-nums; min-width: 4ch; display: inline-block; text-align: center; }
+        .stat-label { color: #8B92A8; }
+        .products { padding: 4rem 5%; }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-tag { display: inline-block; background: rgba(255,107,53,0.1); color: #FF6B35; padding: 0.4rem 1rem; border-radius: 20px; margin-bottom: 1rem; border: 1px solid rgba(255,107,53,0.3); }
+        .section-title { font-size: 2rem; margin-bottom: 0.5rem; }
+        .section-subtitle { color: #8B92A8; }
+        .products-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
+        .product-card { background: #1A2235; border: 1px solid rgba(255,107,53,0.1); border-radius: 16px; padding: 1.5rem; transition: transform 0.3s, box-shadow 0.3s; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(255,107,53,0.1); }
+        .product-icon { width: 50px; height: 50px; background: linear-gradient(135deg, #FF6B35, #FF8A5C); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .product-card h3 { margin-bottom: 0.5rem; }
+        .product-card p { color: #8B92A8; font-size: 0.9rem; margin-bottom: 1rem; }
+        .feature-tag { background: rgba(255,107,53,0.1); color: #FF8A5C; padding: 0.25rem 0.6rem; border-radius: 15px; font-size: 0.75rem; margin-right: 0.5rem; }
+        .solutions { padding: 4rem 5%; background: #121829; }
+        .solutions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
+        .solution-card { background: #0A0E1A; border: 1px solid rgba(255,107,53,0.1); border-radius: 16px; padding: 1.5rem; text-align: center; transition: transform 0.3s; }
+        .solution-card:hover { transform: translateY(-5px); border-color: rgba(255,107,53,0.3); }
+        .solution-icon { width: 60px; height: 60px; background: #1A2235; border: 2px solid rgba(255,107,53,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 1rem; }
+        .solution-card p { color: #8B92A8; font-size: 0.9rem; }
+        .clients { padding: 4rem 5%; overflow: hidden; background: #121829; }
+        .clients .section-tag { background: rgba(255,107,53,0.15); color: #FF6B35; border-color: rgba(255,107,53,0.3); }
+        .clients .section-title { color: #ffffff; }
+        .clients .section-subtitle { color: #a0a0b0; }
+        .clients-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; max-width: 1200px; margin: 0 auto; }
+        .client-card { background: #1A2235; border: 1px solid rgba(255,107,53,0.1); border-radius: 12px; padding: 1.5rem 1rem; text-align: center; transition: all 0.3s; }
+        .client-card:hover { border-color: rgba(255,107,53,0.3); }
+        .client-name { font-weight: 600; color: #C5C9D6; margin-bottom: 0.2rem; }
+        .client-card p { font-size: 0.75rem; color: #8B92A8; }
+
+        /* Logo Marquee Styles */
+        .logo-marquee-container { max-width: 1400px; margin: 0 auto; position: relative; }
+        .logo-marquee { overflow: hidden; width: 100%; position: relative; }
+        .logo-marquee::before,
+        .logo-marquee::after { content: ''; position: absolute; top: 0; width: 100px; height: 100%; z-index: 2; pointer-events: none; }
+        .logo-marquee::before { left: 0; background: linear-gradient(to right, #121829 0%, transparent 100%); }
+        .logo-marquee::after { right: 0; background: linear-gradient(to left, #121829 0%, transparent 100%); }
+        .logo-track { display: flex; animation: marquee 40s linear infinite; width: fit-content; }
+        .logo-marquee:hover .logo-track { animation-play-state: paused; }
+        .logo-item { flex-shrink: 0; padding: 0 1rem; }
+        .logo-box { background: #ffffff; border: 1px solid rgba(0,0,0,0.08); border-radius: 16px; padding: 1rem 1.5rem; min-width: 160px; height: 90px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+        .logo-box:hover { border-color: rgba(255,107,53,0.4); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+        .logo-box img { max-width: 100%; max-height: 60px; width: auto; height: auto; object-fit: contain; filter: brightness(1) contrast(1); transition: all 0.3s ease; }
+        .logo-box:hover img { filter: brightness(1.05) contrast(1.1); transform: scale(1.05); }
+        .logo-text { display: block; font-size: 1.1rem; font-weight: 600; color: #FFFFFF; margin-bottom: 0.4rem; white-space: nowrap; }
+        .logo-desc { display: block; font-size: 0.75rem; color: #8B92A8; white-space: nowrap; }
+
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .logo-track { animation-duration: 25s; }
+            .logo-box { padding: 0.8rem 1rem; min-width: 120px; height: 70px; border-radius: 12px; background: #ffffff; }
+            .logo-box img { max-height: 45px; }
+            .logo-text { font-size: 0.95rem; }
+            .logo-desc { font-size: 0.7rem; }
+            .logo-marquee::before,
+            .logo-marquee::after { width: 50px; }
+            .logo-marquee::before { background: linear-gradient(to right, #121829 0%, transparent 100%); }
+            .logo-marquee::after { background: linear-gradient(to left, #121829 0%, transparent 100%); }
+            .logo-item { padding: 0 0.5rem; }
+        }
+        @media (max-width: 480px) {
+            .logo-track { animation-duration: 20s; }
+            .logo-box { padding: 0.6rem 0.8rem; min-width: 100px; height: 60px; background: #ffffff; }
+            .logo-box img { max-height: 40px; }
+            .logo-text { font-size: 0.85rem; }
+            .logo-desc { font-size: 0.65rem; }
+        }
+        .testimonials { padding: 4rem 5%; background: #121829; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .testimonial-card { background: #0A0E1A; border: 1px solid rgba(255,107,53,0.1); border-radius: 20px; padding: 2rem; position: relative; }
+        .testimonial-card::before { content: '"'; font-size: 4rem; color: #FF6B35; opacity: 0.3; position: absolute; top: 10px; left: 20px; font-family: Georgia, serif; }
+        .testimonial-content { position: relative; z-index: 1; margin-bottom: 1.5rem; color: #C5C9D6; font-style: italic; line-height: 1.8; }
+        .testimonial-author { display: flex; align-items: center; gap: 1rem; }
+        .testimonial-avatar { width: 50px; height: 50px; background: linear-gradient(135deg, #FF6B35, #FF8A5C); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: 600; }
+        .testimonial-info h4 { color: #FFFFFF; font-size: 1rem; margin-bottom: 0.2rem; }
+        .testimonial-info p { color: #8B92A8; font-size: 0.85rem; }
+        .testimonial-rating { color: #FF6B35; margin-top: 0.5rem; }
+        /* News Section Styles - Compact List Layout */
+        .news-section { padding: 4rem 5%; }
+        .news-list { display: flex; flex-direction: column; gap: 1rem; max-width: 900px; margin: 0 auto; }
+        .news-card { background: #1A2235; border: 1px solid rgba(255,107,53,0.1); border-radius: 12px; overflow: hidden; transition: all 0.3s; display: flex; flex-direction: row; align-items: stretch; }
+        .news-card:hover { transform: translateX(5px); box-shadow: 0 5px 20px rgba(255,107,53,0.1); border-color: rgba(255,107,53,0.3); }
+        .news-image { width: 180px; min-width: 180px; height: 120px; background: linear-gradient(135deg, #1A2235, #2A3447); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .news-image img { width: 100%; height: 100%; object-fit: cover; }
+        .news-content { padding: 1rem 1.25rem; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+        .news-date { color: #FF6B35; font-size: 0.8rem; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.3rem; }
+        .news-title { font-size: 1rem; margin-bottom: 0.4rem; line-height: 1.4; font-weight: 600; }
+        .news-excerpt { color: #8B92A8; font-size: 0.85rem; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .view-all-btn { display: inline-flex; align-items: center; justify-content: center; background: transparent; color: #FF6B35; padding: 0.6rem 1.5rem; border-radius: 25px; font-weight: 500; border: 2px solid rgba(255,107,53,0.5); margin-top: 2rem; transition: all 0.3s; }
+        .view-all-btn:hover { background: rgba(255,107,53,0.1); }
+        @media (max-width: 768px) { 
+            .news-card { flex-direction: column; }
+            .news-image { width: 100%; height: 160px; }
+        }
+        .cta-section { padding: 4rem 5%; text-align: center; background: linear-gradient(135deg, #0A0E1A, #1A2235); }
+        .cta-section h2 { font-size: 1.8rem; margin-bottom: 0.8rem; }
+        .cta-section p { color: #8B92A8; margin-bottom: 1.5rem; }
+        .footer { background: #121829; padding: 3rem 5% 1.5rem; border-top: 1px solid rgba(255,107,53,0.1); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .footer h4 { color: #FFFFFF; margin-bottom: 1rem; }
+        .footer ul { list-style: none; }
+        .footer li { margin-bottom: 0.5rem; }
+        .system-login-menu { position: relative; }
+        .system-login-btn { display: block; color: #8B92A8; cursor: pointer; font-size: 0.9rem; background: none; border: none; padding: 0; margin: 0; font-family: inherit; text-align: left; }
+        .system-login-btn:hover { color: #FF6B35; }
+        .system-dropdown { display: none; position: absolute; bottom: 100%; left: 0; background: #1A2235; border: 1px solid rgba(255,107,53,0.3); border-radius: 12px; padding: 1rem; min-width: 200px; margin-bottom: 0.5rem; box-shadow: 0 10px 40px rgba(0,0,0,0.5); z-index: 1000; }
+        .system-dropdown.active { display: block; }
+        .system-dropdown-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,107,53,0.2); }
+        .system-dropdown-title { color: #FF6B35; font-weight: 600; font-size: 0.9rem; }
+        .system-dropdown-close { background: none; border: none; color: #8B92A8; cursor: pointer; font-size: 1.2rem; padding: 0; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+        .system-dropdown-close:hover { color: #FF6B35; background: rgba(255,107,53,0.1); }
+        .system-category { margin-bottom: 0.8rem; }
+        .system-category-title { color: #FF6B35; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+        .system-category-items { padding-left: 0.5rem; }
+        .system-category-items a { display: block; padding: 0.3rem 0.5rem; color: #C5C9D6; border-radius: 6px; font-size: 0.8rem; margin-bottom: 0.2rem; }
+        .system-category-items a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .system-subcategory { margin-bottom: 0.6rem; }
+        .system-subtitle { display: block; color: #8B92A8; font-size: 0.8rem; font-weight: 500; margin-bottom: 0.3rem; padding: 0.2rem 0; }
+        .system-subitems { padding-left: 0.8rem; border-left: 2px solid rgba(255,107,53,0.3); margin-left: 0.3rem; }
+        .system-subitems a { display: inline-block; padding: 0.2rem 0.5rem; color: #C5C9D6; border-radius: 4px; font-size: 0.75rem; margin-right: 0.3rem; margin-bottom: 0.2rem; background: rgba(255,255,255,0.05); }
+        .system-subitems a:hover { background: rgba(255,107,53,0.2); color: #FF6B35; }
+        .footer ul { list-style: none; }
+        .footer li { margin-bottom: 0.5rem; }
+        .footer a { color: #8B92A8; font-size: 0.9rem; }
+        .footer-bottom { text-align: center; color: #8B92A8; font-size: 0.85rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        /* 3D Hero Showcase Styles */
+        .hero-showcase {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .showcase-container {
+            width: 280px;
+            height: 320px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateShowcase 16s infinite linear;
+        }
+        @keyframes rotateShowcase {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+        .showcase-card {
+            position: absolute;
+            width: 200px;
+            height: 240px;
+            background: linear-gradient(145deg, rgba(26,34,53,0.95), rgba(18,24,41,0.95));
+            border: 1px solid rgba(255,107,53,0.3);
+            border-radius: 20px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            backface-visibility: hidden;
+            box-shadow: 0 10px 40px rgba(255,107,53,0.2);
+            transition: all 0.3s ease;
+        }
+        .showcase-card:hover {
+            box-shadow: 0 20px 60px rgba(255,107,53,0.35);
+            border-color: rgba(255,107,53,0.6);
+        }
+        .showcase-card:nth-child(1) { transform: rotateY(0deg) translateZ(180px); }
+        .showcase-card:nth-child(2) { transform: rotateY(90deg) translateZ(180px); }
+        .showcase-card:nth-child(3) { transform: rotateY(180deg) translateZ(180px); }
+        .showcase-card:nth-child(4) { transform: rotateY(270deg) translateZ(180px); }
+        .showcase-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #FF6B35, #FF8A5C);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 8px 24px rgba(255,107,53,0.4);
+        }
+        .showcase-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #FFFFFF;
+        }
+        .showcase-card p {
+            font-size: 0.75rem;
+            color: #8B92A8;
+            margin: 0;
+        }
+        .showcase-tag {
+            display: inline-block;
+            background: rgba(255,107,53,0.15);
+            color: #FF8A5C;
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.65rem;
+            margin-top: 0.75rem;
+            border: 1px solid rgba(255,107,53,0.2);
+        }
+        .particles-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(255,107,53,0.4);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+        }
+        .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; top: 60%; animation-delay: 1s; }
+        .particle:nth-child(3) { left: 80%; top: 30%; animation-delay: 2s; }
+        .particle:nth-child(4) { left: 70%; top: 70%; animation-delay: 3s; }
+        .particle:nth-child(5) { left: 40%; top: 40%; animation-delay: 4s; }
+        .particle:nth-child(6) { left: 90%; top: 50%; animation-delay: 5s; }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+            50% { transform: translateY(-20px) scale(1.2); opacity: 0.8; }
+        }
+        .hero-mobile-products {
+            display: none;
+        }
+        @media (min-width: 769px) { .mobile-menu { display: none !important; } }
+        @media (max-width: 768px) {
+            .nav-links, .nav-right { display: none !important; }
+            .mobile-menu-btn { display: flex !important; }
+            .hero { padding: 5rem 4% 3rem; }
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero h1 { font-size: 1.6rem; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .hero-buttons a { width: auto; padding: 0.8rem 2rem; }
+            .hero-stats { flex-direction: column; align-items: center; gap: 1rem; }
+            .hero-stats .stat-item { width: 100%; max-width: 200px; }
+            .products-grid, .solutions-grid, .testimonials-grid { grid-template-columns: 1fr; }
+            .clients-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .system-login-menu { display: flex; justify-content: center; }
+            .system-login-btn { text-align: center; }
+            .system-dropdown { text-align: left; }
+            .system-category-title, .system-subtitle { text-align: left; display: block; }
+            .system-subitems { text-align: left; justify-content: flex-start; }
+            .hero-showcase {
+                height: 280px;
+                margin-top: 2rem;
+            }
+            .showcase-container {
+                width: 200px;
+                height: 240px;
+                animation-duration: 12s;
+            }
+            .showcase-card {
+                width: 150px;
+                height: 180px;
+                padding: 1rem;
+            }
+            .showcase-card:nth-child(1) { transform: rotateY(0deg) translateZ(120px); }
+            .showcase-card:nth-child(2) { transform: rotateY(90deg) translateZ(120px); }
+            .showcase-card:nth-child(3) { transform: rotateY(180deg) translateZ(120px); }
+            .showcase-card:nth-child(4) { transform: rotateY(270deg) translateZ(120px); }
+            .showcase-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                border-radius: 14px;
+            }
+            .showcase-card h3 {
+                font-size: 0.9rem;
+            }
+            .showcase-card p {
+                font-size: 0.65rem;
+            }
+            .showcase-tag {
+                font-size: 0.55rem;
+                padding: 0.2rem 0.5rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-showcase {
+                display: flex !important;
+                height: 220px;
+                margin-top: 1.5rem;
+            }
+            .showcase-container {
+                width: 180px;
+                height: 200px;
+                animation-duration: 10s;
+            }
+            .showcase-card {
+                width: 130px;
+                height: 160px;
+                padding: 0.8rem;
+                border-radius: 16px;
+            }
+            .showcase-card:nth-child(1) { transform: rotateY(0deg) translateZ(100px); }
+            .showcase-card:nth-child(2) { transform: rotateY(90deg) translateZ(100px); }
+            .showcase-card:nth-child(3) { transform: rotateY(180deg) translateZ(100px); }
+            .showcase-card:nth-child(4) { transform: rotateY(270deg) translateZ(100px); }
+            .showcase-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.3rem;
+                border-radius: 12px;
+            }
+            .showcase-card h3 {
+                font-size: 0.85rem;
+            }
+            .showcase-card p {
+                font-size: 0.6rem;
+            }
+            .showcase-tag {
+                font-size: 0.5rem;
+                padding: 0.15rem 0.4rem;
+            }
+            .hero-mobile-products {
+                display: none !important;
+            }
+        }
+            
+    /* V14 悬浮咨询按钮 */
+.fab-contact { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(255,107,53,0.4); transition: all 0.3s; z-index: 999; opacity: 0; transform: translateY(20px); }
+.fab-contact.visible { opacity: 1; transform: translateY(0); }
+.fab-contact:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(255,107,53,0.6); }
+.fab-contact svg { width: 28px; height: 28px; fill: white; }
+.fab-tooltip { position: absolute; right: 70px; background: var(--bg-card); color: white; padding: 8px 16px; border-radius: 8px; font-size: 14px; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: all 0.3s; border: 1px solid var(--border-hover); }
+.fab-contact:hover .fab-tooltip { opacity: 1; transform: translateX(0); }
+</style>
+</head>
+<body data-page="index">
+    <nav class="navbar">
+        <a href="index-en.html" class="logo" style="display: flex; align-items: center; gap: 6px; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;"><span style="background: linear-gradient(135deg, #FF6B35, #FF8A5C); padding: 6px 10px; border-radius: 12px; color: #FFFFFF; font-weight: bold; font-size: 18px; line-height: 1; font-family: Arial, Helvetica, sans-serif;">BAMI</span><span style="color: #FF6B35; font-weight: bold; font-size: 24px; line-height: 1;">八米</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html"  Home>Home</a></li>
+            <li><a href="product-ai.html"  Products>Products</a></li>
+            <li><a href="solutions.html"  Solutions>Solutions</a></li>
+            <li><a href="about.html"  About>About</a></li>
+            <li><a href="news.html"  News>News</a></li>
+            <li><a href="support.html"  Support>Support</a></li>
+            <li><a href="contact.html"  Contact>Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="zh">中</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <a href="contact.html" class="btn-primary"  Contact>Contact</a>
+        </div>
+        <button class="mobile-menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-menu-list">
+                <li><a href="index.html"  Home>Home</a></li>
+                <li><a href="product-ai.html"  Products>Products</a></li>
+                <li><a href="solutions.html"  Solutions>Solutions</a></li>
+                <li><a href="about.html"  About>About</a></li>
+                <li><a href="news.html"  News>News</a></li>
+                <li><a href="contact.html"  Contact>Contact</a></li>
+            </ul>
+            <div class="mobile-menu-footer">
+                <div class="lang-switch">
+                    <button class="lang-btn active" data-lang="zh">中</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <a href="contact.html" class="btn-primary"  Contact>Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div>
+                <div class="hero-tag">🏆 <span  15 Years · Trusted by 1000+ Enterprises>15年行业经验 · 1000+企业信赖</span></div>
+                <h1><span  AI Digital Workforce>AI Digital Workforce</span><br><span class="highlight"  Driving Digital Supply Chain>驱动供应链数智化</span></h1>
+                <p  BAMI Tech focuses on logistics & supply chain, providing AI Digital Workforce, WMS, TMS, and OMS solutions for enterprise digital transformation.>BAMI Tech专注物流与供应链领域，提供AI Digital Workforce、WMSWarehouse、TMSTransport、OMSOrder四大核心产品，助力企业实现全面数智化转型。</p>
+                <div class="hero-buttons">
+                    <a href="product-ai.html" class="btn-primary"  Our Products>了解产品</a>
+                    <a href="contact.html" class="btn-secondary"  Schedule Demo>预约演示</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">1000+</div>
+                        <div class="stat-label"  Clients Served>累计服务企业</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label"  Years Experience>年行业经验</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label"  System Uptime>系统稳定性</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-showcase-wrapper">
+                <!-- 3D Product Showcase -->
+                <div class="hero-showcase">
+                    <div class="particles-bg">
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                    </div>
+                    <div class="showcase-container">
+                        <div class="showcase-card">
+                            <div class="showcase-icon">🤖</div>
+                            <h3  AI Digital Workforce>AI Digital Workforce</h3>
+                            <p  Smart Acquisition & Service>智能拓客·智能客服</p>
+                            <span class="showcase-tag">7×24小时</span>
+                        </div>
+                        <div class="showcase-card">
+                            <div class="showcase-icon">📦</div>
+                            <h3>BAMI WMS</h3>
+                            <p  Smart Warehouse>智能仓储·多仓协同</p>
+                            <span class="showcase-tag"  100K+ Daily>日处理10万+</span>
+                        </div>
+                        <div class="showcase-card">
+                            <div class="showcase-icon">🚛</div>
+                            <h3>BAMI TMS</h3>
+                            <p  Smart Dispatch>智能调度·路径优化</p>
+                            <span class="showcase-tag"  30% Cost Down>降本30%</span>
+                        </div>
+                        <div class="showcase-card">
+                            <div class="showcase-icon">📋</div>
+                            <h3>BAMI OMS</h3>
+                            <p  Omnichannel Orders>全渠道订单·智能分配</p>
+                            <span class="showcase-tag">99.9%</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Simplified Version -->
+                <div class="hero-mobile-products">
+                    <div class="mobile-product-chip"><span>🤖</span><span  AI Workforce>AI Digital Workforce</span></div>
+                    <div class="mobile-product-chip"><span>📦</span><span>WMS</span></div>
+                    <div class="mobile-product-chip"><span>🚛</span><span>TMS</span></div>
+                    <div class="mobile-product-chip"><span>📋</span><span>OMS</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products">
+        <div class="section-header">
+            <div class="section-tag"  Core Products>核心产品</div>
+            <h2 class="section-title"  Four Core Product Matrix>四大核心产品矩阵</h2>
+            <p class="section-subtitle"  Covering the entire supply chain to build digital competitiveness>覆盖供应链全链路，打造企业数智化核心竞争力</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-icon">🤖</div>
+                <h3  AI Digital Workforce>AI Digital Workforce</h3>
+                <p  Smart acquisition, omnichannel service, data decision commander, intelligent collaborator - 24/7 service.>智能拓客引擎、全渠道客服中枢、数据决策指挥官、智能管理协作者，7×24小时不间断服务。</p>
+                <div>
+                    <span class="feature-tag"  Smart Acquisition>智能拓客</span>
+                    <span class="feature-tag"  AI Service>智能客服</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">📦</div>
+                <h3>BAMI WMS</h3>
+                <p  Intelligent warehouse management with multi-warehouse coordination, smart wave picking, inventory alerts, batch tracking.>智能Warehouse系统，支持多仓协同、智能波次拣货、库存预警、批次追溯，日处理10万+订单。</p>
+                <div>
+                    <span class="feature-tag"  Multi-Warehouse>多仓协同</span>
+                    <span class="feature-tag"  Wave Picking>智能波次</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">🚛</div>
+                <h3>BAMI TMS</h3>
+                <p  Intelligent transportation management with smart dispatch, route optimization, capacity integration.>智能Transport系统，实现智能调度、路径优化、运力整合、多式联运，降低30%运输成本。</p>
+                <div>
+                    <span class="feature-tag"  Smart Dispatch>智能调度</span>
+                    <span class="feature-tag"  Route Optimization>路径优化</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-icon">📋</div>
+                <h3>BAMI OMS</h3>
+                <p  Omnichannel order management with unified order access, smart allocation, full-chain tracking.>全渠道Order系统，实现多渠道订单统一接入、智能分配、全链追踪、售后管理一体化。</p>
+                <div>
+                    <span class="feature-tag"  Omnichannel>多渠道接入</span>
+                    <span class="feature-tag"  Smart Allocation>智能分配</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="solutions">
+        <div class="section-header">
+            <div class="section-tag"  Solutions>Solutions</div>
+            <h2 class="section-title"  Industry Solutions>行业数智化Solutions</h2>
+            <p class="section-subtitle"  Deep understanding of industry pain points with end-to-end solutions>深度理解行业痛点，提供端到端的数智化转型方案</p>
+        </div>
+        <div class="solutions-grid">
+            <div class="solution-card">
+                <div class="solution-icon">🚚</div>
+                <h3  Logistics>物流行业</h3>
+                <p  Full digital management for 3PL, dedicated logistics, urban delivery.>第三方物流、专线物流、城配企业全流程数智化管理方案。</p>
+            </div>
+            <div class="solution-card">
+                <div class="solution-icon">🏭</div>
+                <h3  Manufacturing>制造业</h3>
+                <p  End-to-end supply chain solutions for manufacturing enterprises.>制造企业出海端到端供应链协同Solutions。</p>
+            </div>
+            <div class="solution-card">
+                <div class="solution-icon">🛒</div>
+                <h3  E-commerce>电商行业</h3>
+                <p  Integrated e-commerce solution with omnichannel orders and smart warehousing.>多渠道订单聚合、智能Warehouse的电商一体化方案。</p>
+            </div>
+            <div class="solution-card">
+                <div class="solution-icon">🏪</div>
+                <h3  Retail>零售行业</h3>
+                <p  Omnichannel retail digital solution integrating online and offline.>全渠道零售数智化Solutions，实现线上线下一体化。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="clients">
+        <div class="section-header">
+            <div class="section-tag"  Clients>客户案例</div>
+            <h2 class="section-title"  Trusted By>信赖之选</h2>
+            <p class="section-subtitle"  The choice of 1000+ enterprises>1000+企业的共同选择</p>
+        </div>
+        <div class="logo-marquee-container">
+            <div class="logo-marquee" id="logoMarquee">
+                <div class="logo-track">
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-01.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-02.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-03.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-04.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-05.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-06.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-07.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-08.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-09.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-10.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-11.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-12.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-13.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-14.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-15.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-16.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-17.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-18.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-19.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <!-- 复制一份用于无缝循环 -->
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-01.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-02.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-03.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-04.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-05.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-06.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-07.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-08.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-09.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-10.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-11.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-12.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-13.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-14.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-15.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-16.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-17.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-18.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-19.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-24.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-20.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-21.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-22.png" alt="客户LOGO" loading="lazy"></div></div>
+                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-23.png" alt="客户LOGO" loading="lazy"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="section-header">
+            <div class="section-tag"  Testimonials>客户评价</div>
+            <h2 class="section-title"  What Our Clients Say>听听客户怎么说</h2>
+            <p class="section-subtitle"  Real feedback from industry leaders>来自各行业领军企业的真实反馈</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-content"  BAMI's TMS has transformed our transportation management. Smart dispatch increased vehicle utilization by 40%, saving over 3 million yuan annually. Reliable system with responsive service.>BAMI Tech的TMS系统彻底改变了我们的Transport模式。智能调度功能让我们的车辆利用率提升了40%，每年节省运输成本超过300万元。系统稳定可靠，服务响应及时，是值得信赖的合作伙伴。</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">张</div>
+                    <div class="testimonial-info">
+                        <h4  Zhang Minghua>张明华</h4>
+                        <p  Jiatuo Smart | Logistics Director>嘉拓智能 | 物流总监</p>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-content"  Since implementing BAMI WMS, our warehouse efficiency has soared. Smart wave picking increased daily orders from 50k to 100k+, with 99.99% inventory accuracy. Multi-warehouse coordination made managing 8 warehouses easy.>引入BAMIWMS后，我们的仓储效率实现了质的飞跃。智能波次拣货让日处理订单量从5万提升到10万+，库存准确率达到99.99%。多仓协同功能让我们轻松管理全国8个仓库，真正实现了库存可视化。</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">李</div>
+                    <div class="testimonial-info">
+                        <h4  Li Xiaoyan>李晓燕</h4>
+                        <p  Bain Medical | Supply Chain Manager>贝恩医疗 | 供应链经理</p>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-content"  BAMI's AI Digital Workforce was key to our digital transformation. AI service handled 80% of routine inquiries, letting our team focus on complex needs. The acquisition engine brings hundreds of quality leads monthly.>BAMI的AI Digital Workforce是我们数智化转型的关键助力。智能客服处理了80%的常规咨询，让我们的客服团队可以专注于更复杂的客户需求。拓客引擎每月为我们带来数百条高质量线索，ROI非常可观。</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">王</div>
+                    <div class="testimonial-info">
+                        <h4  Wang Jianguo>王建国</h4>
+                        <p  Hengfa Intl | Operations Director>恒发国际 | 运营总监</p>
+                        <div class="testimonial-rating">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="news-section">
+        <div class="section-header">
+            <div class="section-tag"  News>News</div>
+            <h2 class="section-title"  BAMI Latest News>了解BAMI最新动态</h2>
+            <p class="section-subtitle"  Follow BAMI's development and industry insights>关注BAMI Tech发展，洞悉供应链数智化前沿资讯</p>
+        </div>
+        <div class="news-list">
+            <a href="news-detail.html?id=1" class="news-card">
+                <div class="news-image"><img src="images/news/news-1-1.jpg" alt="BAMI Tech与菲律宾ASC签署战略合作协议"></div>
+                <div class="news-content">
+                    <div class="news-date">📅 2026-03-01</div>
+                    <h3 class="news-title"  BAMI Tech Signs Strategic Partnership with Philippine ASC>BAMI Tech与菲律宾ASC签署战略合作协议</h3>
+                    <p class="news-excerpt"  Signed long-term strategic partnership with Philippines' largest retail IT service provider to develop 4PL solutions.>与菲律宾最大零售行业IT服务商签署长期战略合作伙伴协议，联合打造东南亚统仓共配4PLSolutions。</p>
+                </div>
+            </a>
+            <a href="news-detail.html?id=2" class="news-card">
+                <div class="news-image"><img src="images/news/news-2-1.jpg" alt="BAMI Tech入选广东省科技型中小企业库"></div>
+                <div class="news-content">
+                    <div class="news-date">📅 2025-12-01</div>
+                    <h3 class="news-title"  BAMI Tech Selected for Guangdong Tech SMEs Database>BAMI Tech入选广东省科技型中小企业库</h3>
+                    <p class="news-excerpt"  Certified by Torch High Technology Industry Development Center, recognizing innovation capabilities.>正式通过科学技术部火炬高技术产业开发中心认证，标志着科技创新能力获得国家及省政府的高度认可。</p>
+                </div>
+            </a>
+            <a href="news-detail.html?id=3" class="news-card">
+                <div class="news-image"><img src="images/news/news-3-1.jpg" alt="BAMI Tech与嘉拓智能TMS项目签约"></div>
+                <div class="news-content">
+                    <div class="news-date">📅 2025-12-01</div>
+                    <h3 class="news-title"  BAMI Tech Signs TMS Project with Jiatuo Smart>BAMI Tech与嘉拓智能TMS项目签约</h3>
+                    <p class="news-excerpt"  Strategic partnership with Jiatuo Smart, leader in new energy equipment, TMS project launched.>与新能源高端装备领军企业嘉拓智能达成战略合作，TMS项目成功签约并全面启动。</p>
+                </div>
+            </a>
+            <a href="news-detail.html?id=4" class="news-card">
+                <div class="news-image"><img src="images/news/news-4-1.jpg" alt="广东晟晖再生资源集团供应链数智化平台项目启动"></div>
+                <div class="news-content">
+                    <div class="news-date">📅 2025-06-12</div>
+                    <h3 class="news-title"  Guangdong Shenghui Resource Group Digital Platform Launched>广东晟晖再生资源集团供应链数智化平台项目启动</h3>
+                    <p class="news-excerpt"  Launched supply chain digitalization platform project with Guangdong Shenghui Resource Group.>与广东晟晖再生资源集团联合召开供应链数智化平台建设项目启动会，智能再生资源运营平台正式启航。</p>
+                </div>
+            </a>
+            <a href="news-detail.html?id=5" class="news-card">
+                <div class="news-image"><img src="images/news/news-5-1.jpg" alt="国际物流行业动态：绿色物流与数智化转型趋势"></div>
+                <div class="news-content">
+                    <div class="news-date">📅 2025-05-19</div>
+                    <h3 class="news-title"  Global Logistics Trends: Green Logistics and Digital Transformation>国际物流行业动态：绿色物流与数智化转型趋势</h3>
+                    <p class="news-excerpt"  Global supply chain continues to adjust, green logistics and digital transformation become key directions.>全球供应链格局持续调整，绿色物流和数智化转型成为行业发展的重要方向。</p>
+                </div>
+            </a>
+            <a href="news-detail.html?id=6" class="news-card">
+                <div class="news-image"><img src="images/news/news-6-1.jpg" alt="物流软件如何赋能企业数智化管理升级"></div>
+                <div class="news-content">
+                    <div class="news-date">📅 2024-08-16</div>
+                    <h3 class="news-title"  How Logistics Software Empowers Enterprise Digital Management>物流软件如何赋能企业数智化管理升级</h3>
+                    <p class="news-excerpt"  Logistics software as core information system, digital management has become key to competitiveness.>物流软件作为物流企业核心信息系统，借助物流软件实现信息化管理，已成为企业保持竞争力的关键手段。</p>
+                </div>
+            </a>
+        </div>
+        <div style="text-align: center;">
+            <a href="news.html" class="view-all-btn"  View All News →>查看全部新闻 →</a>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2  Start Digital Transformation>开启数智化转型之旅</h2>
+        <p  Contact our expert team for customized solutions>立即Contact的专家团队，获取专属Solutions</p>
+        <a href="contact.html" class="btn-primary"  Contact Us>Contact</a>
+    </section>
+
+        <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="logo" style="margin-bottom: 1rem;"><div class="logo-icon">BAMI</div><span data-zh="八米科技" data-en="BAMI Tech">八米科技</span></div>
+                <p style="color: #8B92A8; font-size: 0.9rem;" data-zh="专注物流与供应链数智化15年" data-en="15 years in logistics & supply chain digitalization">专注物流与供应链数智化15年</p>
+            </div>
+            <div>
+                <h4 data-zh="产品服务" data-en="Products">产品服务</h4>
+                <ul>
+                    <li><a href="product-ai.html" data-zh="AI数字员工" data-en="AI Digital Workforce">AI数字员工</a></li>
+                    <li><a href="product-wms.html">BAMI WMS</a></li>
+                    <li><a href="product-tms.html">BAMI TMS</a></li>
+                    <li><a href="product-oms.html">BAMI OMS</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 data-zh="快速链接" data-en="Quick Links">快速链接</h4>
+                <ul>
+                    <li><a href="solutions.html" data-zh="解决方案" data-en="Solutions">解决方案</a></li>
+                    <li><a href="about.html" data-zh="关于我们" data-en="About">关于我们</a></li>
+                    <li><a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a></li>
+                    <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 data-zh="联系我们" data-en="Contact Us">联系我们</h4>
+                <ul>
+                    <li><a href="#">📍 <span data-zh="广州天河盛大国际" data-en="Guangzhou Tianhe">广州天河盛大国际</span></a></li>
+                    <li><a href="tel:18926200599">📞 18926200599</a></li>
+                    <li><a href="mailto:27270234@qq.com">✉️ 27270234@qq.com</a></li>
+                    <li><div class="system-login-menu">
+                        <button class="system-login-btn" onclick="toggleSystemMenu()" data-zh="🔐 系统登录" data-en="🔐 System Login">🔐 系统登录</button>
+                        <div class="system-dropdown" id="systemDropdown">
+                            <div class="system-dropdown-header">
+                                <span class="system-dropdown-title" data-zh="选择系统" data-en="Select System">选择系统</span>
+                                <button class="system-dropdown-close" onclick="closeSystemMenu()">✕</button>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">1. WMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="仓配WMS" data-en="Warehouse WMS">仓配WMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="电商WMS" data-en="E-commerce WMS">电商WMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">2. TMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="零担TMS" data-en="LTL TMS">零担TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://admin.liancheng.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://memberh5.liancheng.8bami.com/" target="_blank" data-zh="手机端" data-en="Mobile">手机端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="三方TMS" data-en="3PL TMS">三方TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://live.rxwl.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://live.rxwl.driver.8bami.com" target="_blank" data-zh="司机端" data-en="Driver">司机端</a>
+                                            <a href="http://live.rxwl.memberpc.8bami.com" target="_blank" data-zh="会员端" data-en="Member">会员端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="跨境TMS" data-en="Cross-border TMS">跨境TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://kjtms.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://kjtms.tgemember.8bami.com/?EnterpriseNo=bami" target="_blank" data-zh="会员端" data-en="Member">会员端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="跨境集运" data-en="Cross-border">跨境集运</span>
+                                        <div class="system-subitems">
+                                            <a href="http://b9.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="https://b9.member.8bami.com/?EnterpriseNo=t03_4" target="_blank" data-zh="手机端" data-en="Mobile">手机端</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">3. OMS/BMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="OMS" data-en="OMS">OMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="BMS" data-en="BMS">BMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></li>
+                </ul>
+            </div>
+        </div>
+                    <script>
+                    function toggleSystemMenu() {
+                        const dropdown = document.getElementById('systemDropdown');
+                        dropdown.classList.toggle('active');
+                    }
+                    function closeSystemMenu() {
+                        const dropdown = document.getElementById('systemDropdown');
+                        dropdown.classList.remove('active');
+                    }
+                    document.addEventListener('click', function(e) {
+                        const menu = document.querySelector('.system-login-menu');
+                        if (menu && !menu.contains(e.target)) {
+                            closeSystemMenu();
+                        }
+                    });
+                </script>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BAMI 八米科技. All rights reserved.</p>
+            <p><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer" style="color: #8B92A8; text-decoration: none;">粤ICP备19085702号</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Security: HTTPS Force Redirect
+        if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost' && !window.location.hostname.match(/^127\./)) {
+            window.location.href = window.location.href.replace('http:', 'https:');
+        }
+
+        // Security: XSS Protection - Escape User Input Function
+        function escapeHtml(text) {
+            if (typeof text !== 'string') return text;
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Security: Sanitize URL Function
+        function sanitizeUrl(url) {
+            if (typeof url !== 'string') return '#';
+            // Allow only http, https, mailto, tel protocols
+            const allowedProtocols = ['http:', 'https:', 'mailto:', 'tel:'];
+            const parsed = document.createElement('a');
+            parsed.href = url;
+            if (!allowedProtocols.includes(parsed.protocol)) {
+                return '#';
+            }
+            return url;
+        }
+
+        // Security: Input Validation Function
+        function validateInput(input, type) {
+            if (typeof input !== 'string') return false;
+            const patterns = {
+                email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                phone: /^[\d\s\-\+\(\)]{7,20}$/,
+                name: /^[\u4e00-\u9fa5a-zA-Z\s]{2,50}$/,
+                company: /^[\u4e00-\u9fa5a-zA-Z0-9\s]{2,100}$/
+            };
+            return patterns[type] ? patterns[type].test(input) : true;
+        }
+
+        // Mobile Menu Toggle
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('mobileMenu').classList.toggle('active');
+        });
+        document.querySelectorAll('.mobile-menu-list a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('menuBtn').classList.remove('active');
+                document.getElementById('mobileMenu').classList.remove('active');
+            });
+        });
+
+        // 3D Showcase: Pause on hover
+        const showcaseContainer = document.querySelector('.showcase-container');
+        if (showcaseContainer) {
+            showcaseContainer.addEventListener('mouseenter', function() {
+                this.style.animationPlayState = 'paused';
+            });
+            showcaseContainer.addEventListener('mouseleave', function() {
+                this.style.animationPlayState = 'running';
+            });
+        }
+
+        // Performance: Lazy load for animations
+        if ('IntersectionObserver' in window) {
+            const showcaseObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    } else {
+                        entry.target.style.animationPlayState = 'paused';
+                    }
+                });
+            });
+            if (showcaseContainer) {
+                showcaseObserver.observe(showcaseContainer);
+            }
+        }
+    </script>
+    <script src="js/lang.js">    // System Login Menu Functions
+    function toggleSystemMenu() {
+        const dropdown = document.getElementById('systemDropdown');
+        dropdown.classList.toggle('active');
+    }
+    function closeSystemMenu() {
+        const dropdown = document.getElementById('systemDropdown');
+        dropdown.classList.remove('active');
+    }
+    // Close system menu when clicking outside
+    document.addEventListener('click', function(e) {
+        const menu = document.querySelector('.system-login-menu');
+        const dropdown = document.getElementById('systemDropdown');
+        if (menu && dropdown && !menu.contains(e.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
+
+</script>
+<!-- V14 悬浮咨询按钮 -->
+<a href="contact.html" class="fab-contact" id="fabContact">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+    <span class="fab-tooltip" data-zh="立即咨询" data-en="Contact Us">立即咨询</span>
+</a>
+<script>
+// V14: 悬浮按钮显示控制
+function initFabButton() {
+    const fab = document.getElementById('fabContact');
+    if (!fab) return;
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            fab.classList.add('visible');
+        } else {
+            fab.classList.remove('visible');
+        }
+    }, { passive: true });
+}
+initFabButton();
+</script>
+</body>
+</html>
+<!-- Cache bust: Fri Mar 13 20:41:30 CST 2026 -->

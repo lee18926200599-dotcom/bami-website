@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-zh="成功案例 - 八米科技" data-en="Success Stories - BAMI Tech">成功案例 - 八米科技</title>
+    <link rel="icon" type="image/svg+xml" href="images/LOGO2.SVG">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-orange: #FF6B35;
+            --primary-orange-light: #FF8A5C;
+            --data-cyan: #00C9A7;
+            --bg-dark: #0A0E1A;
+            --bg-card: #1A2235;
+            --text-primary: #FFFFFF;
+            --text-secondary: #C5C9D6;
+            --text-muted: #8B92A8;
+            --border-subtle: rgba(255,107,53,0.1);
+            --border-hover: rgba(255,107,53,0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; background: var(--bg-dark); color: var(--text-primary); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(10,14,26,0.98); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.3rem; font-weight: 700; }
+        .logo-icon { width: 70px; height: 36px; background: linear-gradient(135deg, #FF6B35, #FF8A5C); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem; color: #FFFFFF; font-style: italic; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #C5C9D6; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #FF6B35; }
+        .nav-right { display: flex; align-items: center; gap: 1rem; }
+        .lang-switch { display: flex; background: #1A2235; padding: 0.25rem; border-radius: 20px; border: 1px solid rgba(255,107,53,0.3); }
+        .lang-btn { padding: 0.3rem 0.8rem; border-radius: 15px; border: none; background: none; color: #8B92A8; cursor: pointer; font-size: 0.85rem; }
+        .lang-btn.active { background: #FF6B35; color: #FFFFFF; }
+        .btn-primary { background: linear-gradient(135deg, #FF6B35, #FF8A5C); color: #FFFFFF; padding: 0.6rem 1.2rem; border-radius: 25px; font-weight: 600; }
+        .mobile-menu-btn { display: none; width: 44px; height: 44px; background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.3); border-radius: 8px; cursor: pointer; flex-direction: column; justify-content: center; align-items: center; gap: 5px; }
+        .mobile-menu-btn span { width: 20px; height: 2px; background: #FFFFFF; }
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0A0E1A; z-index: 999; padding: 5rem 1rem 2rem; }
+        .mobile-menu.active { display: flex; flex-direction: column; }
+        .mobile-menu-content { background: #1A2235; border-radius: 16px; border: 1px solid rgba(255,107,53,0.2); padding: 1rem; flex: 1; display: flex; flex-direction: column; margin: 1rem auto; max-width: 300px; width: 90%; }
+        .mobile-menu-header { display: flex; justify-content: flex-end; padding-bottom: 0.5rem; }
+        .mobile-menu-close { background: none; border: none; color: #8B92A8; cursor: pointer; font-size: 1.5rem; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; border-radius: 8px; }
+        .mobile-menu-close:hover { color: #FF6B35; background: rgba(255,107,53,0.1); }
+        .mobile-menu-list { list-style: none; flex: 1; overflow-y: auto; }
+        .mobile-menu-list li { border-bottom: 1px solid rgba(255,107,53,0.1); }
+        .mobile-menu-list a { display: block; padding: 0.8rem 0; font-size: 1rem; color: #FFFFFF; text-align: center; transition: color 0.3s; }
+        .mobile-menu-list a:hover { color: #FF6B35; }
+        .mobile-menu-list a.active { color: #FF6B35; }
+        .mobile-menu-footer { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,107,53,0.2); display: flex; flex-direction: column; gap: 1rem; }
+        .mobile-menu-footer .lang-switch { justify-content: center; width: fit-content; margin: 0 auto; }
+        .mobile-menu-footer .btn-primary { width: 100%; text-align: center; }
+        
+        .page-header { padding: 8rem 5% 4rem; text-align: center; background: linear-gradient(135deg, #0A0E1A, #1A2235); }
+        .section-tag { display: inline-block; background: rgba(255,107,53,0.1); color: #FF6B35; padding: 0.4rem 1rem; border-radius: 20px; margin-bottom: 1rem; border: 1px solid rgba(255,107,53,0.3); }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .page-header p { color: #8B92A8; max-width: 600px; margin: 0 auto; }
+        
+        .stats-bar { background: linear-gradient(135deg, var(--bg-card) 0%, #151B2A 100%); padding: 3rem 5%; border-bottom: 1px solid var(--border-subtle); }
+        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; text-align: center; }
+        .stat-item { padding: 1.5rem; border-radius: 16px; background: rgba(255,107,53,0.05); border: 1px solid var(--border-subtle); }
+        .stat-number { font-size: 2.5rem; font-weight: 700; color: var(--primary-orange); }
+        .stat-label { color: var(--text-muted); font-size: 0.9rem; }
+        
+        .cases-section { padding: 4rem 5%; max-width: 1200px; margin: 0 auto; }
+        .case-card { background: linear-gradient(145deg, var(--bg-card) 0%, #151B2A 100%); border: 1px solid var(--border-subtle); border-radius: 24px; overflow: hidden; margin-bottom: 3rem; transition: all 0.4s; }
+        .case-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(255,107,53,0.2); }
+        .case-header { display: grid; grid-template-columns: 1fr 1fr; }
+        .case-image { height: 300px; background: linear-gradient(135deg, #1E3A5F 0%, var(--bg-card) 100%); display: flex; align-items: center; justify-content: center; }
+        .case-info { padding: 2rem; display: flex; flex-direction: column; justify-content: center; }
+        .case-industry { display: inline-block; background: rgba(255,107,53,0.1); color: #FF8A5C; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; margin-bottom: 1rem; width: fit-content; }
+        .case-info h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .case-info .company { color: var(--text-muted); margin-bottom: 1rem; }
+        .case-results { display: flex; gap: 1.5rem; margin-top: 1rem; }
+        .result-item { text-align: center; }
+        .result-value { font-size: 1.5rem; font-weight: 700; color: var(--data-cyan); }
+        .result-label { font-size: 0.75rem; color: var(--text-muted); }
+        
+        .case-content { padding: 2rem; border-top: 1px solid var(--border-subtle); }
+        .case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .case-block h4 { color: var(--primary-orange); margin-bottom: 1rem; font-size: 1rem; }
+        .case-block ul { list-style: none; color: var(--text-secondary); font-size: 0.9rem; }
+        .case-block li { padding: 0.3rem 0; padding-left: 1.2rem; position: relative; }
+        .case-block li::before { content: '✓'; position: absolute; left: 0; color: var(--data-cyan); }
+        
+        .quote-section { background: linear-gradient(135deg, rgba(255,107,53,0.05) 0%, rgba(0,201,167,0.05) 100%); padding: 2rem; border-radius: 16px; margin-top: 2rem; border: 1px solid var(--border-subtle); }
+        .quote-text { font-style: italic; color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; padding-left: 2rem; position: relative; }
+        .quote-text::before { content: '"'; position: absolute; left: 0; top: -0.5rem; font-size: 3rem; color: var(--primary-orange); opacity: 0.5; font-family: Georgia, serif; }
+        .quote-author { display: flex; align-items: center; gap: 1rem; margin-top: 1.5rem; }
+        .quote-avatar { width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+        
+        .cta-section { padding: 4rem 5%; text-align: center; background: linear-gradient(135deg, var(--bg-dark), var(--bg-card)); }
+        .cta-section h2 { font-size: 1.8rem; margin-bottom: 0.8rem; }
+        .cta-section p { color: var(--text-muted); margin-bottom: 1.5rem; }
+        
+        .footer { background: #121829; padding: 3rem 5% 1.5rem; border-top: 1px solid rgba(255,107,53,0.1); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .footer h4 { color: #FFFFFF; margin-bottom: 1rem; }
+        .footer ul { list-style: none; }
+        .footer li { margin-bottom: 0.5rem; }
+        .footer a { color: #8B92A8; font-size: 0.9rem; }
+        .footer-bottom { text-align: center; color: #8B92A8; font-size: 0.85rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        
+        @media (min-width: 769px) { .mobile-menu { display: none !important; } }
+        @media (max-width: 768px) {
+            .nav-links, .nav-right { display: none !important; }
+            .mobile-menu-btn { display: flex !important; }
+            .page-header { padding: 6rem 4% 3rem; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .case-header { grid-template-columns: 1fr; }
+            .case-image { height: 200px; }
+            .case-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+        }
+    /* V14 悬浮咨询按钮 */
+.fab-contact { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(255,107,53,0.4); transition: all 0.3s; z-index: 999; opacity: 0; transform: translateY(20px); }
+.fab-contact.visible { opacity: 1; transform: translateY(0); }
+.fab-contact:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(255,107,53,0.6); }
+.fab-contact svg { width: 28px; height: 28px; fill: white; }
+.fab-tooltip { position: absolute; right: 70px; background: var(--bg-card); color: white; padding: 8px 16px; border-radius: 8px; font-size: 14px; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: all 0.3s; border: 1px solid var(--border-hover); }
+.fab-contact:hover .fab-tooltip { opacity: 1; transform: translateX(0); }
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 6px; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;"><span style="background: linear-gradient(135deg, #FF6B35, #FF8A5C); padding: 6px 10px; border-radius: 12px; color: #FFFFFF; font-weight: bold; font-size: 18px; line-height: 1; font-family: Arial, Helvetica, sans-serif;">BAMI</span><span style="color: #FF6B35; font-weight: bold; font-size: 24px; line-height: 1;">八米</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html" data-zh="首页" data-en="Home">首页</a></li>
+            <li><a href="products.html" data-zh="产品服务" data-en="Products">产品服务</a></li>
+            <li><a href="solutions.html" data-zh="解决方案" data-en="Solutions">解决方案</a></li>
+            <li><a href="cases.html" class="active" data-zh="成功案例" data-en="Cases">成功案例</a></li>
+            <li><a href="about.html" data-zh="关于我们" data-en="About">关于我们</a></li>
+            <li><a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a></li>
+            <li><a href="support.html" data-zh="服务支持" data-en="Support">服务支持</a></li>
+            <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="zh" onclick="switchLang('zh')">中</button>
+                <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+            </div>
+            <a href="contact.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">立即咨询</a>
+        </div>
+        <button class="mobile-menu-btn" id="menuBtn" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
+            </div>
+            <ul class="mobile-menu-list">
+                <li><a href="index.html" data-zh="首页" data-en="Home">首页</a></li>
+                <li><a href="products.html" data-zh="产品服务" data-en="Products">产品服务</a></li>
+                <li><a href="solutions.html" data-zh="解决方案" data-en="Solutions">解决方案</a></li>
+                <li><a href="cases.html" class="active" data-zh="成功案例" data-en="Cases">成功案例</a></li>
+                <li><a href="about.html" data-zh="关于我们" data-en="About">关于我们</a></li>
+                <li><a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a></li>
+                <li><a href="support.html" data-zh="服务支持" data-en="Support">服务支持</a></li>
+                <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+            </ul>
+            <div class="mobile-menu-footer">
+                <div class="lang-switch">
+                    <button class="lang-btn active" data-lang="zh" onclick="switchLang('zh')">中</button>
+                    <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+                </div>
+                <a href="contact.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">立即咨询</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="page-header">
+        <div class="section-tag" data-zh="成功案例" data-en="Success Stories">成功案例</div>
+        <h1 data-zh="与客户共同成长，见证每一份信任的力量" data-en="Growing Together with Clients, Witnessing the Power of Trust">与客户共同成长，见证每一份信任的力量</h1>
+        <p data-zh="见证八米科技如何助力企业实现数智化转型，创造真实商业价值" data-en="See how BAMI Tech helps enterprises achieve digital transformation and create real business value">见证八米科技如何助力企业实现数智化转型，创造真实商业价值</p>
+    </header>
+
+    <section class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">1200+</div>
+                <div class="stat-label" data-zh="服务客户" data-en="Clients Served">服务客户</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label" data-zh="客户满意度" data-en="Satisfaction">客户满意度</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">30%</div>
+                <div class="stat-label" data-zh="平均成本降低" data-en="Cost Reduction">平均成本降低</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3x</div>
+                <div class="stat-label" data-zh="效率提升" data-en="Efficiency Gain">效率提升</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cases-section">
+        <!-- Case 1: 嘉拓智能 / Jiatuo Intelligence -->
+        <div class="case-card">
+            <div class="case-header">
+                <div class="case-image" style="background: #1A2235; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    <img src="images/cases/case-jiatuo.jpg" alt="嘉拓智能" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="case-info">
+                    <span class="case-industry" data-zh="新能源装备制造" data-en="New Energy Equipment">新能源装备制造</span>
+                    <h2 data-zh="嘉拓智能" data-en="Jiatuo Intelligence">嘉拓智能</h2>
+                    <p class="company" data-zh="新能源高端装备领军企业 | 年营收超50亿" data-en="Leading new energy equipment enterprise | Annual revenue over 5 billion RMB">新能源高端装备领军企业 | 年营收超50亿</p>
+                    <div class="case-results">
+                        <div class="result-item">
+                            <div class="result-value">40%</div>
+                            <div class="result-label" data-zh="车辆利用率提升" data-en="Vehicle Utilization">车辆利用率提升</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value" data-zh="300万" data-en="3M RMB">300万</div>
+                            <div class="result-label" data-zh="年节省成本" data-en="Annual Savings">年节省成本</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value">3x</div>
+                            <div class="result-label" data-zh="调度效率提升" data-en="Dispatch Efficiency">调度效率提升</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-content">
+                <div class="case-grid">
+                    <div class="case-block">
+                        <h4 data-zh="🎯 业务挑战" data-en="🎯 Business Challenges">🎯 业务挑战</h4>
+                        <ul>
+                            <li data-zh="日均200+订单，人工调度效率低下" data-en="200+ daily orders, inefficient manual dispatch">日均200+订单，人工调度效率低下</li>
+                            <li data-zh="车辆空载率高达35%，资源浪费严重" data-en="35% empty load rate, serious resource waste">车辆空载率高达35%，资源浪费严重</li>
+                            <li data-zh="运输过程缺乏实时监控，客户投诉率高" data-en="Lack of real-time monitoring, high complaint rate">运输过程缺乏实时监控，客户投诉率高</li>
+                            <li data-zh="多承运商管理混乱，结算对账困难" data-en="Chaotic multi-carrier management, difficult reconciliation">多承运商管理混乱，结算对账困难</li>
+                        </ul>
+                    </div>
+                    <div class="case-block">
+                        <h4 data-zh="💡 八米方案" data-en="💡 BAMI Solution">💡 八米方案</h4>
+                        <ul>
+                            <li data-zh="部署BAMI TMS智能运输管理系统" data-en="Deployed BAMI TMS intelligent transport management">部署BAMI TMS智能运输管理系统</li>
+                            <li data-zh="AI智能调度算法，自动匹配最优运力" data-en="AI dispatch algorithm for optimal capacity matching">AI智能调度算法，自动匹配最优运力</li>
+                            <li data-zh="GPS全程追踪，实时可视化管理" data-en="GPS tracking with real-time visibility">GPS全程追踪，实时可视化管理</li>
+                            <li data-zh="承运商统一管理平台，自动结算对账" data-en="Unified carrier platform with auto reconciliation">承运商统一管理平台，自动结算对账</li>
+                        </ul>
+                    </div>
+                    <div class="case-block">
+                        <h4 data-zh="📈 项目成果" data-en="📈 Project Results">📈 项目成果</h4>
+                        <ul>
+                            <li data-zh="车辆利用率从60%提升至85%" data-en="Vehicle utilization increased from 60% to 85%">车辆利用率从60%提升至85%</li>
+                            <li data-zh="年节省运输成本超300万元" data-en="Annual transport cost savings over 3M RMB">年节省运输成本超300万元</li>
+                            <li data-zh="调度人员从8人减少至3人" data-en="Dispatch staff reduced from 8 to 3">调度人员从8人减少至3人</li>
+                            <li data-zh="客户满意度从82%提升至96%" data-en="Customer satisfaction increased from 82% to 96%">客户满意度从82%提升至96%</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="quote-section">
+                    <p class="quote-text" data-zh="八米科技的TMS系统彻底改变了我们的运输管理模式。智能调度功能让我们的车辆利用率提升了40%，每年节省运输成本超过300万元。系统稳定可靠，服务响应及时，是值得信赖的合作伙伴。" data-en="BAMI's TMS system has completely transformed our transport management. The intelligent dispatch feature increased our vehicle utilization by 40%, saving over 3 million RMB annually. The system is stable and reliable, with responsive service - a trustworthy partner.">八米科技的TMS系统彻底改变了我们的运输管理模式。智能调度功能让我们的车辆利用率提升了40%，每年节省运输成本超过300万元。系统稳定可靠，服务响应及时，是值得信赖的合作伙伴。</p>
+                    <div class="quote-author">
+                        <div class="quote-avatar" data-zh="张" data-en="Z">张</div>
+                        <div>
+                            <h4 data-zh="张先生" data-en="Mr. Zhang">张先生</h4>
+                            <p style="color: var(--text-muted); font-size: 0.85rem;" data-zh="嘉拓智能 | 物流总监" data-en="Jiatuo Intelligence | Logistics Director">嘉拓智能 | 物流总监</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Case 2: 贝恩医疗 / Bain Medical -->
+        <div class="case-card">
+            <div class="case-header">
+                <div class="case-image" style="background: #1A2235; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    <img src="images/cases/case-bain.jpg" alt="贝恩医疗" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="case-info">
+                    <span class="case-industry" style="background: rgba(0,201,167,0.1); color: #00C9A7;" data-zh="医疗器械" data-en="Medical Devices">医疗器械</span>
+                    <h2 data-zh="贝恩医疗" data-en="Bain Medical">贝恩医疗</h2>
+                    <p class="company" data-zh="国内领先的医疗器械供应链服务商 | 管理8个区域仓库" data-en="Leading medical device supply chain service provider | Managing 8 regional warehouses">国内领先的医疗器械供应链服务商 | 管理8个区域仓库</p>
+                    <div class="case-results">
+                        <div class="result-item">
+                            <div class="result-value" style="color: var(--data-cyan);">99.99%</div>
+                            <div class="result-label" data-zh="库存准确率" data-en="Inventory Accuracy">库存准确率</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value" style="color: var(--data-cyan);">2x</div>
+                            <div class="result-label" data-zh="订单处理能力" data-en="Order Processing">订单处理能力</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value" style="color: var(--data-cyan);">50%</div>
+                            <div class="result-label" data-zh="拣货效率提升" data-en="Picking Efficiency">拣货效率提升</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-content">
+                <div class="case-grid">
+                    <div class="case-block">
+                        <h4 data-zh="🎯 业务挑战" data-en="🎯 Business Challenges">🎯 业务挑战</h4>
+                        <ul>
+                            <li data-zh="医疗器械批次追溯要求高，人工管理易出错" data-en="High batch traceability requirements, error-prone manual management">医疗器械批次追溯要求高，人工管理易出错</li>
+                            <li data-zh="8个区域仓库库存信息不同步，经常超卖" data-en="8 warehouses with unsynchronized inventory, frequent overselling">8个区域仓库库存信息不同步，经常超卖</li>
+                            <li data-zh="日均5万订单，高峰期处理能力不足" data-en="50K daily orders, insufficient peak processing capacity">日均5万订单，高峰期处理能力不足</li>
+                            <li data-zh="效期管理混乱，过期损耗严重" data-en="Chaotic expiry management, serious expiration losses">效期管理混乱，过期损耗严重</li>
+                        </ul>
+                    </div>
+                    <div class="case-block">
+                        <h4 data-zh="💡 八米方案" data-en="💡 BAMI Solution">💡 八米方案</h4>
+                        <ul>
+                            <li data-zh="部署BAMI WMS智能仓储管理系统" data-en="Deployed BAMI WMS intelligent warehouse management">部署BAMI WMS智能仓储管理系统</li>
+                            <li data-zh="多仓协同管理，库存实时同步" data-en="Multi-warehouse collaboration with real-time inventory sync">多仓协同管理，库存实时同步</li>
+                            <li data-zh="智能波次拣货，AI优化拣货路径" data-en="Intelligent wave picking with AI-optimized routes">智能波次拣货，AI优化拣货路径</li>
+                            <li data-zh="全生命周期批次追溯，自动效期预警" data-en="Full lifecycle batch traceability with auto expiry alerts">全生命周期批次追溯，自动效期预警</li>
+                        </ul>
+                    </div>
+                    <div class="case-block">
+                        <h4 data-zh="📈 项目成果" data-en="📈 Project Results">📈 项目成果</h4>
+                        <ul>
+                            <li data-zh="日处理订单量从5万提升至10万+" data-en="Daily order processing increased from 50K to 100K+">日处理订单量从5万提升至10万+</li>
+                            <li data-zh="库存准确率达到99.99%" data-en="Inventory accuracy reached 99.99%">库存准确率达到99.99%</li>
+                            <li data-zh="拣货效率提升50%，人力成本降低30%" data-en="Picking efficiency up 50%, labor costs down 30%">拣货效率提升50%，人力成本降低30%</li>
+                            <li data-zh="过期损耗降低80%，年节省超500万" data-en="Expiration losses reduced 80%, saving 5M+ RMB annually">过期损耗降低80%，年节省超500万</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="quote-section">
+                    <p class="quote-text" data-zh="引入八米WMS后，我们的仓储效率实现了质的飞跃。智能波次拣货让日处理订单量从5万提升到10万+，库存准确率达到99.99%。多仓协同功能让我们轻松管理全国8个仓库，真正实现了库存可视化。" data-en="After implementing BAMI WMS, our warehouse efficiency achieved a qualitative leap. Intelligent wave picking increased daily order processing from 50K to 100K+, with 99.99% inventory accuracy. Multi-warehouse collaboration allows us to easily manage 8 warehouses nationwide, achieving true inventory visibility.">引入八米WMS后，我们的仓储效率实现了质的飞跃。智能波次拣货让日处理订单量从5万提升到10万+，库存准确率达到99.99%。多仓协同功能让我们轻松管理全国8个仓库，真正实现了库存可视化。</p>
+                    <div class="quote-author">
+                        <div class="quote-avatar" style="background: linear-gradient(135deg, #00C9A7, #33D4B8);" data-zh="李" data-en="L">李</div>
+                        <div>
+                            <h4 data-zh="李女士" data-en="Ms. Li">李女士</h4>
+                            <p style="color: var(--text-muted); font-size: 0.85rem;" data-zh="贝恩医疗 | 供应链经理" data-en="Bain Medical | Supply Chain Manager">贝恩医疗 | 供应链经理</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Case 3: 菲律宾APOLLO公司 / APOLLO Philippines -->
+        <div class="case-card">
+            <div class="case-header">
+                <div class="case-image" style="background: #1A2235; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    <img src="images/cases/case-apollo.jpg" alt="APOLLO Tech" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="case-info">
+                    <span class="case-industry" data-zh="快消品4PL物流" data-en="FMCG 4PL Logistics">快消品4PL物流</span>
+                    <h2 data-zh="菲律宾APOLLO公司" data-en="APOLLO Tech Philippines">菲律宾APOLLO公司</h2>
+                    <p class="company" data-zh="菲律宾领先的统仓共配平台 | 服务快消品行业全链路配送" data-en="Leading 4PL platform in Philippines | Serving FMCG industry end-to-end distribution">菲律宾领先的统仓共配平台 | 服务快消品行业全链路配送</p>
+                    <div class="case-results">
+                        <div class="result-item">
+                            <div class="result-value">35%</div>
+                            <div class="result-label" data-zh="配送成本降低" data-en="Delivery Cost Reduction">配送成本降低</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value">2.5x</div>
+                            <div class="result-label" data-zh="配送效率提升" data-en="Delivery Efficiency">配送效率提升</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value" data-zh="全链路" data-en="End-to-End">全链路</div>
+                            <div class="result-label" data-zh="数智化管控" data-en="Digital Control">数智化管控</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-content">
+                <div class="case-grid">
+                    <div class="case-block">
+                        <h4 data-zh="🎯 业务挑战" data-en="🎯 Business Challenges">🎯 业务挑战</h4>
+                        <ul>
+                            <li data-zh="菲律宾快消品配送网络分散，物流成本居高不下" data-en="Fragmented FMCG distribution network in Philippines with high logistics costs">菲律宾快消品配送网络分散，物流成本居高不下</li>
+                            <li data-zh="订单、仓储、运输三套系统独立运行，数据孤岛严重" data-en="Orders, warehouse, and transport systems operated independently with data silos">订单、仓储、运输三套系统独立运行，数据孤岛严重</li>
+                            <li data-zh="缺乏统一调度平台，车辆装载率低，配送时效难保障" data-en="Lack of unified dispatch platform, low vehicle load rates, delivery times hard to guarantee">缺乏统一调度平台，车辆装载率低，配送时效难保障</li>
+                            <li data-zh="社会化配送资源整合困难，难以形成规模效应" data-en="Difficulty integrating social delivery resources, hard to achieve economies of scale">社会化配送资源整合困难，难以形成规模效应</li>
+                        </ul>
+                    </div>
+                    <div class="case-block">
+                        <h4 data-zh="💡 八米方案" data-en="💡 BAMI Solution">💡 八米方案</h4>
+                        <ul>
+                            <li data-zh="部署八米OMS+WMS+TMS一体化解决方案" data-en="Deployed integrated BAMI OMS+WMS+TMS solution">部署八米OMS+WMS+TMS一体化解决方案</li>
+                            <li data-zh="构建统仓共配4PL平台，整合社会化运力资源" data-en="Built 4PL unified warehousing and distribution platform, integrated social capacity resources">构建统仓共配4PL平台，整合社会化运力资源</li>
+                            <li data-zh="智能订单聚合与波次分配，优化仓储作业效率" data-en="Intelligent order aggregation and wave allocation, optimized warehouse operations">智能订单聚合与波次分配，优化仓储作业效率</li>
+                            <li data-zh="AI路径规划与动态调度，实现最优配送方案" data-en="AI route planning and dynamic dispatch for optimal delivery solutions">AI路径规划与动态调度，实现最优配送方案</li>
+                        </ul>
+                    </div>
+                    <div class="case-block">
+                        <h4 data-zh="📈 项目成果" data-en="📈 Project Results">📈 项目成果</h4>
+                        <ul>
+                            <li data-zh="社会化配送成本降低35%，为客户节省大量物流支出" data-en="Social delivery costs reduced 35%, saving significant logistics expenses for clients">社会化配送成本降低35%，为客户节省大量物流支出</li>
+                            <li data-zh="配送效率提升2.5倍，订单履约时效缩短40%" data-en="Delivery efficiency improved 2.5x, order fulfillment time reduced by 40%">配送效率提升2.5倍，订单履约时效缩短40%</li>
+                            <li data-zh="车辆装载率从55%提升至82%，资源利用率大幅提高" data-en="Vehicle load rate increased from 55% to 82%, significantly improved resource utilization">车辆装载率从55%提升至82%，资源利用率大幅提高</li>
+                            <li data-zh="平台整合300+社会运力资源，覆盖菲律宾主要城市" data-en="Platform integrated 300+ social capacity resources, covering major Philippine cities">平台整合300+社会运力资源，覆盖菲律宾主要城市</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="quote-section">
+                    <p class="quote-text" data-zh="八米科技的OMS+WMS+MS一体化平台彻底改变了我们的业务模式。统仓共配4PL平台让我们成功整合了菲律宾分散的快消品配送资源，不仅为客户降低了35%的物流成本，更将配送效率提升了2.5倍。这是菲律宾物流行业的数智化里程碑。" data-en="BAMI's integrated OMS+WMS+TMS platform completely transformed our business model. The 4PL unified warehousing and distribution platform successfully integrated fragmented FMCG delivery resources in the Philippines, reducing logistics costs by 35% for clients while improving delivery efficiency by 2.5x. This is a digital milestone for the Philippine logistics industry.">八米科技的OMS+WMS+TMS一体化平台彻底改变了我们的业务模式。统仓共配4PL平台让我们成功整合了菲律宾分散的快消品配送资源，不仅为客户降低了35%的物流成本，更将配送效率提升了2.5倍。这是菲律宾物流行业的数智化里程碑。</p>
+                    <div class="quote-author">
+                        <div class="quote-avatar" style="background: linear-gradient(135deg, #0038A8, #CE1126);" data-zh="A" data-en="A">A</div>
+                        <div>
+                            <h4 data-zh="A先生" data-en="Mr. A">A先生</h4>
+                            <p style="color: var(--text-muted); font-size: 0.85rem;" data-zh="APOLLO Tech | CEO" data-en="APOLLO Tech | CEO">APOLLO Tech | CEO</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Case 4: 广东云山快仓 / Guangdong Yunshan Express Warehouse -->
+        <div class="case-card">
+            <div class="case-header">
+                <div class="case-image" style="background: #1A2235; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+                    <img src="images/cases/case-yunshan.jpg" alt="云山快仓" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="case-info">
+                    <span class="case-industry" data-zh="电商云仓" data-en="E-Commerce Cloud Warehouse">电商云仓</span>
+                    <h2 data-zh="广东云山快仓" data-en="Guangdong Yunshan Express">广东云山快仓</h2>
+                    <p class="company" data-zh="华南地区头部电商云仓服务商 | 20万㎡仓储面积，日处理50万订单" data-en="Leading e-commerce cloud warehouse in South China | 200K sqm storage, 500K daily orders">华南地区头部电商云仓服务商 | 20万㎡仓储面积，日处理50万订单</p>
+                    <div class="case-results">
+                        <div class="result-item">
+                            <div class="result-value">50万+</div>
+                            <div class="result-label" data-zh="日均订单处理" data-en="Daily Orders">日均订单处理</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value">3x</div>
+                            <div class="result-label" data-zh="峰值处理能力" data-en="Peak Capacity">峰值处理能力</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-value">99.97%</div>
+                            <div class="result-label" data-zh="发货准确率" data-en="Shipping Accuracy">发货准确率</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="case-content">
+                <div class="case-grid">
+                    <div class="case-block">
+                        <h4 data-zh="🎯 业务挑战" data-en="🎯 Business Challenges">🎯 业务挑战</h4>
+                        <ul>
+                            <li data-zh="日均50万订单，大促期间峰值达150万，系统承载压力大" data-en="500K daily orders, 1.5M peak during promotions, heavy system load">日均50万订单，大促期间峰值达150万，系统承载压力大</li>
+                            <li data-zh="多平台订单聚合复杂，库存同步延迟导致超卖频发" data-en="Complex multi-platform order aggregation, inventory sync delays caused frequent overselling">多平台订单聚合复杂，库存同步延迟导致超卖频发</li>
+                            <li data-zh="20万㎡仓库作业效率低，人工拣货错误率高" data-en="Low efficiency in 200K sqm warehouse, high error rate in manual picking">20万㎡仓库作业效率低，人工拣货错误率高</li>
+                            <li data-zh="客户对发货时效要求严苛，24小时发货率仅85%" data-en="Strict delivery time requirements from clients, 24h shipping rate only 85%">客户对发货时效要求严苛，24小时发货率仅85%</li>
+                        </ul>
+                    </div>
+                    <div class="case-block">
+                        <h4 data-zh="💡 八米方案" data-en="💡 BAMI Solution">💡 八米方案</h4>
+                        <ul>
+                            <li data-zh="部署八米WMS+OMS电商云仓解决方案" data-en="Deployed BAMI WMS+OMS e-commerce cloud warehouse solution">部署八米WMS+OMS电商云仓解决方案</li>
+                            <li data-zh="多平台订单统一接入，实时库存同步引擎" data-en="Unified multi-platform order接入 with real-time inventory sync engine">多平台订单统一接入，实时库存同步引擎</li>
+                            <li data-zh="智能波次拣货+AGV机器人协同，自动化作业流程" data-en="Intelligent wave picking + AGV robot collaboration, automated workflows">智能波次拣货+AGV机器人协同，自动化作业流程</li>
+                            <li data-zh="弹性云架构，支持10倍峰值订单量平滑扩容" data-en="Elastic cloud architecture supporting 10x peak order volume scaling">弹性云架构，支持10倍峰值订单量平滑扩容</li>
+                        </ul>
+                    </div>
+                    <div class="case-block">
+                        <h4 data-zh="📈 项目成果" data-en="📈 Project Results">📈 项目成果</h4>
+                        <ul>
+                            <li data-zh="日处理订单能力从50万提升至150万+，峰值承载3倍增长" data-en="Daily order processing capacity increased from 500K to 1.5M+, 3x peak growth">日处理订单能力从50万提升至150万+，峰值承载3倍增长</li>
+                            <li data-zh="发货准确率达到99.97%，客户投诉率下降90%" data-en="Shipping accuracy reached 99.97%, customer complaints down 90%">发货准确率达到99.97%，客户投诉率下降90%</li>
+                            <li data-zh="24小时发货率从85%提升至99.5%，客户满意度大幅提高" data-en="24h shipping rate improved from 85% to 99.5%, customer satisfaction greatly improved">24小时发货率从85%提升至99.5%，客户满意度大幅提高</li>
+                            <li data-zh="拣货效率提升200%，人力成本降低40%，ROI显著" data-en="Picking efficiency up 200%, labor costs down 40%, significant ROI">拣货效率提升200%，人力成本降低40%，ROI显著</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="quote-section">
+                    <p class="quote-text" data-zh="选择八米WMS+OMS是我们做过的最正确的决定。系统上线后，我们成功应对了双11期间150万单的峰值冲击，发货准确率99.97%，24小时发货率99.5%。八米的技术实力和本地化服务让我们非常放心，是云仓数智化转型的最佳合作伙伴。" data-en="Choosing BAMI WMS+OMS was the best decision we made. After system launch, we successfully handled 1.5M orders during Double 11 peak with 99.97% shipping accuracy and 99.5% 24h shipping rate. BAMI's technical strength and localized service give us great confidence - the best partner for cloud warehouse digital transformation.">选择八米WMS+OMS是我们做过的最正确的决定。系统上线后，我们成功应对了双11期间150万单的峰值冲击，发货准确率99.97%，24小时发货率99.5%。八米的技术实力和本地化服务让我们非常放心，是云仓数智化转型的最佳合作伙伴。</p>
+                    <div class="quote-author">
+                        <div class="quote-avatar" style="background: linear-gradient(135deg, #FF6B35, #FFB347);" data-zh="陈" data-en="C">陈</div>
+                        <div>
+                            <h4 data-zh="陈先生" data-en="Mr. Chen">陈先生</h4>
+                            <p style="color: var(--text-muted); font-size: 0.85rem;" data-zh="云山快仓 | 运营总经理" data-en="Yunshan Express | COO">云山快仓 | 运营总经理</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2 data-zh="成为我们的下一个成功案例" data-en="Become Our Next Success Story">成为我们的下一个成功案例</h2>
+        <p data-zh="联系我们的专家团队，获取专属数智化转型方案" data-en="Contact our expert team for your digital transformation solution">联系我们的专家团队，获取专属数智化转型方案</p>
+        <a href="contact.html" class="btn-primary" data-zh="预约免费咨询" data-en="Book Free Consultation">预约免费咨询</a>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="logo" style="margin-bottom: 1rem;"><div class="logo-icon">BAMI</div><span data-zh="八米科技" data-en="BAMI Tech">八米科技</span></div>
+                <p style="color: #8B92A8; font-size: 0.9rem;" data-zh="专注物流与供应链数智化15年" data-en="15 years focused on logistics & supply chain digitalization">专注物流与供应链数智化15年</p>
+            </div>
+            <div>
+                <h4 data-zh="产品服务" data-en="Products">产品服务</h4>
+                <ul>
+                    <li><a href="product-ai.html">AI <span data-zh="数字员工" data-en="Digital Worker">数字员工</span></a></li>
+                    <li><a href="product-wms.html">BAMI WMS</a></li>
+                    <li><a href="product-tms.html">BAMI TMS</a></li>
+                    <li><a href="product-oms.html">BAMI OMS</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 data-zh="快速链接" data-en="Quick Links">快速链接</h4>
+                <ul>
+                    <li><a href="solutions.html" data-zh="解决方案" data-en="Solutions
+                    <li><a href="cases.html" data-zh="成功案例" data-en="Success Stories">成功案例</a></li>
+                    <li><a href="about.html" data-zh="关于我们" data-en="About Us">关于我们</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 data-zh="联系我们" data-en="Contact">联系我们</h4>
+                <ul>
+                    <li><a href="#">📍 <span data-zh="广州天河盛大国际" data-en="Guangzhou Tianhe Shengda International">广州天河盛大国际</span></a></li>
+                    <li><a href="tel:18926200599">📞 18926200599</a></li>
+                    <li><a href="mailto:27270234@qq.com">✉️ 27270234@qq.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BAMI <span data-zh="八米科技" data-en="Tech">八米科技</span>. All rights reserved.</p>
+            <p><a href="https://beian.miit.gov.cn/" target="_blank" style="color: #8B92A8;">粤ICP备19085702号</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Language Switching
+        function switchLang(lang) {
+            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+            
+            // Update all elements with data-zh and data-en attributes
+            document.querySelectorAll('[data-zh][data-en]').forEach(el => {
+                el.textContent = el.getAttribute('data-' + lang);
+            });
+            
+            // Update active state on buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+            
+            // Store preference
+            localStorage.setItem('bami-lang', lang);
+        }
+        
+        // Mobile Menu Functions
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('menuBtn');
+            menu.classList.toggle('active');
+            btn.classList.toggle('active');
+        }
+        
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btn = document.getElementById('menuBtn');
+            menu.classList.remove('active');
+            btn.classList.remove('active');
+        }
+        
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('bami-lang') || 'zh';
+            switchLang(savedLang);
+        });
+    
+</script>
+<!-- V14 悬浮咨询按钮 -->
+<a href="contact.html" class="fab-contact" id="fabContact">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+    <span class="fab-tooltip" data-zh="立即咨询" data-en="Contact Us">立即咨询</span>
+</a>
+<script>
+// V14: 悬浮按钮显示控制
+function initFabButton() {
+    const fab = document.getElementById('fabContact');
+    if (!fab) return;
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            fab.classList.add('visible');
+        } else {
+            fab.classList.remove('visible');
+        }
+    }, { passive: true });
+}
+initFabButton();
+</script>
+</body>
+</html>

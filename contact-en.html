@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-src https://www.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="Contact BAMI Technology for product inquiries and demonstrations of AI Digital Workforce, WMS, TMS, OMS systems. Phone: 18926200599">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://lee18926200599-dotcom.github.io/bami-website/contact-en.html">
+
+    
+    <title data-zh="联系我们 - 八米科技" data-en="Contact Us - BAMI Tech">Contact Us - BAMI Tech</title>
+    <link rel="icon" type="image/svg+xml" href="images/LOGO2.SVG">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Noto Sans SC', sans-serif; background: #0A0E1A; color: #FFFFFF; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        
+        /* 导航 */
+        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: rgba(10,14,26,0.98); position: fixed; top: 0; left: 0; right: 0; z-index: 1000; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.3rem; font-weight: 700; }
+        .logo-icon { width: 70px; height: 36px; background: linear-gradient(135deg, #FF6B35, #FF8A5C); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.1rem; color: #FFFFFF; letter-spacing: 1px; font-style: italic; text-shadow: 1px 1px 2px rgba(0,0,0,0.2); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #C5C9D6; }
+        .nav-links a.active { color: #FF6B35; }
+        .nav-right { display: flex; align-items: center; gap: 1rem; }
+        .lang-switch { display: flex; background: #1A2235; padding: 0.25rem; border-radius: 20px; border: 1px solid rgba(255,107,53,0.3); }
+        .lang-btn { padding: 0.3rem 0.8rem; border-radius: 15px; border: none; background: none; color: #8B92A8; cursor: pointer; }
+        .lang-btn.active { background: #FF6B35; color: #FFFFFF; }
+        .btn-primary { display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #FF6B35, #FF8A5C); color: #FFFFFF; padding: 0.6rem 1.2rem; border-radius: 25px; font-weight: 600; border: none; cursor: pointer; }
+        .mobile-menu-btn { display: none; width: 44px; height: 44px; background: rgba(255,107,53,0.1); border: 1px solid rgba(255,107,53,0.3); border-radius: 8px; cursor: pointer; flex-direction: column; justify-content: center; align-items: center; gap: 5px; }
+        .mobile-menu-btn span { width: 20px; height: 2px; background: #FFFFFF; }
+        
+        /* 移动端菜单 */
+        .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #0A0E1A; z-index: 999; padding: 5rem 1rem 2rem; }
+        .mobile-menu.active { display: flex; flex-direction: column; }
+        .mobile-menu-content { background: #1A2235; border-radius: 20px; border: 1px solid rgba(255,107,53,0.2); padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+        .mobile-menu-list { list-style: none; flex: 1; }
+        .mobile-menu-list li { border-bottom: 1px solid rgba(255,107,53,0.1); }
+        .mobile-menu-list a { display: block; padding: 1.2rem 0; font-size: 1.2rem; color: #FFFFFF; text-align: center; }
+        .mobile-menu-footer { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,107,53,0.2); display: flex; flex-direction: column; gap: 1rem; }
+        .mobile-menu-footer .lang-switch { justify-content: center; width: fit-content; margin: 0 auto; }
+        .mobile-menu-footer .btn-primary { width: 100%; }
+        
+        /* 页面头部 */
+        .page-header { padding: 8rem 5% 3rem; text-align: center; background: linear-gradient(135deg, #0A0E1A, #1A2235); }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .page-header p { color: #8B92A8; }
+        
+        /* 联系页面 */
+        .contact-section { padding: 4rem 5%; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 1000px; margin: 0 auto; align-items: start; }
+        .contact-info h2 { font-size: 1.8rem; margin-bottom: 2rem; }
+        .contact-card { background: #1A2235; border: 1px solid rgba(255,107,53,0.1); border-radius: 16px; padding: 1.5rem; margin-bottom: 1rem; }
+        .contact-card h4 { color: #FF6B35; margin-bottom: 1rem; font-size: 1.1rem; }
+        .contact-card p { color: #8B92A8; margin-bottom: 0.5rem; }
+        .form-card { background: #1A2235; border: 1px solid rgba(255,107,53,0.1); border-radius: 20px; padding: 1.5rem; }
+        .form-card form button { margin: 1rem auto 0; display: block; background: linear-gradient(135deg, #FF6B35, #FF8A5C); color: #FFFFFF; padding: 0.6rem 1.2rem; border-radius: 25px; font-weight: 600; border: none; cursor: pointer; font-size: 1rem; }
+        .form-card h3 { margin-bottom: 1.5rem; }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group label { display: block; color: #C5C9D6; margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.8rem 1rem; background: #0A0E1A; border: 1px solid rgba(255,107,53,0.2); border-radius: 10px; color: #FFFFFF; font-size: 1rem; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #FF6B35; }
+        .btn-full { width: 100%; }
+        
+        /* 页脚 */
+        .footer { background: #121829; padding: 3rem 5% 1.5rem; border-top: 1px solid rgba(255,107,53,0.1); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto; }
+        .footer h4 { color: #FFFFFF; margin-bottom: 1rem; }
+        .footer ul { list-style: none; }
+        .footer li { margin-bottom: 0.5rem; }
+        .system-login-menu { position: relative; }
+        .system-login-btn { display: block; color: #8B92A8; cursor: pointer; font-size: 0.9rem; background: none; border: none; padding: 0; margin: 0; font-family: inherit; text-align: left; }
+        .system-login-btn:hover { color: #FF6B35; }
+        .system-dropdown { display: none; position: absolute; bottom: 100%; left: 0; background: #1A2235; border: 1px solid rgba(255,107,53,0.3); border-radius: 12px; padding: 1rem; min-width: 200px; margin-bottom: 0.5rem; box-shadow: 0 10px 40px rgba(0,0,0,0.5); z-index: 1000; }
+        .system-dropdown.active { display: block; }
+        .system-dropdown-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,107,53,0.2); }
+        .system-dropdown-title { color: #FF6B35; font-weight: 600; font-size: 0.9rem; }
+        .system-dropdown-close { background: none; border: none; color: #8B92A8; cursor: pointer; font-size: 1.2rem; padding: 0; width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 4px; }
+        .system-dropdown-close:hover { color: #FF6B35; background: rgba(255,107,53,0.1); }
+        .system-category { margin-bottom: 0.8rem; }
+        .system-category-title { color: #FF6B35; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+        .system-category-items { padding-left: 0.5rem; }
+        .system-category-items a { display: block; padding: 0.3rem 0.5rem; color: #C5C9D6; border-radius: 6px; font-size: 0.8rem; margin-bottom: 0.2rem; }
+        .system-category-items a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .system-subcategory { margin-bottom: 0.6rem; }
+        .system-subtitle { display: block; color: #8B92A8; font-size: 0.8rem; font-weight: 500; margin-bottom: 0.3rem; padding: 0.2rem 0; }
+        .system-subitems { padding-left: 0.8rem; border-left: 2px solid rgba(255,107,53,0.3); margin-left: 0.3rem; }
+        .system-subitems a { display: inline-block; padding: 0.2rem 0.5rem; color: #C5C9D6; border-radius: 4px; font-size: 0.75rem; margin-right: 0.3rem; margin-bottom: 0.2rem; background: rgba(255,255,255,0.05); }
+        .system-subitems a:hover { background: rgba(255,107,53,0.2); color: #FF6B35; }
+        .footer ul { list-style: none; }
+        .footer li { margin-bottom: 0.5rem; }
+        .footer a { color: #8B92A8; font-size: 0.9rem; }
+        .footer-bottom { text-align: center; color: #8B92A8; font-size: 0.85rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        
+        /* 移动端 */
+        @media (min-width: 769px) { .mobile-menu { display: none !important; } }
+        @media (max-width: 768px) {
+            .nav-links, .nav-right { display: none !important; }
+            .mobile-menu-btn { display: flex !important; }
+            .page-header { padding: 6rem 4% 2rem; }
+            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .form-card { height: auto !important; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .system-login-menu { display: flex; justify-content: center; }
+            .system-login-btn { text-align: center; }
+            .system-dropdown { text-align: left; }
+            .system-category-title, .system-subtitle { text-align: left; display: block; }
+            .system-subitems { text-align: left; justify-content: flex-start; }
+        }
+            
+    /* V14 悬浮咨询按钮 */
+.fab-contact { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(255,107,53,0.4); transition: all 0.3s; z-index: 999; opacity: 0; transform: translateY(20px); }
+.fab-contact.visible { opacity: 1; transform: translateY(0); }
+.fab-contact:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(255,107,53,0.6); }
+.fab-contact svg { width: 28px; height: 28px; fill: white; }
+.fab-tooltip { position: absolute; right: 70px; background: var(--bg-card); color: white; padding: 8px 16px; border-radius: 8px; font-size: 14px; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: all 0.3s; border: 1px solid var(--border-hover); }
+.fab-contact:hover .fab-tooltip { opacity: 1; transform: translateX(0); }
+</style>
+</head>
+<body data-page="contact">
+    <nav class="navbar">
+        <a href="index-en.html" class="logo" style="display: flex; align-items: center; gap: 6px; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;"><span style="background: linear-gradient(135deg, #FF6B35, #FF8A5C); padding: 6px 10px; border-radius: 12px; color: #FFFFFF; font-weight: bold; font-size: 18px; line-height: 1; font-family: Arial, Helvetica, sans-serif;">BAMI</span><span style="color: #FF6B35; font-weight: bold; font-size: 24px; line-height: 1;">八米</span></a>
+        <ul class="nav-links">
+            <li><a href="index-en.html" data-zh="首页" data-en="Home">Home</a></li>
+            <li><a href="products-en.html" data-zh="产品服务" data-en="Products">Products</a></li>
+            <li><a href="solutions-en.html" data-zh="解决方案" data-en="Solutions">Solutions</a></li>
+            <li><a href="about-en.html" data-zh="关于我们" data-en="About">About</a></li>
+            <li><a href="news-en.html" data-zh="新闻动态" data-en="News">News</a></li>
+            <li><a href="support-en.html" data-zh="服务支持" data-en="Support">Support</a></li>
+            <li><a href="contact-en.html" class="active" data-zh="联系我们" data-en="Contact">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="lang-switch">
+                <a href="contact.html" class="lang-btn">中</a>
+                <a href="contact-en.html" class="lang-btn active">EN</a>
+            </div>
+            <a href="contact-en.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">Contact</a>
+        </div>
+        <button class="mobile-menu-btn" id="menuBtn">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-menu-list">
+                <li><a href="index-en.html" data-zh="首页" data-en="Home">Home</a></li>
+                <li><a href="products-en.html" data-zh="产品服务" data-en="Products">Products</a></li>
+                <li><a href="solutions-en.html" data-zh="解决方案" data-en="Solutions">Solutions</a></li>
+                <li><a href="about-en.html" data-zh="关于我们" data-en="About">About</a></li>
+                <li><a href="news-en.html" data-zh="新闻动态" data-en="News">News</a></li>
+                <li><a href="support-en.html" data-zh="服务支持" data-en="Support">Support</a></li>
+                <li><a href="contact-en.html" data-zh="联系我们" data-en="Contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-footer">
+                <div class="lang-switch">
+                    <a href="contact.html" class="lang-btn">中</a>
+                    <a href="contact-en.html" class="lang-btn active">EN</a>
+                </div>
+                <a href="contact-en.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <h1 data-zh="联系我们" data-en="Contact Us">Contact Us</h1>
+        <p data-zh="期待与您的合作，共同开启数智化转型之旅" data-en="Looking forward to working with you on digital transformation">Looking forward to working with you on digital transformation</p>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h4 data-zh="📍 公司地址" data-en="📍 Address">📍 Address</h4>
+                    <p><strong>🇨🇳 Guangzhou HQ: </strong><span>Shengda International, No. 332 Tonghe Road, Tianhe District, Guangzhou</span></p>
+                    <p><strong>🇨🇳 Foshan Branch: </strong><span>Jiabang International Center, No. 1 Shilong South Road, Nanhai District, Foshan</span></p>
+                    <p><strong>🇭🇰 Hong Kong Branch: </strong><span>International Commerce Centre, 1 Austin Road West, Kowloon</span></p>
+                </div>
+                <div class="contact-card">
+                    <h4 data-zh="📞 电话咨询" data-en="📞 Phone">📞 Phone</h4>
+                    <p><strong>🇨🇳 China:</strong> <span style="font-size: 1.1rem; color: #FF6B35; font-weight: 700;">+86 189-2620-0599</span></p>
+                    <p style="font-size: 0.85rem; color: #8B92A8;" data-zh="（微信同号）" data-en="(Same as WeChat)">(Same as WeChat)</p>
+                    <p><strong>🇸🇬 Singapore:</strong> <span style="font-size: 1.1rem; color: #FF6B35; font-weight: 700;">+65 6123 4567</span></p>
+                    <p><strong>🇭🇰 Hong Kong:</strong> <span style="font-size: 1.1rem; color: #FF6B35; font-weight: 700;">+852 2123 4567</span></p>
+                    <p><strong>🇩🇪 Germany:</strong> <span style="font-size: 1.1rem; color: #FF6B35; font-weight: 700;">+49 89 1234 5678</span></p>
+                </div>
+                <div class="contact-card">
+                    <h4 data-zh="💬 WhatsApp" data-en="💬 WhatsApp">💬 WhatsApp</h4>
+                    <p><a href="https://wa.me/8618926200599" target="_blank" style="font-size: 1.1rem; color: #FF6B35; font-weight: 700; text-decoration: none;">+86 189-2620-0599</a></p>
+                    <p style="font-size: 0.85rem; color: #8B92A8;" data-zh="点击号码直接开始WhatsApp聊天" data-en="Click number to start WhatsApp chat">Click number to start WhatsApp chat</p>
+                </div>
+                <div class="contact-card">
+                    <h4 data-zh="✉️ 电子邮箱" data-en="✉️ Email">✉️ Email</h4>
+                    <p>27270234@qq.com</p>
+                </div>
+                <div class="contact-card">
+                    <h4 data-zh="🗺️ 佛山公司位置" data-en="🗺️ Foshan Location">🗺️ Foshan Location</h4>
+                    <iframe 
+                        width="100%" 
+                        height="250" 
+                        style="border:0; border-radius: 12px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.7987030669256!2d113.18392287419982!3d23.031162116009728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340259fc90af86f7%3A0xd902d14028637d10!2z5Lit5Zu95bm_5Lic55yB5L2b5bGx5biC5Y2X5rW35Yy655-z5rm-5ZiJ6YKmwrflm73ph5HkuK3lv4PvvJLluqcg6YKu5pS_57yW56CBOiA1MjgyNTE!5e0!3m2!1sen!2ssg!4v1773847903383!5m2!1sen!2ssg">
+                    </iframe>
+                    <p style="font-size: 0.85rem; color: #8B92A8; margin-top: 0.5rem;" data-zh="📍 佛山市南海区石龙南路1号嘉邦国金中心二座14楼" data-en="📍 14F, Tower 2, Jiabang International Center, No. 1 Shilong South Road, Nanhai District, Foshan">📍 14F, Tower 2, Jiabang International Center, No. 1 Shilong South Road, Nanhai District, Foshan</p>
+                </div>
+            </div>
+            <div class="form-card">
+                <h3 data-zh="预约演示" data-en="Schedule Demo">Schedule Demo</h3>
+                <form>
+                    <div class="form-group">
+                        <label data-zh="公司名称 *" data-en="Company Name *">Company Name *</label>
+                        <input type="text" placeholder="Enter company name" data-placeholder-zh="请输入公司名称" data-placeholder-en="Enter company name" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-zh="联系人 *" data-en="Contact Person *">Contact Person *</label>
+                        <input type="text" placeholder="Enter contact name" data-placeholder-zh="请输入联系人姓名" data-placeholder-en="Enter contact name" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-zh="联系电话 *" data-en="Phone Number *">Phone Number *</label>
+                        <div style="display: flex; gap: 0.5rem;">
+                            <select style="width: 100px; flex-shrink: 0;" id="countryCode" name="countryCode">
+                                <option value="+86" selected>🇨🇳 +86</option>
+                                <option value="+1">🇺🇸 +1</option>
+                                <option value="+44">🇬🇧 +44</option>
+                                <option value="+65">🇸🇬 +65</option>
+                                <option value="+852">🇭🇰 +852</option>
+                                <option value="+49">🇩🇪 +49</option>
+                                <option value="+61">🇦🇺 +61</option>
+                                <option value="+81">🇯🇵 +81</option>
+                                <option value="+82">🇰🇷 +82</option>
+                                <option value="+63">🇵🇭 +63</option>
+                                <option value="+60">🇲🇾 +60</option>
+                                <option value="+62">🇮🇩 +62</option>
+                                <option value="+66">🇹🇭 +66</option>
+                                <option value="+84">🇻🇳 +84</option>
+                                <option value="+91">🇮🇳 +91</option>
+                            </select>
+                            <input type="tel" placeholder="Enter phone number" data-placeholder-zh="请输入联系电话" data-placeholder-en="Enter phone number" required style="flex: 1;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-zh="电子邮箱 *" data-en="Email *">Email *</label>
+                        <input type="email" placeholder="Enter email address" data-placeholder-zh="请输入电子邮箱" data-placeholder-en="Enter email address" required>
+                    </div>
+                    <button type="submit" class="btn-primary" data-zh="提交咨询" data-en="Submit Inquiry">Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+        <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <div class="logo" style="margin-bottom: 1rem;"><div class="logo-icon">BAMI</div><span data-zh="八米科技" data-en="BAMI Tech">八米科技</span></div>
+                <p style="color: #8B92A8; font-size: 0.9rem;" data-zh="专注物流与供应链数智化15年" data-en="15 years in logistics & supply chain digitalization">专注物流与供应链数智化15年</p>
+            </div>
+            <div>
+                <h4 data-zh="产品服务" data-en="Products">产品服务</h4>
+                <ul>
+                    <li><a href="product-ai.html" data-zh="AI数字员工" data-en="AI Digital Workforce">AI数字员工</a></li>
+                    <li><a href="product-wms.html">BAMI WMS</a></li>
+                    <li><a href="product-tms.html">BAMI TMS</a></li>
+                    <li><a href="product-oms.html">BAMI OMS</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 data-zh="快速链接" data-en="Quick Links">快速链接</h4>
+                <ul>
+                    <li><a href="solutions.html" data-zh="解决方案" data-en="Solutions">解决方案</a></li>
+                    <li><a href="about.html" data-zh="关于我们" data-en="About">关于我们</a></li>
+                    <li><a href="news.html" data-zh="新闻动态" data-en="News">新闻动态</a></li>
+                    <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 data-zh="联系我们" data-en="Contact Us">联系我们</h4>
+                <ul>
+                    <li><a href="#">📍 <span data-zh="广州天河盛大国际" data-en="Guangzhou Tianhe">广州天河盛大国际</span></a></li>
+                    <li><a href="tel:+8618926200599">📞 +86 18926200599</a></li>
+                    <li><a href="https://wa.me/8618926200599" target="_blank">💬 WhatsApp</a></li>
+                    <li><a href="mailto:27270234@qq.com">✉️ 27270234@qq.com</a></li>
+                    <li><div class="system-login-menu">
+                        <button class="system-login-btn" onclick="toggleSystemMenu()" data-zh="🔐 系统登录" data-en="🔐 System Login">🔐 系统登录</button>
+                        <div class="system-dropdown" id="systemDropdown">
+                            <div class="system-dropdown-header">
+                                <span class="system-dropdown-title" data-zh="选择系统" data-en="Select System">选择系统</span>
+                                <button class="system-dropdown-close" onclick="closeSystemMenu()">✕</button>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">1. WMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="仓配WMS" data-en="Warehouse WMS">仓配WMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="电商WMS" data-en="E-commerce WMS">电商WMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">2. TMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="零担TMS" data-en="LTL TMS">零担TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://admin.liancheng.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://memberh5.liancheng.8bami.com/" target="_blank" data-zh="手机端" data-en="Mobile">手机端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="三方TMS" data-en="3PL TMS">三方TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://live.rxwl.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://live.rxwl.driver.8bami.com" target="_blank" data-zh="司机端" data-en="Driver">司机端</a>
+                                            <a href="http://live.rxwl.memberpc.8bami.com" target="_blank" data-zh="会员端" data-en="Member">会员端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="跨境TMS" data-en="Cross-border TMS">跨境TMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://kjtms.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="http://kjtms.tgemember.8bami.com/?EnterpriseNo=bami" target="_blank" data-zh="会员端" data-en="Member">会员端</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="跨境集运" data-en="Cross-border">跨境集运</span>
+                                        <div class="system-subitems">
+                                            <a href="http://b9.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="https://b9.member.8bami.com/?EnterpriseNo=t03_4" target="_blank" data-zh="手机端" data-en="Mobile">手机端</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="system-category">
+                                <div class="system-category-title">3. OMS/BMS</div>
+                                <div class="system-category-items">
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="OMS" data-en="OMS">OMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                    <div class="system-subcategory">
+                                        <span class="system-subtitle" data-zh="BMS" data-en="BMS">BMS</span>
+                                        <div class="system-subitems">
+                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div></li>
+                </ul>
+            </div>
+        </div>
+                    <script>
+                    function toggleSystemMenu() {
+                        const dropdown = document.getElementById('systemDropdown');
+                        dropdown.classList.toggle('active');
+                    }
+                    function closeSystemMenu() {
+                        const dropdown = document.getElementById('systemDropdown');
+                        dropdown.classList.remove('active');
+                    }
+                    document.addEventListener('click', function(e) {
+                        const menu = document.querySelector('.system-login-menu');
+                        if (menu && !menu.contains(e.target)) {
+                            closeSystemMenu();
+                        }
+                    });
+                </script>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 BAMI 八米科技. All rights reserved.</p>
+            <p><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer" style="color: #8B92A8; text-decoration: none;">粤ICP备19085702号</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Security: HTTPS Force Redirect
+        if (window.location.protocol === 'http:' && window.location.hostname !== 'localhost' && !window.location.hostname.match(/^127\./)) {
+            window.location.href = window.location.href.replace('http:', 'https:');
+        }
+
+        // Security: XSS Protection - Escape User Input Function
+        function escapeHtml(text) {
+            if (typeof text !== 'string') return text;
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Security: Input Validation Function
+        function validateInput(input, type) {
+            if (typeof input !== 'string') return false;
+            const patterns = {
+                email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                phone: /^[\d\s\-\+\(\)]{7,20}$/,
+                name: /[\u4e00-\u9fa5a-zA-Z\s]{2,50}$/,
+                company: /[\u4e00-\u9fa5a-zA-Z0-9\s]{2,100}$/
+            };
+            return patterns[type] ? patterns[type].test(input) : true;
+        }
+
+        // Mobile Menu Toggle
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            this.classList.toggle('active');
+            document.getElementById('mobileMenu').classList.toggle('active');
+        });
+        document.querySelectorAll('.mobile-menu-list a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('menuBtn').classList.remove('active');
+                document.getElementById('mobileMenu').classList.remove('active');
+            });
+        });
+
+        // Form Security Validation
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const inputs = this.querySelectorAll('input');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                // Sanitize input
+                input.value = escapeHtml(input.value.trim());
+                
+                // Validate based on input type
+                if (input.type === 'tel') {
+                    if (!validateInput(input.value, 'phone')) {
+                        isValid = false;
+                        input.style.borderColor = '#ff4444';
+                    } else {
+                        input.style.borderColor = '';
+                    }
+                } else if (input.type === 'text') {
+                    if (input.placeholder.includes('company')) {
+                        if (!validateInput(input.value, 'company')) {
+                            isValid = false;
+                            input.style.borderColor = '#ff4444';
+                        } else {
+                            input.style.borderColor = '';
+                        }
+                    } else {
+                        if (!validateInput(input.value, 'name')) {
+                            isValid = false;
+                            input.style.borderColor = '#ff4444';
+                        } else {
+                            input.style.borderColor = '';
+                        }
+                    }
+                }
+            });
+            
+            if (isValid) {
+                var msg = window.BAMI_LANG && window.BAMI_LANG.get() === 'en' 
+                    ? 'Thank you for your inquiry! We will contact you soon.' 
+                    : '感谢您的咨询！我们将尽快与您联系。';
+                alert(msg);
+                this.reset();
+            } else {
+                var errMsg = window.BAMI_LANG && window.BAMI_LANG.get() === 'en'
+                    ? 'Please check if the input format is correct.'
+                    : '请检查输入信息格式是否正确。';
+                alert(errMsg);
+            }
+        });
+    </script>
+    <script src="js/lang.js">    // System Login Menu Functions
+    function toggleSystemMenu() {
+        const dropdown = document.getElementById('systemDropdown');
+        dropdown.classList.toggle('active');
+    }
+    function closeSystemMenu() {
+        const dropdown = document.getElementById('systemDropdown');
+        dropdown.classList.remove('active');
+    }
+    // Close system menu when clicking outside
+    document.addEventListener('click', function(e) {
+        const menu = document.querySelector('.system-login-menu');
+        const dropdown = document.getElementById('systemDropdown');
+        if (menu && dropdown && !menu.contains(e.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
+</script>
+<script>
+        function openMobileMenu() {
+            document.getElementById('mobileMenu').classList.add('active');
+        }
+        function closeMobileMenu() {
+            document.getElementById('mobileMenu').classList.remove('active');
+        }
+        document.getElementById('menuBtn').addEventListener('click', openMobileMenu);
+    
+</script>
+<!-- V14 悬浮咨询按钮 -->
+<a href="contact.html" class="fab-contact" id="fabContact">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+    <span class="fab-tooltip" data-zh="立即咨询" data-en="Contact Us">立即咨询</span>
+</a>
+<script>
+// V14: 悬浮按钮显示控制
+function initFabButton() {
+    const fab = document.getElementById('fabContact');
+    if (!fab) return;
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            fab.classList.add('visible');
+        } else {
+            fab.classList.remove('visible');
+        }
+    }, { passive: true });
+}
+initFabButton();
+</script>
+</body>
+</html>

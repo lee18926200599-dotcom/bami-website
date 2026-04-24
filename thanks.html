@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="感谢您的提交，八米科技团队将尽快与您联系">
+    <title>提交成功 - 八米科技</title>
+    <link rel="icon" type="image/svg+xml" href="images/LOGO2.SVG">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', 'Noto Sans SC', sans-serif; 
+            background: #0A0E1A; 
+            color: #FFFFFF; 
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .success-container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 500px;
+        }
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #FF6B35, #FF8A5C);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+        }
+        .success-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #FF6B35;
+        }
+        .success-message {
+            color: #C5C9D6;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+        .success-details {
+            background: #1A2235;
+            border: 1px solid rgba(255,107,53,0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        .success-details p {
+            color: #8B92A8;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        .success-details strong {
+            color: #FF6B35;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #FF6B35, #FF8A5C);
+            color: #FFFFFF;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(255,107,53,0.3);
+        }
+        .btn-secondary {
+            display: inline-block;
+            border: 2px solid rgba(255,107,53,0.5);
+            color: #FFFFFF;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-left: 1rem;
+            transition: all 0.3s;
+        }
+        .btn-secondary:hover {
+            background: rgba(255,107,53,0.1);
+            border-color: #FF6B35;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 3rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .logo-icon {
+            width: 70px;
+            height: 36px;
+            background: linear-gradient(135deg, #FF6B35, #FF8A5C);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.1rem;
+            color: #FFFFFF;
+            letter-spacing: 1px;
+            font-style: italic;
+        }
+        @media (max-width: 480px) {
+            .success-title { font-size: 1.5rem; }
+            .btn-secondary { margin-left: 0; margin-top: 1rem; }
+            .buttons { display: flex; flex-direction: column; gap: 1rem; }
+        }
+    /* V14 悬浮咨询按钮 */
+.fab-contact { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(255,107,53,0.4); transition: all 0.3s; z-index: 999; opacity: 0; transform: translateY(20px); }
+.fab-contact.visible { opacity: 1; transform: translateY(0); }
+.fab-contact:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(255,107,53,0.6); }
+.fab-contact svg { width: 28px; height: 28px; fill: white; }
+.fab-tooltip { position: absolute; right: 70px; background: var(--bg-card); color: white; padding: 8px 16px; border-radius: 8px; font-size: 14px; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: all 0.3s; border: 1px solid var(--border-hover); }
+.fab-contact:hover .fab-tooltip { opacity: 1; transform: translateX(0); }
+</style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="logo">
+            <div class="logo-icon">BAMI</div>
+            <span>八米科技</span>
+        </div>
+        
+        <div class="success-icon">✓</div>
+        
+        <h1 class="success-title">提交成功！</h1>
+        
+        <p class="success-message">
+            感谢您的预约，我们的专业顾问将在 24 小时内与您联系，为您安排产品演示。
+        </p>
+        
+        <div class="success-details">
+            <p><strong>📧 邮件已发送至：</strong></p>
+            <p>27270234@qq.com</p>
+            <br>
+            <p><strong>📞 咨询热线：</strong></p>
+            <p>+86 189-2620-0599（微信同号）</p>
+            <br>
+            <p><strong>⏰ 工作时间：</strong></p>
+            <p>周一至周五 9:00 - 18:00</p>
+        </div>
+        
+        <div class="buttons">
+            <a href="index.html" class="btn-primary">返回首页</a>
+            <a href="products.html" class="btn-secondary">浏览产品</a>
+        </div>
+    </div>
+<!-- V14 悬浮咨询按钮 -->
+<a href="contact.html" class="fab-contact" id="fabContact">
+    <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+    <span class="fab-tooltip" data-zh="立即咨询" data-en="Contact Us">立即咨询</span>
+</a>
+<script>// V14: 悬浮按钮显示控制
+function initFabButton() {
+    const fab = document.getElementById('fabContact');
+    if (!fab) return;
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            fab.classList.add('visible');
+        } else {
+            fab.classList.remove('visible');
+        }
+    }, { passive: true });
+}
+initFabButton();</script>
+</body>
+</html>
