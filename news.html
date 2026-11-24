@@ -2,9 +2,10 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="js/geo-boot.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Security Meta Tags -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://ipwho.is https://ipinfo.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -13,7 +14,8 @@
     <meta name="description" content="了解八米科技最新动态、产品更新、行业趋势分析、客户成功案例分享。关注供应链数智化前沿资讯。">
     <meta name="keywords" content="八米科技新闻,行业动态,供应链资讯,数智化趋势,物流行业新闻">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://lee18926200599-dotcom.github.io/bami-website/news.html">
+    <!-- SEO managed by scripts/apply-seo.js -->
+    <link rel="canonical" href="https://www.8bami.com/news.html">
 
 
     <title data-zh="新闻动态 - 八米科技" data-en="News - BAMI Tech">新闻动态 - 八米科技</title>
@@ -100,7 +102,7 @@
         .footer a { color: #8B92A8; font-size: 0.9rem; }
         .footer-bottom { text-align: center; color: #8B92A8; font-size: 0.85rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); }
         .footer-bottom p { text-align: center; }
-        
+
         /* 3D Showcase Styles */
         .showcase-wrapper { perspective: 1000px; position: relative; }
         .showcase-container { width: 250px; height: 280px; position: relative; transform-style: preserve-3d; animation: rotateShowcase 15s infinite linear; margin: 0 auto; }
@@ -139,6 +141,24 @@
 .fab-tooltip { position: absolute; right: 70px; background: var(--bg-card); color: white; padding: 8px 16px; border-radius: 8px; font-size: 14px; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: all 0.3s; border: 1px solid var(--border-hover); }
 .fab-contact:hover .fab-tooltip { opacity: 1; transform: translateX(0); }
 </style>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.8bami.com/news.html">
+    <meta property="og:title" content="新闻动态 - 八米科技">
+    <meta property="og:description" content="了解八米科技最新动态、产品更新、行业趋势分析、客户成功案例分享。关注供应链数智化前沿资讯。">
+    <meta property="og:image" content="https://www.8bami.com/images/og-image.jpg">
+    <meta property="og:site_name" content="BAMI Technology">
+    <meta property="og:locale" content="zh_CN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="新闻动态 - 八米科技">
+    <meta name="twitter:description" content="了解八米科技最新动态、产品更新、行业趋势分析、客户成功案例分享。关注供应链数智化前沿资讯。">
+    <meta name="twitter:image" content="https://www.8bami.com/images/og-image.jpg">
+    <link rel="alternate" hreflang="zh-CN" href="https://www.8bami.com/news.html" data-seo-managed>
+    <link rel="alternate" hreflang="en" href="https://www.8bami.com/news.html?lang=en" data-seo-managed>
+    <link rel="alternate" hreflang="vi" href="https://www.8bami.com/news.html?lang=vi" data-seo-managed>
+    <link rel="alternate" hreflang="th" href="https://www.8bami.com/news.html?lang=th" data-seo-managed>
+    <link rel="alternate" hreflang="id" href="https://www.8bami.com/news.html?lang=id" data-seo-managed>
+    <link rel="alternate" hreflang="x-default" href="https://www.8bami.com/news.html" data-seo-managed>
+    <script type="application/ld+json" data-seo-schema>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.8bami.com/"},{"@type":"ListItem","position":2,"name":"新闻动态","item":"https://www.8bami.com/news.html"}]}</script>
 </head>
 <body data-page="news">
     <nav class="navbar">
@@ -157,6 +177,7 @@
             <div class="lang-switch">
                 <button class="lang-btn active" data-lang="zh">中</button>
                 <button class="lang-btn" data-lang="en">EN</button>
+                <button type="button" class="lang-btn" data-lang="vi">VI</button>
             </div>
             <a href="contact.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">立即咨询</a>
         </div>
@@ -182,6 +203,7 @@
                 <div class="lang-switch">
                     <button class="lang-btn active" data-lang="zh">中</button>
                     <button class="lang-btn" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="vi">VI</button>
                 </div>
                 <a href="contact.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">立即咨询</a>
             </div>
@@ -235,9 +257,41 @@
 
     <section class="news-section">
         <div class="news-grid">
+            <!-- REGIONAL_NEWS_START -->
+            <a href="news-detail-37.html" class="regional-news-item" data-regional-news style="text-decoration:none;color:inherit;display:block;height:100%;">
+                <article class="news-card">
+                    <div class="news-image"><img src="images/news/2026-regional/indonesia-cover.webp" alt="八米科技与印尼零售集团启动OMS+WMS项目，支持雅加达及多城市全渠道履约"></div>
+                    <div class="news-content">
+                        <div class="news-date">📅 2026-11-11</div>
+                        <h3 class="news-title" data-zh="八米科技与印尼零售集团启动OMS+WMS项目，支持雅加达及多城市全渠道履约" data-en="BAMI Technology and Indonesian Retail Group Launch OMS and WMS Project">八米科技与印尼零售集团启动OMS+WMS项目，支持雅加达及多城市全渠道履约</h3>
+                        <p class="news-excerpt" data-zh="2026年11月，八米科技与某印尼全渠道零售集团正式启动OMS+WMS项目，覆盖雅加达及12个城市的480家门店、电商平台和社交渠道订单。" data-en="In November 2026, BAMI Technology launched an OMS and WMS project with an Indonesian omnichannel retail group covering 480 stores in Jakarta and 12 other cities, together with e-commerce and social-commerce orders.">2026年11月，八米科技与某印尼全渠道零售集团正式启动OMS+WMS项目，覆盖雅加达及12个城市的480家门店、电商平台和社交渠道订单。</p>
+                    </div>
+                </article>
+            </a>
+            <a href="news-detail-36.html" class="regional-news-item" data-regional-news style="text-decoration:none;color:inherit;display:block;height:100%;">
+                <article class="news-card">
+                    <div class="news-image"><img src="images/news/2026-regional/thailand-cover.webp" alt="八米科技为泰国数字物流企业部署TMS+WMS，提升曼谷都市圈配送效率"></div>
+                    <div class="news-content">
+                        <div class="news-date">📅 2026-08-12</div>
+                        <h3 class="news-title" data-zh="八米科技为泰国数字物流企业部署TMS+WMS，提升曼谷都市圈配送效率" data-en="BAMI Technology Deploys TMS and WMS for a Thai Digital Logistics Provider">八米科技为泰国数字物流企业部署TMS+WMS，提升曼谷都市圈配送效率</h3>
+                        <p class="news-excerpt" data-zh="2026年8月，八米科技为某泰国数字物流企业完成TMS与WMS联合部署，覆盖曼谷都市圈门店配送、电商包裹和部分跨境运输业务。" data-en="In August 2026, BAMI Technology completed a combined TMS and WMS deployment for a Thai digital logistics provider serving Bangkok metropolitan store delivery, e-commerce parcels and selected cross-border routes.">2026年8月，八米科技为某泰国数字物流企业完成TMS与WMS联合部署，覆盖曼谷都市圈门店配送、电商包裹和部分跨境运输业务。</p>
+                    </div>
+                </article>
+            </a>
+            <a href="news-detail-35.html" class="regional-news-item" data-regional-news style="text-decoration:none;color:inherit;display:block;height:100%;">
+                <article class="news-card">
+                    <div class="news-image"><img src="images/news/2026-regional/vietnam-cover.webp" alt="八米科技携手越南零售集团，以4PL统仓共配方案赋能全渠道履约"></div>
+                    <div class="news-content">
+                        <div class="news-date">📅 2026-06-18</div>
+                        <h3 class="news-title" data-zh="八米科技携手越南零售集团，以4PL统仓共配方案赋能全渠道履约" data-en="BAMI Technology Partners with Vietnamese Retail Group on 4PL Omnichannel Fulfillment">八米科技携手越南零售集团，以4PL统仓共配方案赋能全渠道履约</h3>
+                        <p class="news-excerpt" data-zh="2026年6月，八米科技与某越南区域零售集团完成4PL统仓共配项目交付，以WMS、TMS和OMS一体化能力连接多个配送中心、320家门店及线上订单。" data-en="In June 2026, BAMI Technology completed a 4PL centralized warehousing and shared-delivery deployment for a leading Vietnamese regional retail group, connecting multiple distribution centers, 320 stores and online orders.">2026年6月，八米科技与某越南区域零售集团完成4PL统仓共配项目交付，以WMS、TMS和OMS一体化能力连接多个配送中心、320家门店及线上订单。</p>
+                    </div>
+                </article>
+            </a>
+            <!-- REGIONAL_NEWS_END -->
             <!-- News 1 -->
             <a href="news-detail-34.html" style="text-decoration:none;color:inherit;display:block;height:100%;"><article class="news-card" data-news-id="1">
-                <div class="news-image"><img src="images/news/news-1-1.jpg" alt="八米科技与菲律宾ASC签署战略合作协议"></div>
+                <div class="news-image"><img src="images/news/news-1-1.webp" alt="八米科技与菲律宾ASC签署战略合作协议"></div>
                 <div class="news-content">
                     <div class="news-date">📅 2026-03-01</div>
                     <h3 class="news-title" data-zh="八米科技与菲律宾ASC签署战略合作协议" data-en="BAMI Tech Signs Strategic Partnership with Philippine ASC">八米科技与菲律宾ASC签署战略合作协议</h3>
@@ -247,7 +301,7 @@
 
             <!-- News 2 -->
             <a href="news-detail-33.html" style="text-decoration:none;color:inherit;display:block;height:100%;"><article class="news-card" data-news-id="2">
-                <div class="news-image"><img src="images/news/news-2-1.jpg" alt="八米科技入选广东省科技型中小企业库"></div>
+                <div class="news-image"><img src="images/news/news-2-1.webp" alt="八米科技入选广东省科技型中小企业库"></div>
                 <div class="news-content">
                     <div class="news-date">📅 2025-12-01</div>
                     <h3 class="news-title" data-zh="八米科技入选广东省科技型中小企业库" data-en="BAMI Tech Selected for Guangdong Tech SMEs Database">八米科技入选广东省科技型中小企业库</h3>
@@ -257,7 +311,7 @@
 
             <!-- News 3 -->
             <a href="news-detail-32.html" style="text-decoration:none;color:inherit;display:block;height:100%;"><article class="news-card" data-news-id="3">
-                <div class="news-image"><img src="images/news/news-3-1.jpg" alt="八米科技与嘉拓智能TMS项目签约"></div>
+                <div class="news-image"><img src="images/news/news-3-1.webp" alt="八米科技与嘉拓智能TMS项目签约"></div>
                 <div class="news-content">
                     <div class="news-date">📅 2025-12-01</div>
                     <h3 class="news-title" data-zh="八米科技与嘉拓智能TMS项目签约" data-en="BAMI Tech Signs TMS Project with Jiatuo Smart">八米科技与嘉拓智能TMS项目签约</h3>
@@ -486,6 +540,7 @@
                 </script>
         </div>
         <div class="footer-bottom">
+            <p><a href="privacy.html" data-zh="隐私政策" data-en="Privacy Policy">隐私政策</a></p>
             <p>&copy; 2026 BAMI 八米科技. All rights reserved.</p>
             <p><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer" style="color: #8B92A8; text-decoration: none;">粤ICP备19085702号</a></p>
         </div>
@@ -502,8 +557,10 @@
                 document.getElementById('mobileMenu').classList.remove('active');
             });
         });
+
     </script>
-    <script src="js/lang.js">    // System Login Menu Functions
+<script src="js/lang.js"></script>
+<script>    // System Login Menu Functions
     function toggleSystemMenu() {
         const dropdown = document.getElementById('systemDropdown');
         dropdown.classList.toggle('active');

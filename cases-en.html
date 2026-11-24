@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="js/geo-boot.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Security Meta Tags -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://ipwho.is https://ipinfo.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="View BAMI Technology customer success stories and case studies. See how AI Digital Workforce, WMS, TMS, OMS systems are applied across industries.">
+    <meta name="description" content="Explore BAMI Technology success stories across new energy, medical devices, FMCG and e-commerce warehousing.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://lee18926200599-dotcom.github.io/bami-website/cases-en.html">
+    <!-- SEO managed by scripts/apply-seo.js -->
+    <link rel="canonical" href="https://www.8bami.com/cases.html?lang=en">
 
 
     <title>Client Cases - BAMI Tech</title>
@@ -99,8 +101,20 @@
 .fab-tooltip { position: absolute; right: 70px; background: var(--bg-card); color: white; padding: 8px 16px; border-radius: 8px; font-size: 14px; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: all 0.3s; border: 1px solid var(--border-hover); }
 .fab-contact:hover .fab-tooltip { opacity: 1; transform: translateX(0); }
 </style>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.8bami.com/cases.html?lang=en">
+    <meta property="og:title" content="Client Cases - BAMI Tech">
+    <meta property="og:description" content="Explore BAMI Technology success stories across new energy, medical devices, FMCG and e-commerce warehousing.">
+    <meta property="og:image" content="https://www.8bami.com/images/og-image.jpg">
+    <meta property="og:site_name" content="BAMI Technology">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Client Cases - BAMI Tech">
+    <meta name="twitter:description" content="Explore BAMI Technology success stories across new energy, medical devices, FMCG and e-commerce warehousing.">
+    <meta name="twitter:image" content="https://www.8bami.com/images/og-image.jpg">
+    <script type="application/ld+json" data-seo-schema>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.8bami.com/"},{"@type":"ListItem","position":2,"name":"Client Cases","item":"https://www.8bami.com/cases.html?lang=en"}]}</script>
 </head>
-<body>
+<body data-page-lang="en">
     <nav class="navbar">
         <a href="index-en.html" class="logo" style="display: flex; align-items: center; gap: 6px; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;"><span style="background: linear-gradient(135deg, #FF6B35, #FF8A5C); padding: 6px 10px; border-radius: 12px; color: #FFFFFF; font-weight: bold; font-size: 18px; line-height: 1; font-family: Arial, Helvetica, sans-serif;">BAMI</span><span style="color: #FF6B35; font-weight: bold; font-size: 24px; line-height: 1;">八米</span></a>
         <ul class="nav-links">
@@ -114,8 +128,9 @@
         </ul>
         <div class="nav-right">
             <div class="lang-switch">
-                <a href="cases.html" class="lang-btn">中</a>
-                <a href="cases-en.html" class="lang-btn active">EN</a>
+                <button type="button" class="lang-btn" data-lang="zh">中</button>
+                <button type="button" class="lang-btn active" data-lang="en">EN</button>
+                <button type="button" class="lang-btn" data-lang="vi">VI</button>
             </div>
             <a href="contact-en.html" class="btn-primary">Contact Us</a>
         </div>
@@ -138,6 +153,7 @@
                 <div class="lang-switch">
                     <button class="lang-btn" data-lang="zh">中</button>
                     <button class="lang-btn active" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="vi">VI</button>
                 </div>
                 <a href="contact.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">Contact</a>
             </div>
@@ -347,6 +363,7 @@
                 </script>
         </div>
         <div class="footer-bottom">
+            <p><a href="privacy.html" data-zh="隐私政策" data-en="Privacy Policy">隐私政策</a></p>
             <p>&copy; 2026 BAMI 八米科技. All rights reserved.</p>
             <p><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer" style="color: #8B92A8; text-decoration: none;">粤ICP备19085702号</a></p>
         </div>
@@ -377,7 +394,8 @@
         function closeMobileMenu() {
             document.getElementById('mobileMenu').classList.remove('active');
         }
-        document.getElementById('menuBtn').addEventListener('click', openMobileMenu);
+        const menuBtn = document.getElementById('menuBtn');
+        if (menuBtn) menuBtn.addEventListener('click', openMobileMenu);
     
 </script>
 <!-- V14 悬浮咨询按钮 -->
@@ -400,5 +418,7 @@ function initFabButton() {
 }
 initFabButton();
 </script>
+    <script src="js/lang.js"></script>
+<script></script>
 </body>
 </html>

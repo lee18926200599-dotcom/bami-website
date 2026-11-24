@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="js/geo-boot.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Security Meta Tags -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://ipwho.is https://ipinfo.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -12,7 +13,8 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="Latest news and updates from BAMI Technology. Product releases, industry trends, and customer success stories in supply chain digitalization.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://lee18926200599-dotcom.github.io/bami-website/news-en.html">
+    <!-- SEO managed by scripts/apply-seo.js -->
+    <link rel="canonical" href="https://www.8bami.com/news.html?lang=en">
 
 
     <title>News - BAMI Tech</title>
@@ -97,8 +99,20 @@
 .fab-tooltip { position: absolute; right: 70px; background: var(--bg-card); color: white; padding: 8px 16px; border-radius: 8px; font-size: 14px; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: all 0.3s; border: 1px solid var(--border-hover); }
 .fab-contact:hover .fab-tooltip { opacity: 1; transform: translateX(0); }
 </style>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.8bami.com/news.html?lang=en">
+    <meta property="og:title" content="News - BAMI Tech">
+    <meta property="og:description" content="Latest news and updates from BAMI Technology. Product releases, industry trends, and customer success stories in supply chain digitalization.">
+    <meta property="og:image" content="https://www.8bami.com/images/og-image.jpg">
+    <meta property="og:site_name" content="BAMI Technology">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="News - BAMI Tech">
+    <meta name="twitter:description" content="Latest news and updates from BAMI Technology. Product releases, industry trends, and customer success stories in supply chain digitalization.">
+    <meta name="twitter:image" content="https://www.8bami.com/images/og-image.jpg">
+    <script type="application/ld+json" data-seo-schema>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.8bami.com/"},{"@type":"ListItem","position":2,"name":"News","item":"https://www.8bami.com/news.html?lang=en"}]}</script>
 </head>
-<body>
+<body data-page-lang="en">
     <nav class="navbar">
         <a href="index-en.html" class="logo" style="display: flex; align-items: center; gap: 6px; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;"><span style="background: linear-gradient(135deg, #FF6B35, #FF8A5C); padding: 6px 10px; border-radius: 12px; color: #FFFFFF; font-weight: bold; font-size: 18px; line-height: 1; font-family: Arial, Helvetica, sans-serif;">BAMI</span><span style="color: #FF6B35; font-weight: bold; font-size: 24px; line-height: 1;">八米</span></a>
         <ul class="nav-links">
@@ -112,8 +126,9 @@
         </ul>
         <div class="nav-right">
             <div class="lang-switch">
-                <a href="news.html" class="lang-btn">中</a>
-                <a href="news-en.html" class="lang-btn active">EN</a>
+                <button type="button" class="lang-btn" data-lang="zh">中</button>
+                <button type="button" class="lang-btn active" data-lang="en">EN</button>
+                <button type="button" class="lang-btn" data-lang="vi">VI</button>
             </div>
             <a href="contact-en.html" class="btn-primary">Contact Us</a>
         </div>
@@ -142,9 +157,38 @@
 
     <section class="news-section">
         <div class="news-grid">
+            <!-- REGIONAL_NEWS_START -->
+            <article class="news-card regional-news-item" data-regional-news>
+                <div class="news-image"><img src="images/news/2026-regional/indonesia-cover.webp" alt="BAMI Technology and Indonesian Retail Group Launch OMS and WMS Project"></div>
+                <div class="news-content">
+                    <div class="news-date">2026-11-11</div>
+                    <h3 class="news-title" data-zh="八米科技与印尼零售集团启动OMS+WMS项目，支持雅加达及多城市全渠道履约" data-en="BAMI Technology and Indonesian Retail Group Launch OMS and WMS Project">BAMI Technology and Indonesian Retail Group Launch OMS and WMS Project</h3>
+                    <p class="news-excerpt" data-zh="2026年11月，八米科技与某印尼全渠道零售集团正式启动OMS+WMS项目，覆盖雅加达及12个城市的480家门店、电商平台和社交渠道订单。" data-en="In November 2026, BAMI Technology launched an OMS and WMS project with an Indonesian omnichannel retail group covering 480 stores in Jakarta and 12 other cities, together with e-commerce and social-commerce orders.">In November 2026, BAMI Technology launched an OMS and WMS project with an Indonesian omnichannel retail group covering 480 stores in Jakarta and 12 other cities, together with e-commerce and social-commerce orders.</p>
+                    <a href="news-detail-37.html?lang=en" class="news-link">Read More →</a>
+                </div>
+            </article>
+            <article class="news-card regional-news-item" data-regional-news>
+                <div class="news-image"><img src="images/news/2026-regional/thailand-cover.webp" alt="BAMI Technology Deploys TMS and WMS for a Thai Digital Logistics Provider"></div>
+                <div class="news-content">
+                    <div class="news-date">2026-08-12</div>
+                    <h3 class="news-title" data-zh="八米科技为泰国数字物流企业部署TMS+WMS，提升曼谷都市圈配送效率" data-en="BAMI Technology Deploys TMS and WMS for a Thai Digital Logistics Provider">BAMI Technology Deploys TMS and WMS for a Thai Digital Logistics Provider</h3>
+                    <p class="news-excerpt" data-zh="2026年8月，八米科技为某泰国数字物流企业完成TMS与WMS联合部署，覆盖曼谷都市圈门店配送、电商包裹和部分跨境运输业务。" data-en="In August 2026, BAMI Technology completed a combined TMS and WMS deployment for a Thai digital logistics provider serving Bangkok metropolitan store delivery, e-commerce parcels and selected cross-border routes.">In August 2026, BAMI Technology completed a combined TMS and WMS deployment for a Thai digital logistics provider serving Bangkok metropolitan store delivery, e-commerce parcels and selected cross-border routes.</p>
+                    <a href="news-detail-36.html?lang=en" class="news-link">Read More →</a>
+                </div>
+            </article>
+            <article class="news-card regional-news-item" data-regional-news>
+                <div class="news-image"><img src="images/news/2026-regional/vietnam-cover.webp" alt="BAMI Technology Partners with Vietnamese Retail Group on 4PL Omnichannel Fulfillment"></div>
+                <div class="news-content">
+                    <div class="news-date">2026-06-18</div>
+                    <h3 class="news-title" data-zh="八米科技携手越南零售集团，以4PL统仓共配方案赋能全渠道履约" data-en="BAMI Technology Partners with Vietnamese Retail Group on 4PL Omnichannel Fulfillment">BAMI Technology Partners with Vietnamese Retail Group on 4PL Omnichannel Fulfillment</h3>
+                    <p class="news-excerpt" data-zh="2026年6月，八米科技与某越南区域零售集团完成4PL统仓共配项目交付，以WMS、TMS和OMS一体化能力连接多个配送中心、320家门店及线上订单。" data-en="In June 2026, BAMI Technology completed a 4PL centralized warehousing and shared-delivery deployment for a leading Vietnamese regional retail group, connecting multiple distribution centers, 320 stores and online orders.">In June 2026, BAMI Technology completed a 4PL centralized warehousing and shared-delivery deployment for a leading Vietnamese regional retail group, connecting multiple distribution centers, 320 stores and online orders.</p>
+                    <a href="news-detail-35.html?lang=en" class="news-link">Read More →</a>
+                </div>
+            </article>
+            <!-- REGIONAL_NEWS_END -->
             <article class="news-card">
                 <div class="news-image">
-                    <img src="images/news/news-34.jpg" alt="News" onerror="this.parentElement.style.background='linear-gradient(135deg, #FF6B35, #FF8A5C)'">
+                    <img src="images/news/news-1-1.webp" alt="BAMI Technology and APOLLOTECH strategic cooperation">
                 </div>
                 <div class="news-content">
                     <div class="news-date">2025-09-18</div>
@@ -155,24 +199,24 @@
             </article>
             <article class="news-card">
                 <div class="news-image">
-                    <img src="images/news/news-33.jpg" alt="News" onerror="this.parentElement.style.background='linear-gradient(135deg, #FF6B35, #FF8A5C)'">
+                    <img src="images/news/news-2-1.webp" alt="BAMI Technology technology SME certification">
                 </div>
                 <div class="news-content">
                     <div class="news-date">2024-12-02</div>
                     <h3 class="news-title">BAMI Tech Certified as Technology SME</h3>
                     <p class="news-excerpt">BAMI Technology was officially certified as a Technology Small and Medium Enterprise.</p>
-                    <a href="news-detail.html?id=33" class="news-link">Read More →</a>
+                    <a href="news-detail-33.html?lang=en" class="news-link">Read More →</a>
                 </div>
             </article>
             <article class="news-card">
                 <div class="news-image">
-                    <img src="images/news/news-32.jpg" alt="News" onerror="this.parentElement.style.background='linear-gradient(135deg, #FF6B35, #FF8A5C)'">
+                    <img src="images/news/news-3-1.webp" alt="BAMI Technology and Jiatuo Smart TMS cooperation">
                 </div>
                 <div class="news-content">
                     <div class="news-date">2024-09-02</div>
                     <h3 class="news-title">BAMI Partners with Jiatuo for New Energy Logistics</h3>
                     <p class="news-excerpt">BAMI Tech and Jiatuo Intelligence collaborate to build smart logistics benchmark.</p>
-                    <a href="news-detail.html?id=32" class="news-link">Read More →</a>
+                    <a href="news-detail-32.html?lang=en" class="news-link">Read More →</a>
                 </div>
             </article>
         </div>
@@ -306,6 +350,7 @@
                 </script>
         </div>
         <div class="footer-bottom">
+            <p><a href="privacy.html" data-zh="隐私政策" data-en="Privacy Policy">隐私政策</a></p>
             <p>&copy; 2026 BAMI 八米科技. All rights reserved.</p>
             <p><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer" style="color: #8B92A8; text-decoration: none;">粤ICP备19085702号</a></p>
         </div>
@@ -336,7 +381,8 @@
         function closeMobileMenu() {
             document.getElementById('mobileMenu').classList.remove('active');
         }
-        document.getElementById('menuBtn').addEventListener('click', openMobileMenu);
+        const menuBtn = document.getElementById('menuBtn');
+        if (menuBtn) menuBtn.addEventListener('click', openMobileMenu);
     
 </script>
 <!-- V14 悬浮咨询按钮 -->
@@ -359,5 +405,7 @@ function initFabButton() {
 }
 initFabButton();
 </script>
+    <script src="js/lang.js"></script>
+<script></script>
 </body>
 </html>

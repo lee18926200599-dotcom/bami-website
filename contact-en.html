@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="js/geo-boot.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Security Meta Tags -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-src https://www.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://ipwho.is https://ipinfo.io https://formspree.io; frame-src https://www.google.com https://maps.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
@@ -13,7 +14,8 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="Contact BAMI Technology for product inquiries and demonstrations of AI Digital Workforce, WMS, TMS, OMS systems. Phone: 18926200599">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://lee18926200599-dotcom.github.io/bami-website/contact-en.html">
+    <!-- SEO managed by scripts/apply-seo.js -->
+    <link rel="canonical" href="https://www.8bami.com/contact.html?lang=en">
 
     
     <title data-zh="联系我们 - 八米科技" data-en="Contact Us - BAMI Tech">Contact Us - BAMI Tech</title>
@@ -125,8 +127,20 @@
 .fab-tooltip { position: absolute; right: 70px; background: var(--bg-card); color: white; padding: 8px 16px; border-radius: 8px; font-size: 14px; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: all 0.3s; border: 1px solid var(--border-hover); }
 .fab-contact:hover .fab-tooltip { opacity: 1; transform: translateX(0); }
 </style>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.8bami.com/contact.html?lang=en">
+    <meta property="og:title" content="Contact Us - BAMI Tech">
+    <meta property="og:description" content="Contact BAMI Technology for product inquiries and demonstrations of AI Digital Workforce, WMS, TMS, OMS systems. Phone: 18926200599">
+    <meta property="og:image" content="https://www.8bami.com/images/og-image.jpg">
+    <meta property="og:site_name" content="BAMI Technology">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Us - BAMI Tech">
+    <meta name="twitter:description" content="Contact BAMI Technology for product inquiries and demonstrations of AI Digital Workforce, WMS, TMS, OMS systems. Phone: 18926200599">
+    <meta name="twitter:image" content="https://www.8bami.com/images/og-image.jpg">
+    <script type="application/ld+json" data-seo-schema>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.8bami.com/"},{"@type":"ListItem","position":2,"name":"Contact Us","item":"https://www.8bami.com/contact.html?lang=en"}]}</script>
 </head>
-<body data-page="contact">
+<body data-page-lang="en" data-page="contact">
     <nav class="navbar">
         <a href="index-en.html" class="logo" style="display: flex; align-items: center; gap: 6px; text-decoration: none; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;"><span style="background: linear-gradient(135deg, #FF6B35, #FF8A5C); padding: 6px 10px; border-radius: 12px; color: #FFFFFF; font-weight: bold; font-size: 18px; line-height: 1; font-family: Arial, Helvetica, sans-serif;">BAMI</span><span style="color: #FF6B35; font-weight: bold; font-size: 24px; line-height: 1;">八米</span></a>
         <ul class="nav-links">
@@ -140,8 +154,9 @@
         </ul>
         <div class="nav-right">
             <div class="lang-switch">
-                <a href="contact.html" class="lang-btn">中</a>
-                <a href="contact-en.html" class="lang-btn active">EN</a>
+                <button type="button" class="lang-btn" data-lang="zh">中</button>
+                <button type="button" class="lang-btn active" data-lang="en">EN</button>
+                <button type="button" class="lang-btn" data-lang="vi">VI</button>
             </div>
             <a href="contact-en.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">Contact</a>
         </div>
@@ -163,8 +178,9 @@
             </ul>
             <div class="mobile-menu-footer">
                 <div class="lang-switch">
-                    <a href="contact.html" class="lang-btn">中</a>
-                    <a href="contact-en.html" class="lang-btn active">EN</a>
+                    <button type="button" class="lang-btn" data-lang="zh">中</button>
+                    <button type="button" class="lang-btn active" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang="vi">VI</button>
                 </div>
                 <a href="contact-en.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">Contact</a>
             </div>
@@ -189,9 +205,9 @@
                     <h4 data-zh="📞 电话咨询" data-en="📞 Phone">📞 Phone</h4>
                     <p><strong>🇨🇳 China:</strong> <span style="font-size: 1.1rem; color: #FF6B35; font-weight: 700;">+86 189-2620-0599</span></p>
                     <p style="font-size: 0.85rem; color: #8B92A8;" data-zh="（微信同号）" data-en="(Same as WeChat)">(Same as WeChat)</p>
-                    <p><strong>🇸🇬 Singapore:</strong> <span style="font-size: 1.1rem; color: #FF6B35; font-weight: 700;">+65 6123 4567</span></p>
-                    <p><strong>🇭🇰 Hong Kong:</strong> <span style="font-size: 1.1rem; color: #FF6B35; font-weight: 700;">+852 2123 4567</span></p>
-                    <p><strong>🇩🇪 Germany:</strong> <span style="font-size: 1.1rem; color: #FF6B35; font-weight: 700;">+49 89 1234 5678</span></p>
+                    <p><strong>🇸🇬 Singapore:</strong> <span style="font-size: .95rem; color: #FF6B35; font-weight: 600;">Contact headquarters for local support</span></p>
+                    <p><strong>🇭🇰 Hong Kong:</strong> <span style="font-size: .95rem; color: #FF6B35; font-weight: 600;">Contact headquarters for local support</span></p>
+                    <p><strong>🇩🇪 Germany:</strong> <span style="font-size: .95rem; color: #FF6B35; font-weight: 600;">Contact headquarters for local support</span></p>
                 </div>
                 <div class="contact-card">
                     <h4 data-zh="💬 WhatsApp" data-en="💬 WhatsApp">💬 WhatsApp</h4>
@@ -218,14 +234,17 @@
             </div>
             <div class="form-card">
                 <h3 data-zh="预约演示" data-en="Schedule Demo">Schedule Demo</h3>
-                <form>
+                <form action="https://formspree.io/f/xreywwro" method="POST" accept-charset="UTF-8">
+                    <input type="hidden" name="_subject" value="BAMI Website - New Demo Request">
+                    <input type="hidden" name="_next" value="https://www.8bami.com/thanks.html">
+                    <input type="hidden" name="_language" value="en">
                     <div class="form-group">
                         <label data-zh="公司名称 *" data-en="Company Name *">Company Name *</label>
-                        <input type="text" placeholder="Enter company name" data-placeholder-zh="请输入公司名称" data-placeholder-en="Enter company name" required>
+                        <input type="text" name="company" placeholder="Enter company name" data-placeholder-zh="请输入公司名称" data-placeholder-en="Enter company name" required>
                     </div>
                     <div class="form-group">
                         <label data-zh="联系人 *" data-en="Contact Person *">Contact Person *</label>
-                        <input type="text" placeholder="Enter contact name" data-placeholder-zh="请输入联系人姓名" data-placeholder-en="Enter contact name" required>
+                        <input type="text" name="name" placeholder="Enter contact name" data-placeholder-zh="请输入联系人姓名" data-placeholder-en="Enter contact name" required>
                     </div>
                     <div class="form-group">
                         <label data-zh="联系电话 *" data-en="Phone Number *">Phone Number *</label>
@@ -247,12 +266,18 @@
                                 <option value="+84">🇻🇳 +84</option>
                                 <option value="+91">🇮🇳 +91</option>
                             </select>
-                            <input type="tel" placeholder="Enter phone number" data-placeholder-zh="请输入联系电话" data-placeholder-en="Enter phone number" required style="flex: 1;">
+                            <input type="tel" name="phone" placeholder="Enter phone number" data-placeholder-zh="请输入联系电话" data-placeholder-en="Enter phone number" required style="flex: 1;">
                         </div>
                     </div>
                     <div class="form-group">
                         <label data-zh="电子邮箱 *" data-en="Email *">Email *</label>
-                        <input type="email" placeholder="Enter email address" data-placeholder-zh="请输入电子邮箱" data-placeholder-en="Enter email address" required>
+                        <input type="email" name="email" placeholder="Enter email address" data-placeholder-zh="请输入电子邮箱" data-placeholder-en="Enter email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label style="display:flex;align-items:flex-start;gap:.6rem;color:#8B92A8;font-size:.85rem;line-height:1.6;">
+                            <input type="checkbox" name="privacy_consent" value="yes" required style="width:auto;margin-top:.25rem;">
+                            <span><span data-zh="我已阅读并同意" data-en="I have read and agree to the">I have read and agree to the</span> <a href="privacy.html" target="_blank" rel="noopener" data-zh="隐私政策" data-en="Privacy Policy">Privacy Policy</a><span data-zh="。 *" data-en=". *">. *</span></span>
+                        </label>
                     </div>
                     <button type="submit" class="btn-primary" data-zh="提交咨询" data-en="Submit Inquiry">Submit Inquiry</button>
                 </form>
@@ -414,8 +439,8 @@
             const patterns = {
                 email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                 phone: /^[\d\s\-\+\(\)]{7,20}$/,
-                name: /[\u4e00-\u9fa5a-zA-Z\s]{2,50}$/,
-                company: /[\u4e00-\u9fa5a-zA-Z0-9\s]{2,100}$/
+                name: /^[\p{L}\p{M}\s.'-]{2,50}$/u,
+                company: /^[\p{L}\p{M}\p{N}\s&.,'()-]{2,100}$/u
             };
             return patterns[type] ? patterns[type].test(input) : true;
         }
@@ -470,20 +495,43 @@
             });
             
             if (isValid) {
-                var msg = window.BAMI_LANG && window.BAMI_LANG.get() === 'en' 
-                    ? 'Thank you for your inquiry! We will contact you soon.' 
-                    : '感谢您的咨询！我们将尽快与您联系。';
-                alert(msg);
-                this.reset();
+                var form = this;
+                var lang = window.BAMI_LANG ? window.BAMI_LANG.get() : 'en';
+                var translator = lang === 'vi' ? window.BAMI_VI : (lang === 'th' ? window.BAMI_TH : (lang === 'id' ? window.BAMI_ID : null));
+                var tr = function(text) { return translator ? translator.translate(text) : text; };
+                var submitBtn = form.querySelector('button[type="submit"]');
+                var originalText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.textContent = lang === 'en' ? 'Submitting...' : tr('提交中...');
+                var formData = new FormData(form);
+                formData.set('_language', lang);
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                }).then(function(response) {
+                    if (!response.ok) throw new Error('Form submission failed');
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({ event: 'generate_lead', form_name: 'contact', language: lang });
+                    form.reset();
+                    window.location.href = 'thanks.html';
+                }).catch(function() {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                    alert(lang === 'en' ? 'Submission failed. Please try again or contact us on WhatsApp.' : tr('提交失败，请稍后重试，或直接通过 WhatsApp 联系我们。'));
+                });
             } else {
-                var errMsg = window.BAMI_LANG && window.BAMI_LANG.get() === 'en'
+                var lang = window.BAMI_LANG ? window.BAMI_LANG.get() : 'en';
+                var translator = lang === 'vi' ? window.BAMI_VI : (lang === 'th' ? window.BAMI_TH : (lang === 'id' ? window.BAMI_ID : null));
+                var errMsg = lang === 'en'
                     ? 'Please check if the input format is correct.'
-                    : '请检查输入信息格式是否正确。';
+                    : (translator ? translator.translate('请检查输入信息格式是否正确。') : '请检查输入信息格式是否正确。');
                 alert(errMsg);
             }
         });
     </script>
-    <script src="js/lang.js">    // System Login Menu Functions
+    <script src="js/lang.js"></script>
+<script>    // System Login Menu Functions
     function toggleSystemMenu() {
         const dropdown = document.getElementById('systemDropdown');
         dropdown.classList.toggle('active');

@@ -3,14 +3,17 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 Disallow: /tmp/
+Disallow: /product-detail.html
+Disallow: /solution-detail.html
+Disallow: /thanks.html
 
-# 百度爬虫
+# Chinese search engines
 User-agent: Baiduspider
 Allow: /
 Crawl-delay: 1
 
-# Google爬虫
+# Google
 User-agent: Googlebot
 Allow: /
 
-Sitemap: https://lee18926200599-dotcom.github.io/bami-website/sitemap.xml
+Sitemap: https://www.8bami.com/sitemap.xml

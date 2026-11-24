@@ -237,22 +237,14 @@ function initLangSwitch() {
             langBtns.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             
-            // 切换语言内容
-            document.querySelectorAll('[data-zh][data-en]').forEach(el => {
-                el.textContent = el.getAttribute('data-' + lang);
-            });
-            
-            // 保存语言偏好
-            localStorage.setItem('bami-lang', lang);
+            // 共享语言脚本负责中文、英文和越南语的完整切换
+            if (window.BAMI_LANG) {
+                window.BAMI_LANG.set(lang);
+            }
         });
     });
     
-    // 恢复语言偏好
-    const savedLang = localStorage.getItem('bami-lang');
-    if (savedLang) {
-        const btn = document.querySelector(`.lang-btn[data-lang="${savedLang}"]`);
-        if (btn) btn.click();
-    }
+    // 初始语言由 js/lang.js 统一恢复
 }
 
 // 表单处理
@@ -269,11 +261,16 @@ function initFormHandler() {
         // 模拟提交
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
-        submitBtn.textContent = '提交中...';
+        submitBtn.textContent = window.BAMI_LANG && window.BAMI_LANG.get() === 'vi'
+            ? window.BAMI_VI.translate('提交中...') : '提交中...';
         submitBtn.disabled = true;
         
         setTimeout(() => {
-            alert('感谢您的咨询！我们的专家团队将在24小时内与您联系。');
+            var lang = window.BAMI_LANG ? window.BAMI_LANG.get() : 'zh';
+            var message = lang === 'vi'
+                ? window.BAMI_VI.translate('感谢您的咨询！我们的专家团队将在24小时内与您联系。')
+                : '感谢您的咨询！我们的专家团队将在24小时内与您联系。';
+            alert(message);
             form.reset();
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;

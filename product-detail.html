@@ -2,17 +2,19 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <script src="js/geo-boot.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Security Meta Tags -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://ipwho.is https://ipinfo.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="Detailed information about BAMI Technology products. Learn about features, benefits, and specifications of our supply chain solutions.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://lee18926200599-dotcom.github.io/bami-website/product-detail.html">
+    <meta name="robots" content="noindex, follow">
+    <!-- SEO managed by scripts/apply-seo.js -->
+    <link rel="canonical" href="https://www.8bami.com/product-detail.html">
 
 
   <title>产品详情 - 八米科技</title>
@@ -21,6 +23,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="js/lang.js"></script>
+<script></script>
   <script src="js/products-data.js"></script>
   <style>
     .product-hero { min-height: 60vh; padding: 10rem 5% 5rem; background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 50%, rgba(255,107,53,0.05) 100%); position: relative; overflow: hidden; }
@@ -99,6 +102,17 @@
 .fab-tooltip { position: absolute; right: 70px; background: var(--bg-card); color: white; padding: 8px 16px; border-radius: 8px; font-size: 14px; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: all 0.3s; border: 1px solid var(--border-hover); }
 .fab-contact:hover .fab-tooltip { opacity: 1; transform: translateX(0); }
 </style>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.8bami.com/product-detail.html">
+    <meta property="og:title" content="产品详情 - 八米科技">
+    <meta property="og:description" content="Detailed information about BAMI Technology products. Learn about features, benefits, and specifications of our supply chain solutions.">
+    <meta property="og:image" content="https://www.8bami.com/images/og-image.jpg">
+    <meta property="og:site_name" content="BAMI Technology">
+    <meta property="og:locale" content="zh_CN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="产品详情 - 八米科技">
+    <meta name="twitter:description" content="Detailed information about BAMI Technology products. Learn about features, benefits, and specifications of our supply chain solutions.">
+    <meta name="twitter:image" content="https://www.8bami.com/images/og-image.jpg">
 </head>
 <body class="lang-zh">
   <div class="preloader"><div class="preloader-text">BAMI</div></div>
@@ -120,6 +134,7 @@
       <div class="lang-switcher">
         <button class="lang-btn active" data-lang="zh">中</button>
         <button class="lang-btn" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="vi">VI</button>
       </div>
       <div class="mobile-menu-toggle" id="mobileMenuToggle"><span></span><span></span><span></span></div>
     </div>
@@ -299,6 +314,7 @@
                 </script>
         </div>
         <div class="footer-bottom">
+            <p><a href="privacy.html" data-zh="隐私政策" data-en="Privacy Policy">隐私政策</a></p>
             <p>&copy; 2026 BAMI 八米科技. All rights reserved.</p>
             <p><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer" style="color: #8B92A8; text-decoration: none;">粤ICP备19085702号</a></p>
         </div>

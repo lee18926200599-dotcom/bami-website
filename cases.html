@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <script src="js/geo-boot.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-zh="成功案例 - 八米科技" data-en="Success Stories - BAMI Tech">成功案例 - 八米科技</title>
     <link rel="icon" type="image/svg+xml" href="images/LOGO2.SVG">
@@ -120,6 +121,29 @@
 .fab-tooltip { position: absolute; right: 70px; background: var(--bg-card); color: white; padding: 8px 16px; border-radius: 8px; font-size: 14px; white-space: nowrap; opacity: 0; transform: translateX(10px); transition: all 0.3s; border: 1px solid var(--border-hover); }
 .fab-contact:hover .fab-tooltip { opacity: 1; transform: translateX(0); }
 </style>
+    <meta name="description" content="查看八米科技在新能源、医疗器械、快消零售与电商云仓等行业的成功案例，了解TMS、WMS、OMS和4PL方案带来的可量化业务价值。">
+    <meta name="robots" content="index, follow">
+
+    <!-- SEO managed by scripts/apply-seo.js -->
+    <link rel="canonical" href="https://www.8bami.com/cases.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.8bami.com/cases.html">
+    <meta property="og:title" content="成功案例 - 八米科技">
+    <meta property="og:description" content="查看八米科技在新能源、医疗器械、快消零售与电商云仓等行业的成功案例，了解TMS、WMS、OMS和4PL方案带来的可量化业务价值。">
+    <meta property="og:image" content="https://www.8bami.com/images/og-image.jpg">
+    <meta property="og:site_name" content="BAMI Technology">
+    <meta property="og:locale" content="zh_CN">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="成功案例 - 八米科技">
+    <meta name="twitter:description" content="查看八米科技在新能源、医疗器械、快消零售与电商云仓等行业的成功案例，了解TMS、WMS、OMS和4PL方案带来的可量化业务价值。">
+    <meta name="twitter:image" content="https://www.8bami.com/images/og-image.jpg">
+    <link rel="alternate" hreflang="zh-CN" href="https://www.8bami.com/cases.html" data-seo-managed>
+    <link rel="alternate" hreflang="en" href="https://www.8bami.com/cases.html?lang=en" data-seo-managed>
+    <link rel="alternate" hreflang="vi" href="https://www.8bami.com/cases.html?lang=vi" data-seo-managed>
+    <link rel="alternate" hreflang="th" href="https://www.8bami.com/cases.html?lang=th" data-seo-managed>
+    <link rel="alternate" hreflang="id" href="https://www.8bami.com/cases.html?lang=id" data-seo-managed>
+    <link rel="alternate" hreflang="x-default" href="https://www.8bami.com/cases.html" data-seo-managed>
+    <script type="application/ld+json" data-seo-schema>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://www.8bami.com/"},{"@type":"ListItem","position":2,"name":"成功案例","item":"https://www.8bami.com/cases.html"}]}</script>
 </head>
 <body>
     <nav class="navbar">
@@ -138,6 +162,7 @@
             <div class="lang-switch">
                 <button class="lang-btn active" data-lang="zh" onclick="switchLang('zh')">中</button>
                 <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+                <button type="button" class="lang-btn" data-lang="vi">VI</button>
             </div>
             <a href="contact.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">立即咨询</a>
         </div>
@@ -163,6 +188,7 @@
                 <div class="lang-switch">
                     <button class="lang-btn active" data-lang="zh" onclick="switchLang('zh')">中</button>
                     <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
+                    <button type="button" class="lang-btn" data-lang="vi">VI</button>
                 </div>
                 <a href="contact.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">立即咨询</a>
             </div>
@@ -513,6 +539,7 @@
             </div>
         </div>
         <div class="footer-bottom">
+            <p><a href="privacy.html" data-zh="隐私政策" data-en="Privacy Policy">隐私政策</a></p>
             <p>&copy; 2026 BAMI <span data-zh="八米科技" data-en="Tech">八米科技</span>. All rights reserved.</p>
             <p><a href="https://beian.miit.gov.cn/" target="_blank" style="color: #8B92A8;">粤ICP备19085702号</a></p>
         </div>
@@ -521,20 +548,7 @@
     <script>
         // Language Switching
         function switchLang(lang) {
-            document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-            
-            // Update all elements with data-zh and data-en attributes
-            document.querySelectorAll('[data-zh][data-en]').forEach(el => {
-                el.textContent = el.getAttribute('data-' + lang);
-            });
-            
-            // Update active state on buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-            });
-            
-            // Store preference
-            localStorage.setItem('bami-lang', lang);
+            if (window.BAMI_LANG) return window.BAMI_LANG.set(lang);
         }
         
         // Mobile Menu Functions
@@ -552,12 +566,6 @@
             btn.classList.remove('active');
         }
         
-        // Initialize language on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedLang = localStorage.getItem('bami-lang') || 'zh';
-            switchLang(savedLang);
-        });
-    
 </script>
 <!-- V14 悬浮咨询按钮 -->
 <a href="contact.html" class="fab-contact" id="fabContact">
@@ -579,5 +587,7 @@ function initFabButton() {
 }
 initFabButton();
 </script>
+    <script src="js/lang.js"></script>
+<script></script>
 </body>
 </html>
