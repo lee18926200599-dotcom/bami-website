@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Security Meta Tags -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://ipwho.is https://ipinfo.io https://formspree.io; frame-src https://www.google.com https://maps.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-hashes' 'sha256-FQxdK+VhX/EYrpgZ9InTUpwi+JWbeM9OiFEeo1VJx9s=' 'sha256-KOj4LRJGU+0vHC1GaGyLWY9cN2nOl1GYotMLWAXlvX4=' 'sha256-Ocpv1/sC2tH2R3wQtvFPJFDWvv9BR+ecukOjUtcrtuY=' 'sha256-X5YdKo60TZX/XzzAONI3F9FR+iYketVOZTtA/yDlCYw=' 'sha256-bCzsj9O0xAoLNL/p4L6abkC+pFZNNCqd8b0dUVTG1XU=' 'sha256-s9dfLZCKHXz79J38sv0ybKA2YcvrU8Pd43V3OX20Mj8=' 'sha256-uMgzSUNWRWu21TdUE7Ub+uFYUQvA21atFhcrD1gOykk=' 'sha256-w4kU35lC74Gexx7u9ivXbIQLOc/xJrARYZ/DnXLzq+k='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://ipwho.is https://ipinfo.io https://formspree.io; frame-src https://www.google.com https://maps.google.com; media-src 'self'; object-src 'none'; worker-src 'none'; manifest-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self' https://formspree.io;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta name="format-detection" content="telephone=no">
     <meta name="description" content="Contact BAMI Technology for product inquiries and demonstrations of AI Digital Workforce, WMS, TMS, OMS systems. Phone: 18926200599">
@@ -211,7 +210,7 @@
                 </div>
                 <div class="contact-card">
                     <h4 data-zh="💬 WhatsApp" data-en="💬 WhatsApp">💬 WhatsApp</h4>
-                    <p><a href="https://wa.me/8618926200599" target="_blank" style="font-size: 1.1rem; color: #FF6B35; font-weight: 700; text-decoration: none;">+86 189-2620-0599</a></p>
+                    <p><a href="https://wa.me/8618926200599" target="_blank" style="font-size: 1.1rem; color: #FF6B35; font-weight: 700; text-decoration: none;" rel="noopener">+86 189-2620-0599</a></p>
                     <p style="font-size: 0.85rem; color: #8B92A8;" data-zh="点击号码直接开始WhatsApp聊天" data-en="Click number to start WhatsApp chat">Click number to start WhatsApp chat</p>
                 </div>
                 <div class="contact-card">
@@ -238,13 +237,16 @@
                     <input type="hidden" name="_subject" value="BAMI Website - New Demo Request">
                     <input type="hidden" name="_next" value="https://www.8bami.com/thanks.html">
                     <input type="hidden" name="_language" value="en">
+                    <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+                        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+                    </div>
                     <div class="form-group">
                         <label data-zh="公司名称 *" data-en="Company Name *">Company Name *</label>
-                        <input type="text" name="company" placeholder="Enter company name" data-placeholder-zh="请输入公司名称" data-placeholder-en="Enter company name" required>
+                        <input type="text" name="company" placeholder="Enter company name" data-placeholder-zh="请输入公司名称" data-placeholder-en="Enter company name" autocomplete="organization" minlength="2" maxlength="100" required>
                     </div>
                     <div class="form-group">
                         <label data-zh="联系人 *" data-en="Contact Person *">Contact Person *</label>
-                        <input type="text" name="name" placeholder="Enter contact name" data-placeholder-zh="请输入联系人姓名" data-placeholder-en="Enter contact name" required>
+                        <input type="text" name="name" placeholder="Enter contact name" data-placeholder-zh="请输入联系人姓名" data-placeholder-en="Enter contact name" autocomplete="name" minlength="2" maxlength="50" required>
                     </div>
                     <div class="form-group">
                         <label data-zh="联系电话 *" data-en="Phone Number *">Phone Number *</label>
@@ -266,12 +268,12 @@
                                 <option value="+84">🇻🇳 +84</option>
                                 <option value="+91">🇮🇳 +91</option>
                             </select>
-                            <input type="tel" name="phone" placeholder="Enter phone number" data-placeholder-zh="请输入联系电话" data-placeholder-en="Enter phone number" required style="flex: 1;">
+                            <input type="tel" name="phone" placeholder="Enter phone number" data-placeholder-zh="请输入联系电话" data-placeholder-en="Enter phone number" autocomplete="tel" inputmode="tel" minlength="7" maxlength="20" required style="flex: 1;">
                         </div>
                     </div>
                     <div class="form-group">
                         <label data-zh="电子邮箱 *" data-en="Email *">Email *</label>
-                        <input type="email" name="email" placeholder="Enter email address" data-placeholder-zh="请输入电子邮箱" data-placeholder-en="Enter email address" required>
+                        <input type="email" name="email" placeholder="Enter email address" data-placeholder-zh="请输入电子邮箱" data-placeholder-en="Enter email address" autocomplete="email" maxlength="254" required>
                     </div>
                     <div class="form-group">
                         <label style="display:flex;align-items:flex-start;gap:.6rem;color:#8B92A8;font-size:.85rem;line-height:1.6;">
@@ -314,7 +316,7 @@
                 <ul>
                     <li><a href="#">📍 <span data-zh="广州天河盛大国际" data-en="Guangzhou Tianhe">广州天河盛大国际</span></a></li>
                     <li><a href="tel:+8618926200599">📞 +86 18926200599</a></li>
-                    <li><a href="https://wa.me/8618926200599" target="_blank">💬 WhatsApp</a></li>
+                    <li><a href="https://wa.me/8618926200599" target="_blank" rel="noopener">💬 WhatsApp</a></li>
                     <li><a href="mailto:27270234@qq.com">✉️ 27270234@qq.com</a></li>
                     <li><div class="system-login-menu">
                         <button class="system-login-btn" onclick="toggleSystemMenu()" data-zh="🔐 系统登录" data-en="🔐 System Login">🔐 系统登录</button>
@@ -329,13 +331,13 @@
                                     <div class="system-subcategory">
                                         <span class="system-subtitle" data-zh="仓配WMS" data-en="Warehouse WMS">仓配WMS</span>
                                         <div class="system-subitems">
-                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="https://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend" rel="noopener">PC后台</a>
                                         </div>
                                     </div>
                                     <div class="system-subcategory">
                                         <span class="system-subtitle" data-zh="电商WMS" data-en="E-commerce WMS">电商WMS</span>
                                         <div class="system-subitems">
-                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="https://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend" rel="noopener">PC后台</a>
                                         </div>
                                     </div>
                                 </div>
@@ -346,30 +348,30 @@
                                     <div class="system-subcategory">
                                         <span class="system-subtitle" data-zh="零担TMS" data-en="LTL TMS">零担TMS</span>
                                         <div class="system-subitems">
-                                            <a href="http://admin.liancheng.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
-                                            <a href="http://memberh5.liancheng.8bami.com/" target="_blank" data-zh="手机端" data-en="Mobile">手机端</a>
+                                            <a href="https://admin.liancheng.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend" rel="noopener">PC后台</a>
+                                            <a href="https://memberh5.liancheng.8bami.com/" target="_blank" data-zh="手机端" data-en="Mobile" rel="noopener">手机端</a>
                                         </div>
                                     </div>
                                     <div class="system-subcategory">
                                         <span class="system-subtitle" data-zh="三方TMS" data-en="3PL TMS">三方TMS</span>
                                         <div class="system-subitems">
-                                            <a href="http://live.rxwl.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
-                                            <a href="http://live.rxwl.driver.8bami.com" target="_blank" data-zh="司机端" data-en="Driver">司机端</a>
-                                            <a href="http://live.rxwl.memberpc.8bami.com" target="_blank" data-zh="会员端" data-en="Member">会员端</a>
+                                            <a href="https://live.rxwl.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend" rel="noopener">PC后台</a>
+                                            <a href="https://live.rxwl.driver.8bami.com" target="_blank" data-zh="司机端" data-en="Driver" rel="noopener">司机端</a>
+                                            <a href="https://live.rxwl.memberpc.8bami.com" target="_blank" data-zh="会员端" data-en="Member" rel="noopener">会员端</a>
                                         </div>
                                     </div>
                                     <div class="system-subcategory">
                                         <span class="system-subtitle" data-zh="跨境TMS" data-en="Cross-border TMS">跨境TMS</span>
                                         <div class="system-subitems">
-                                            <a href="http://kjtms.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
-                                            <a href="http://kjtms.tgemember.8bami.com/?EnterpriseNo=bami" target="_blank" data-zh="会员端" data-en="Member">会员端</a>
+                                            <a href="https://kjtms.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend" rel="noopener">PC后台</a>
+                                            <a href="https://kjtms.tgemember.8bami.com/?EnterpriseNo=bami" target="_blank" data-zh="会员端" data-en="Member" rel="noopener">会员端</a>
                                         </div>
                                     </div>
                                     <div class="system-subcategory">
                                         <span class="system-subtitle" data-zh="跨境集运" data-en="Cross-border">跨境集运</span>
                                         <div class="system-subitems">
-                                            <a href="http://b9.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
-                                            <a href="https://b9.member.8bami.com/?EnterpriseNo=t03_4" target="_blank" data-zh="手机端" data-en="Mobile">手机端</a>
+                                            <a href="https://b9.admin.8bami.com" target="_blank" data-zh="PC后台" data-en="PC Backend" rel="noopener">PC后台</a>
+                                            <a href="https://b9.member.8bami.com/?EnterpriseNo=t03_4" target="_blank" data-zh="手机端" data-en="Mobile" rel="noopener">手机端</a>
                                         </div>
                                     </div>
                                 </div>
@@ -380,13 +382,13 @@
                                     <div class="system-subcategory">
                                         <span class="system-subtitle" data-zh="OMS" data-en="OMS">OMS</span>
                                         <div class="system-subitems">
-                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="https://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend" rel="noopener">PC后台</a>
                                         </div>
                                     </div>
                                     <div class="system-subcategory">
                                         <span class="system-subtitle" data-zh="BMS" data-en="BMS">BMS</span>
                                         <div class="system-subitems">
-                                            <a href="http://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend">PC后台</a>
+                                            <a href="https://asc.8bami.com/" target="_blank" data-zh="PC后台" data-en="PC Backend" rel="noopener">PC后台</a>
                                         </div>
                                     </div>
                                 </div>
@@ -425,14 +427,6 @@
             window.location.href = window.location.href.replace('http:', 'https:');
         }
 
-        // Security: XSS Protection - Escape User Input Function
-        function escapeHtml(text) {
-            if (typeof text !== 'string') return text;
-            const div = document.createElement('div');
-            div.textContent = text;
-            return div.innerHTML;
-        }
-
         // Security: Input Validation Function
         function validateInput(input, type) {
             if (typeof input !== 'string') return false;
@@ -464,8 +458,10 @@
             let isValid = true;
             
             inputs.forEach(input => {
-                // Sanitize input
-                input.value = escapeHtml(input.value.trim());
+                if (input.type === 'hidden' || input.type === 'checkbox' || input.name === '_gotcha') {
+                    return;
+                }
+                input.value = input.value.trim();
                 
                 // Validate based on input type
                 if (input.type === 'tel') {
@@ -475,15 +471,22 @@
                     } else {
                         input.style.borderColor = '';
                     }
+                } else if (input.type === 'email') {
+                    if (!validateInput(input.value, 'email')) {
+                        isValid = false;
+                        input.style.borderColor = '#ff4444';
+                    } else {
+                        input.style.borderColor = '';
+                    }
                 } else if (input.type === 'text') {
-                    if (input.placeholder.includes('company')) {
+                    if (input.name === 'company') {
                         if (!validateInput(input.value, 'company')) {
                             isValid = false;
                             input.style.borderColor = '#ff4444';
                         } else {
                             input.style.borderColor = '';
                         }
-                    } else {
+                    } else if (input.name === 'name') {
                         if (!validateInput(input.value, 'name')) {
                             isValid = false;
                             input.style.borderColor = '#ff4444';

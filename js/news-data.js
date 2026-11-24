@@ -269,7 +269,7 @@ var newsData = {
     },
     20: {
         id: 20,
-        title: "反向海淘火了，海外仓成国货"走出去"重要助推器",
+        title: "反向海淘火了，海外仓成国货“走出去”重要助推器",
         titleEn: "Reverse Cross-border E-commerce Booms, Overseas Warehouses Boost Chinese Products",
         date: "2023-09-26",
         summary: "反向海淘市场火热，海外仓成为国货出海的重要支撑，助力中国品牌走向全球。",
@@ -339,7 +339,7 @@ var newsListData = [
     { id: 23, title: "港珠澳大桥开通四年出入境人员车辆货物量不断上升-新闻资讯 - 八米科技", date: "2023-09-26", category: "company" },
     { id: 22, title: "俄罗斯和朝鲜时隔两年恢复铁路运输 - 八米科技", date: "2023-09-26", category: "company" },
     { id: 21, title: "物流运输节点通知提醒有哪些？-了解物流节点提醒通知 - 八米科技", date: "2023-09-26", category: "company" },
-    { id: 20, title: "反向海淘火了，海外仓成国货"走出去"重要助推器 - 八米科技", date: "2023-09-26", category: "company" },
+    { id: 20, title: "反向海淘火了，海外仓成国货“走出去”重要助推器 - 八米科技", date: "2023-09-26", category: "company" },
     { id: 19, title: "八米科技跨境系统丨系统一体化，跨境物流不复杂 - 八米科技", date: "2023-09-26", category: "company" },
     { id: 18, title: "八米助力弘海铁盛掘金非洲代购集运蓝海大市场 - 八米科技", date: "2023-09-26", category: "company" },
 ];

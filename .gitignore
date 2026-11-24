@@ -15,6 +15,7 @@ desktop.ini
 .env
 .env.*
 !.env.example
+AGENTS.md
 
 # Local dependencies, logs, and temporary files
 node_modules/
@@ -29,6 +30,13 @@ yarn-error.log*
 test-results/
 playwright-report/
 .playwright/
+scripts/*-check-report.json
+
+# Deployment packages and internal working directories
+dist/
+output/
+网站交接目录/
+网站交接目录.zip
 scripts/seo-audit-result.json
 
 # macOS text clipping files
