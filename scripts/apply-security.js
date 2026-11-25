@@ -57,16 +57,21 @@ function addNoopener(html) {
 function buildCsp(fileName, html) {
   const isContact = fileName === 'contact.html' || fileName === 'contact-en.html';
   const usesFontAwesome = fileName === 'product-detail.html' || fileName === 'solution-detail.html';
+  const usesGoogleFonts = /<link\b[^>]*fonts\.googleapis\.com/i.test(html);
   const scriptHashes = [...new Set([
     ...inlineScriptHashes(html),
     ...inlineHandlerHashes(html)
   ])].sort();
 
-  const styleSources = ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'];
-  const fontSources = ["'self'", 'https://fonts.gstatic.com'];
+  const styleSources = ["'self'", "'unsafe-inline'"];
+  const fontSources = ["'self'"];
   const connectSources = ["'self'", 'https://ipwho.is', 'https://ipinfo.io'];
   const formSources = ["'self'"];
 
+  if (usesGoogleFonts) {
+    styleSources.push('https://fonts.googleapis.com');
+    fontSources.push('https://fonts.gstatic.com');
+  }
   if (usesFontAwesome) {
     styleSources.push(cdnFontAwesome);
     fontSources.push(cdnFontAwesome);

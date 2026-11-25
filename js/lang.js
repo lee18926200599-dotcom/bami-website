@@ -19,7 +19,7 @@
     });
     var languagePacks = {};
     var activeLanguagePack = null;
-    var languageAssets = {
+    var fullLanguageAssets = {
         vi: ['js/lang-news-content.js', 'js/lang-vi-content.js', 'js/lang-vi.js'],
         th: ['js/lang-news-content.js', 'js/lang-th-content.js', 'js/lang-th.js'],
         id: ['js/lang-news-content.js', 'js/lang-id-content.js', 'js/lang-id.js']
@@ -187,20 +187,27 @@
     
     // 应用语言到页面
     function applyLang(lang) {
+        var previousLang = currentLang;
+        var restoredLanguagePack = false;
         currentLang = lang;
 
         // 当前语言的翻译包先恢复原文，再切换到目标语言
         if (activeLanguagePack && typeof activeLanguagePack.restore === 'function') {
             activeLanguagePack.restore();
+            restoredLanguagePack = true;
         }
         activeLanguagePack = null;
 
         document.documentElement.lang = getLanguage(lang).htmlLang;
         if (document.body) {
-            Array.from(document.body.classList)
-                .filter(function(className) { return className.indexOf('lang-') === 0; })
-                .forEach(function(className) { document.body.classList.remove(className); });
-            document.body.classList.add('lang-' + lang);
+            var languageClasses = Array.from(document.body.classList)
+                .filter(function(className) { return className.indexOf('lang-') === 0; });
+            var hasCorrectLanguageClass = languageClasses.length === 1 &&
+                languageClasses[0] === 'lang-' + lang;
+            if (!hasCorrectLanguageClass && (languageClasses.length || lang !== 'zh')) {
+                languageClasses.forEach(function(className) { document.body.classList.remove(className); });
+                document.body.classList.add('lang-' + lang);
+            }
         }
 
         var languagePack = languagePacks[lang];
@@ -210,6 +217,15 @@
             });
             languagePack.apply();
             activeLanguagePack = languagePack;
+            return;
+        }
+
+        // The static document is already Chinese. Avoid rewriting every data
+        // attribute on the first paint when no language change is needed.
+        if (lang === 'zh' && (previousLang === 'zh' || restoredLanguagePack)) {
+            document.querySelectorAll('span.zh, span.en').forEach(function(el) {
+                el.style.display = el.classList.contains('zh') ? 'inline' : 'none';
+            });
             return;
         }
 
@@ -318,18 +334,52 @@
         });
     }
 
-    function ensureLanguagePack(lang) {
-        if (languagePacks[lang] || !languageAssets[lang]) return Promise.resolve();
-        if (loadingLanguagePacks[lang]) return loadingLanguagePacks[lang];
-        loadingLanguagePacks[lang] = languageAssets[lang].reduce(function(chain, src) {
+    function currentPageKey() {
+        var fileName = decodeURIComponent(window.location.pathname).split('/').pop() || 'index.html';
+        fileName = fileName.replace(/\.html?$/i, '') || 'index';
+        return fileName.replace(/[^a-z0-9_-]/gi, '-').toLowerCase();
+    }
+
+    function pageLanguageAssets(lang) {
+        if (!fullLanguageAssets[lang]) return null;
+        return [
+            'js/lang-packs/' + lang + '/' + currentPageKey() + '.js',
+            'js/lang-' + lang + '.js'
+        ];
+    }
+
+    function loadLanguageAssets(lang, assets) {
+        return assets.reduce(function(chain, src) {
             return chain.then(function() { return loadScript(src); });
-        }, Promise.resolve()).then(function() {
-            var pack = lang === 'vi' ? window.BAMI_VI : (lang === 'th' ? window.BAMI_TH : window.BAMI_ID);
-            if (!pack) throw new Error('Language pack unavailable: ' + lang);
-            var language = getLanguage(lang);
-            registerLanguage(language, pack);
-            delete loadingLanguagePacks[lang];
-        }).catch(function(error) {
+        }, Promise.resolve());
+    }
+
+    function registerLoadedLanguagePack(lang) {
+        var pack = lang === 'vi' ? window.BAMI_VI : (lang === 'th' ? window.BAMI_TH : window.BAMI_ID);
+        if (!pack) throw new Error('Language pack unavailable: ' + lang);
+        var language = getLanguage(lang);
+        registerLanguage(language, pack);
+    }
+
+    function ensureLanguagePack(lang) {
+        if (languagePacks[lang] || !fullLanguageAssets[lang]) return Promise.resolve();
+        if (loadingLanguagePacks[lang]) return loadingLanguagePacks[lang];
+
+        var pageAssets = pageLanguageAssets(lang);
+        loadingLanguagePacks[lang] = loadLanguageAssets(lang, pageAssets)
+            .then(function() {
+                registerLoadedLanguagePack(lang);
+            })
+            .catch(function() {
+                // A newly added page may not have a generated page pack yet.
+                return loadLanguageAssets(lang, fullLanguageAssets[lang]).then(function() {
+                    registerLoadedLanguagePack(lang);
+                });
+            })
+            .then(function() {
+                delete loadingLanguagePacks[lang];
+            })
+            .catch(function(error) {
             delete loadingLanguagePacks[lang];
             throw error;
         });

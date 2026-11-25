@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Security Meta Tags -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-hashes' 'sha256-/woOSXrqptXky1dA6aPvhl3wt9HxZbOptpO9wQwBrA4=' 'sha256-LaiQpfnMYnBoxcSgyINi2vf4f37xBZbGFEzTirGKQbc=' 'sha256-Ocpv1/sC2tH2R3wQtvFPJFDWvv9BR+ecukOjUtcrtuY=' 'sha256-kKw4Y+xZBQ5s29HZjkR+brZ35Thvc21detELjqIFXt0=' 'sha256-leHdBr+HDyXuNhyUAPYpaSAXm9Q+6WrcBEnp2xlvBCo=' 'sha256-q2krFmDRHGy0yPAn7HcWdS07/+eUM6o53s9Gxc5oNP8=' 'sha256-s9dfLZCKHXz79J38sv0ybKA2YcvrU8Pd43V3OX20Mj8=' 'sha256-uMgzSUNWRWu21TdUE7Ub+uFYUQvA21atFhcrD1gOykk='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://ipwho.is https://ipinfo.io; frame-src 'none'; media-src 'self'; object-src 'none'; worker-src 'none'; manifest-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-hashes' 'sha256-/woOSXrqptXky1dA6aPvhl3wt9HxZbOptpO9wQwBrA4=' 'sha256-LaiQpfnMYnBoxcSgyINi2vf4f37xBZbGFEzTirGKQbc=' 'sha256-Ocpv1/sC2tH2R3wQtvFPJFDWvv9BR+ecukOjUtcrtuY=' 'sha256-eJU6IyzHMLtgPP2IQMeqPn4dYauHjEnoVsQE/QjgNNU=' 'sha256-kKw4Y+xZBQ5s29HZjkR+brZ35Thvc21detELjqIFXt0=' 'sha256-leHdBr+HDyXuNhyUAPYpaSAXm9Q+6WrcBEnp2xlvBCo=' 'sha256-s9dfLZCKHXz79J38sv0ybKA2YcvrU8Pd43V3OX20Mj8=' 'sha256-uMgzSUNWRWu21TdUE7Ub+uFYUQvA21atFhcrD1gOykk='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://ipwho.is https://ipinfo.io; frame-src 'none'; media-src 'self'; object-src 'none'; worker-src 'none'; manifest-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
@@ -71,8 +71,7 @@
     
     <title data-zh="八米科技 - AI数字员工与供应链数智化解决方案" data-en="BAMI Tech - AI Digital Workforce & Supply Chain Solutions">八米科技 - AI数字员工与供应链数智化解决方案</title>
     <link rel="icon" type="image/svg+xml" href="images/LOGO2.SVG">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
+<style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             /* V14 新配色体系 */
@@ -227,13 +226,13 @@
 
         /* Logo Marquee Styles */
         .logo-marquee-container { max-width: 1400px; margin: 0 auto; position: relative; }
-        .logo-marquee { overflow: hidden; width: 100%; position: relative; }
+        .logo-marquee { overflow-x: auto; overflow-y: hidden; width: 100%; position: relative; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+        .logo-marquee::-webkit-scrollbar { display: none; }
         .logo-marquee::before,
         .logo-marquee::after { content: ''; position: absolute; top: 0; width: 100px; height: 100%; z-index: 2; pointer-events: none; }
         .logo-marquee::before { left: 0; background: linear-gradient(to right, #121829 0%, transparent 100%); }
         .logo-marquee::after { right: 0; background: linear-gradient(to left, #121829 0%, transparent 100%); }
-        .logo-track { display: flex; animation: marquee 40s linear infinite; width: fit-content; }
-        .logo-marquee:hover .logo-track { animation-play-state: paused; }
+        .logo-track { display: flex; width: fit-content; }
         .logo-item { flex-shrink: 0; padding: 0 1rem; }
         .logo-box { background: #ffffff !important; border: 2px solid rgba(255,107,53,0.3); border-radius: 16px; padding: 1rem 1.5rem; min-width: 160px; height: 90px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15); overflow: hidden; }
         .logo-box:hover { border-color: rgba(255,107,53,0.4); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
@@ -242,11 +241,8 @@
         .logo-text { display: block; font-size: 1.1rem; font-weight: 600; color: #FFFFFF; margin-bottom: 0.4rem; white-space: nowrap; }
         .logo-desc { display: block; font-size: 0.75rem; color: #8B92A8; white-space: nowrap; }
 
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .logo-track { animation-duration: 25s; }
             .logo-box { padding: 0.8rem 1rem; min-width: 120px; height: 70px; border-radius: 12px; background: #ffffff; }
             .logo-box img { max-height: 45px; }
             .logo-text { font-size: 0.95rem; }
@@ -258,7 +254,6 @@
             .logo-item { padding: 0 0.5rem; }
         }
         @media (max-width: 480px) {
-            .logo-track { animation-duration: 20s; }
             .logo-box { padding: 0.6rem 0.8rem; min-width: 100px; height: 60px; background: #ffffff; }
             .logo-box img { max-height: 40px; }
             .logo-text { font-size: 0.85rem; }
@@ -327,13 +322,25 @@
         .footer-bottom p { text-align: center; }
         
         /* V14 新增：滚动触发动画 */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal { opacity: 1; transform: none; }
         .reveal.active { opacity: 1; transform: translateY(0); }
         .reveal-delay-1 { transition-delay: 0.1s; }
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
         .reveal-delay-4 { transition-delay: 0.4s; }
-        
+
+        .products,
+        .solutions,
+        .clients,
+        .testimonials,
+        .news-section,
+        .about-intro-section,
+        .cta-section,
+        .footer {
+            content-visibility: auto;
+            contain-intrinsic-size: auto 700px;
+        }
+
         /* V14 新增：悬浮咨询按钮 */
         .fab-contact { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-light)); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 20px rgba(255,107,53,0.4); transition: all 0.3s; z-index: 999; opacity: 0; transform: translateY(20px); }
         .fab-contact.visible { opacity: 1; transform: translateY(0); }
@@ -471,6 +478,18 @@
         .hero-mobile-products {
             display: none;
         }
+        .mobile-product-chip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.8rem;
+            background: #1A2235;
+            border: 1px solid rgba(255,107,53,0.2);
+            border-radius: 12px;
+            color: #FFFFFF;
+            font-weight: 600;
+        }
         @media (min-width: 769px) { .mobile-menu { display: none !important; } }
         @media (max-width: 768px) {
             .nav-links, .nav-right { display: none !important; }
@@ -490,14 +509,13 @@
             .system-dropdown { text-align: left; }
             .system-category-title, .system-subtitle { text-align: left; display: block; }
             .system-subitems { text-align: left; justify-content: flex-start; }
-            .hero-showcase {
-                height: 280px;
-                margin-top: 2rem;
-            }
-            .showcase-container {
-                width: 200px;
-                height: 240px;
-                animation-duration: 12s;
+            .hero-showcase { display: none !important; }
+            .hero-mobile-products {
+                display: grid !important;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.75rem;
+                max-width: 360px;
+                margin: 1.5rem auto 0;
             }
             .showcase-card {
                 width: 150px;
@@ -524,6 +542,7 @@
                 font-size: 0.55rem;
                 padding: 0.2rem 0.5rem;
             }
+            .particle { animation: none; }
         }
         @media (max-width: 480px) {
             .hero-showcase {
@@ -563,7 +582,15 @@
                 padding: 0.15rem 0.4rem;
             }
             .hero-mobile-products {
-                display: none !important;
+                display: grid !important;
+            }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
             }
         }
     </style>
@@ -584,6 +611,8 @@
     <link rel="alternate" hreflang="th" href="https://www.8bami.com/?lang=th" data-seo-managed>
     <link rel="alternate" hreflang="id" href="https://www.8bami.com/?lang=id" data-seo-managed>
     <link rel="alternate" hreflang="x-default" href="https://www.8bami.com/" data-seo-managed>
+    <style id="bami-language-select-styles">.bami-language-select{appearance:none;-webkit-appearance:none;min-width:112px;height:36px;padding:0 34px 0 14px;border:1px solid rgba(255,107,53,.35);border-radius:20px;background-color:#1A2235;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%23FF8A5C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;background-size:12px 8px;color:#fff;font:600 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;cursor:pointer;outline:none;transition:border-color .2s,box-shadow .2s;}.bami-language-select:hover,.bami-language-select:focus{border-color:#FF6B35;box-shadow:0 0 0 3px rgba(255,107,53,.12);}.bami-language-select option{background:#1A2235;color:#fff;}.mobile-menu-footer .bami-language-select{margin:0 auto;min-width:132px;}.bami-fallback-language-select{position:fixed;right:16px;bottom:16px;z-index:10000;}</style>
+    <style id="bami-performance-styles">.footer,.section,.article-section,.cta-section,.product-detail,.solution-section,.news-section,.cases-section,.shareholder-section,.timeline-section,.tms-section,.process-section,.scenario-section,.modules-section,.about-section,.founder-section,.clients-section,.culture-section,.contact-section,.highlights-section,.value-section,.pain-intro,.pain-points,.solution-features,.benefits-section,.team-section,.org-section,.certificates-section,.quality-section,.steps-section,.feedback-section,.support-section,.features-section{content-visibility:auto;contain-intrinsic-size:auto 700px;}</style>
 </head>
 <body data-page="index">
     <nav class="navbar">
@@ -599,11 +628,7 @@
             <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
         </ul>
         <div class="nav-right">
-            <div class="lang-switch">
-                <button class="lang-btn active" data-lang="zh">中</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-                <button type="button" class="lang-btn" data-lang="vi">VI</button>
-            </div>
+            <div class="lang-switch"><select class="bami-language-select" aria-label="Select language / Chọn ngôn ngữ"><option value="zh" lang="zh-CN" aria-label="Chinese" selected>中文</option><option value="en" lang="en" aria-label="English">English</option><option value="vi" lang="vi" aria-label="Vietnamese">Tiếng Việt</option><option value="th" lang="th" aria-label="Thai">ไทย</option><option value="id" lang="id" aria-label="Indonesian">Bahasa Indonesia</option></select></div>
             <a href="contact.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">立即咨询</a>
         </div>
         <button class="mobile-menu-btn" id="menuBtn"><span></span><span></span><span></span></button>
@@ -625,11 +650,7 @@
                 <li><a href="contact.html" data-zh="联系我们" data-en="Contact">联系我们</a></li>
             </ul>
             <div class="mobile-menu-footer">
-                <div class="lang-switch">
-                    <button class="lang-btn active" data-lang="zh">中</button>
-                    <button class="lang-btn" data-lang="en">EN</button>
-                    <button type="button" class="lang-btn" data-lang="vi">VI</button>
-                </div>
+                <div class="lang-switch"><select class="bami-language-select" aria-label="Select language / Chọn ngôn ngữ"><option value="zh" lang="zh-CN" aria-label="Chinese" selected>中文</option><option value="en" lang="en" aria-label="English">English</option><option value="vi" lang="vi" aria-label="Vietnamese">Tiếng Việt</option><option value="th" lang="th" aria-label="Thai">ไทย</option><option value="id" lang="id" aria-label="Indonesian">Bahasa Indonesia</option></select></div>
                 <a href="contact.html" class="btn-primary" data-zh="立即咨询" data-en="Contact">立即咨询</a>
             </div>
         </div>
@@ -645,7 +666,7 @@
         <div class="hero-content">
             <div>
                 <div class="hero-tag">🏆 <span data-zh="15年行业经验 · 1000+企业信赖" data-en="15 Years · Trusted by 1000+ Enterprises">15年行业经验 · 1000+企业信赖</span></div>
-                <h1><span id="typewriter-line1" class="typewriter typewriter-white" data-zh="科技降低物流成本" data-en="Technology Reduces Logistics Costs" style="opacity: 0;">科技降低物流成本</span><br><span id="typewriter-line2" class="highlight typewriter typewriter-orange" data-zh="驱动供应链数智化" data-en="Driving Supply Chain Digital Intelligence" style="opacity: 0;">驱动供应链数智化</span></h1>
+                <h1><span id="typewriter-line1" class="typewriter-white" data-zh="科技降低物流成本" data-en="Technology Reduces Logistics Costs">科技降低物流成本</span><br><span id="typewriter-line2" class="highlight typewriter-orange" data-zh="驱动供应链数智化" data-en="Driving Supply Chain Digital Intelligence">驱动供应链数智化</span></h1>
                 <p data-zh="八米科技专注物流与供应链领域，提供AI数字员工、WMS仓储管理、TMS运输管理、OMS订单管理四大核心产品，助力企业实现全面数智化转型。" data-en="BAMI Tech focuses on logistics & supply chain, providing AI Digital Workforce, WMS, TMS, and OMS solutions for enterprise digital transformation.">八米科技专注物流与供应链领域，提供AI数字员工、WMS仓储管理、TMS运输管理、OMS订单管理四大核心产品，助力企业实现全面数智化转型。</p>
                 <div class="hero-buttons">
                     <a href="products.html" class="btn-primary" data-zh="了解产品" data-en="Our Products">了解产品</a>
@@ -653,15 +674,15 @@
                 </div>
                 <div class="hero-stats">
                     <div class="stat-item">
-                        <div class="stat-number" data-target="1000" data-suffix="+">0</div>
+                        <div class="stat-number" data-target="1000" data-suffix="+">1000+</div>
                         <div class="stat-label" data-zh="累计服务企业" data-en="Clients Served">累计服务企业</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number" data-target="15" data-suffix="">0</div>
+                        <div class="stat-number" data-target="15" data-suffix="">15</div>
                         <div class="stat-label" data-zh="年行业经验" data-en="Years Experience">年行业经验</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number" data-target="99.9" data-suffix="%">0</div>
+                        <div class="stat-number" data-target="99.9" data-suffix="%">99.9%</div>
                         <div class="stat-label" data-zh="系统稳定性" data-en="System Uptime">系统稳定性</div>
                     </div>
                 </div>
@@ -841,26 +862,6 @@
                     <div class="logo-item"><div class="logo-box"><img src="images/clients/client-17.png" alt="客户LOGO" loading="lazy"></div></div>
                     <div class="logo-item"><div class="logo-box"><img src="images/clients/client-18.png" alt="客户LOGO" loading="lazy"></div></div>
                     <div class="logo-item"><div class="logo-box"><img src="images/clients/client-19.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <!-- 复制一份用于无缝循环 -->
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-01.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-02.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-03.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-04.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-05.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-06.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-07.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-08.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-09.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-10.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-11.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-12.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-13.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-14.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-15.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-16.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-17.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-18.png" alt="客户LOGO" loading="lazy"></div></div>
-                    <div class="logo-item"><div class="logo-box"><img src="images/clients/client-19.png" alt="客户LOGO" loading="lazy"></div></div>
                     <div class="logo-item"><div class="logo-box"><img src="images/clients/client-24.png" alt="客户LOGO" loading="lazy"></div></div>
                     <div class="logo-item"><div class="logo-box"><img src="images/clients/client-20.png" alt="客户LOGO" loading="lazy"></div></div>
                     <div class="logo-item"><div class="logo-box"><img src="images/clients/client-21.png" alt="客户LOGO" loading="lazy"></div></div>
@@ -923,7 +924,7 @@
         <div class="news-list">
             <!-- REGIONAL_NEWS_START -->
             <a href="news-detail-37.html" class="news-card regional-news-item" data-regional-news>
-                <div class="news-image"><img src="images/news/2026-regional/indonesia-cover.webp" alt="八米科技与印尼零售集团启动OMS+WMS项目，支持雅加达及多城市全渠道履约"></div>
+                <div class="news-image"><img src="images/optimized/news/2026-regional/indonesia-cover.webp" alt="八米科技与印尼零售集团启动OMS+WMS项目，支持雅加达及多城市全渠道履约" width="1000" height="489" decoding="async" loading="lazy"></div>
                 <div class="news-content">
                     <div class="news-date">📅 2026-11-11</div>
                     <h3 class="news-title" data-zh="八米科技与印尼零售集团启动OMS+WMS项目，支持雅加达及多城市全渠道履约" data-en="BAMI Technology and Indonesian Retail Group Launch OMS and WMS Project">八米科技与印尼零售集团启动OMS+WMS项目，支持雅加达及多城市全渠道履约</h3>
@@ -931,7 +932,7 @@
                 </div>
             </a>
             <a href="news-detail-36.html" class="news-card regional-news-item" data-regional-news>
-                <div class="news-image"><img src="images/news/2026-regional/thailand-cover.webp" alt="八米科技为泰国数字物流企业部署TMS+WMS，提升曼谷都市圈配送效率"></div>
+                <div class="news-image"><img src="images/optimized/news/2026-regional/thailand-cover.webp" alt="八米科技为泰国数字物流企业部署TMS+WMS，提升曼谷都市圈配送效率" width="1000" height="487" decoding="async" loading="lazy"></div>
                 <div class="news-content">
                     <div class="news-date">📅 2026-08-12</div>
                     <h3 class="news-title" data-zh="八米科技为泰国数字物流企业部署TMS+WMS，提升曼谷都市圈配送效率" data-en="BAMI Technology Deploys TMS and WMS for a Thai Digital Logistics Provider">八米科技为泰国数字物流企业部署TMS+WMS，提升曼谷都市圈配送效率</h3>
@@ -939,7 +940,7 @@
                 </div>
             </a>
             <a href="news-detail-35.html" class="news-card regional-news-item" data-regional-news>
-                <div class="news-image"><img src="images/news/2026-regional/vietnam-cover.webp" alt="八米科技携手越南零售集团，以4PL统仓共配方案赋能全渠道履约"></div>
+                <div class="news-image"><img src="images/optimized/news/2026-regional/vietnam-cover.webp" alt="八米科技携手越南零售集团，以4PL统仓共配方案赋能全渠道履约" width="1000" height="500" decoding="async" loading="lazy"></div>
                 <div class="news-content">
                     <div class="news-date">📅 2026-06-18</div>
                     <h3 class="news-title" data-zh="八米科技携手越南零售集团，以4PL统仓共配方案赋能全渠道履约" data-en="BAMI Technology Partners with Vietnamese Retail Group on 4PL Omnichannel Fulfillment">八米科技携手越南零售集团，以4PL统仓共配方案赋能全渠道履约</h3>
@@ -948,7 +949,7 @@
             </a>
             <!-- REGIONAL_NEWS_END -->
             <a href="news-detail-34.html" class="news-card reveal reveal-delay-1">
-                <div class="news-image"><img src="images/news/news-1-1.webp" alt="八米科技与菲律宾ASC签署战略合作协议"></div>
+                <div class="news-image"><img src="images/optimized/news/news-1-1.webp" alt="八米科技与菲律宾ASC签署战略合作协议" width="1000" height="500" decoding="async" loading="lazy"></div>
                 <div class="news-content">
                     <div class="news-date">📅 2026-03-01</div>
                     <h3 class="news-title" data-zh="八米科技与菲律宾ASC签署战略合作协议" data-en="BAMI Tech Signs Strategic Partnership with Philippine ASC">八米科技与菲律宾ASC签署战略合作协议</h3>
@@ -956,7 +957,7 @@
                 </div>
             </a>
             <a href="news-detail-33.html" class="news-card reveal reveal-delay-2">
-                <div class="news-image"><img src="images/news/news-2-1.webp" alt="八米科技入选广东省科技型中小企业库"></div>
+                <div class="news-image"><img src="images/optimized/news/news-2-1.webp" alt="八米科技入选广东省科技型中小企业库" width="900" height="450" decoding="async" loading="lazy"></div>
                 <div class="news-content">
                     <div class="news-date">📅 2025-12-01</div>
                     <h3 class="news-title" data-zh="八米科技入选广东省科技型中小企业库" data-en="BAMI Tech Selected for Guangdong Tech SMEs Database">八米科技入选广东省科技型中小企业库</h3>
@@ -964,7 +965,7 @@
                 </div>
             </a>
             <a href="news-detail-32.html" class="news-card reveal reveal-delay-3">
-                <div class="news-image"><img src="images/news/news-3-1.webp" alt="八米科技与嘉拓智能TMS项目签约"></div>
+                <div class="news-image"><img src="images/optimized/news/news-3-1.webp" alt="八米科技与嘉拓智能TMS项目签约" width="1000" height="500" decoding="async" loading="lazy"></div>
                 <div class="news-content">
                     <div class="news-date">📅 2025-12-01</div>
                     <h3 class="news-title" data-zh="八米科技与嘉拓智能TMS项目签约" data-en="BAMI Tech Signs TMS Project with Jiatuo Smart">八米科技与嘉拓智能TMS项目签约</h3>
@@ -1217,7 +1218,7 @@
         </div>
         <div class="footer-bottom">
             <p><a href="privacy.html" data-zh="隐私政策" data-en="Privacy Policy">隐私政策</a></p>
-            <p>&copy; 2026 BAMI 八米科技. All rights reserved.</p>
+            <p>© 2026 八米科技 BAMI Technology. 保留所有权利。</p>
             <p><a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank" rel="noopener noreferrer" style="color: #8B92A8; text-decoration: none;">粤ICP备19085702号</a></p>
         </div>
     </footer>
@@ -1252,6 +1253,7 @@
             
             reveals.forEach(el => revealObserver.observe(el));
         }
+
         
         // V14: 悬浮按钮显示控制
         function initFabButton() {
@@ -1414,8 +1416,6 @@
                 });
             });
         }
-        initShowcaseIndicators();
-
         // 数字滚动动画
         function animateNumbers() {
             const statNumbers = document.querySelectorAll('.stat-number[data-target]');
@@ -1537,35 +1537,7 @@
         }
         
         // 页面加载完成后启动动画
-        window.onload = function() {
-            // V14: 初始化滚动动画
-            initRevealAnimations();
-            
-            // V14: 初始化悬浮按钮
-            initFabButton();
-            
-            // 启动循环打字动画
-            loopTypewriter();
-            
-            // V14: 启动数字滚动动画(使用IntersectionObserver)
-            animateNumbers();
-            
-            // 语言切换由打字循环在下一个字符时自动识别并从新文案重排
-            document.addEventListener('bami:languagechange', function() {
-                const line1 = document.getElementById('typewriter-line1');
-                const line2 = document.getElementById('typewriter-line2');
-                line1.style.opacity = '1';
-                line2.style.opacity = '1';
-            });
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const line1 = document.getElementById('typewriter-line1');
-                    const line2 = document.getElementById('typewriter-line2');
-                    line1.style.opacity = '1';
-                    line2.style.opacity = '1';
-                });
-            });
-        };
+        initFabButton();
     </script>
     <script src="js/lang.js"></script>
 <script></script>
