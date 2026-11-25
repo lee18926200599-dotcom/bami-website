@@ -75,6 +75,22 @@ def set_attribute(tag: str, name: str, value: str) -> str:
     return tag[:-1].rstrip() + replacement + ">"
 
 
+def add_class(tag: str, class_name: str) -> str:
+    class_attribute = re.search(r"\sclass=([\"'])(.*?)\1", tag, re.IGNORECASE)
+    if class_attribute:
+        classes = class_attribute.group(2).split()
+        if class_name not in classes:
+            classes.append(class_name)
+        return re.sub(
+            r"\sclass=([\"']).*?\1",
+            f' class="{" ".join(classes)}"',
+            tag,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+    return tag[:-1].rstrip() + f' class="{class_name}">'
+
+
 generated: dict[str, tuple[str, int, int]] = {}
 changed = [0]
 
@@ -105,6 +121,8 @@ for page in target_pages():
             count=1,
             flags=re.IGNORECASE,
         )
+        if page.name == "contact.html" and source.startswith("images/contact/"):
+            tag = add_class(tag, "contact-qr")
         tag = set_attribute(tag, "width", str(width))
         tag = set_attribute(tag, "height", str(height))
         tag = set_attribute(tag, "decoding", "async")
